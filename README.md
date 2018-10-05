@@ -19,7 +19,7 @@ We use [SemVer](http://semver.org/) for versioning.
 * **Jackie Tang** - [jickay](https://github.com/jickay)
 * **Max Kurapov** - [mkuravpov](https://github.com/mkurapov)
 * **Michaela Olsakova** - [olsakova](https://github.com/olsakova)
-* **Micheal Friesen** - [MikenIke135](https://github.com/MikenIke135)
+* **Micheal Friesen** - [michealfriesen](https://github.com/michealfriesen)
 
 ## License
 
