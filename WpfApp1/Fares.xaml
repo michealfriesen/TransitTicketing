@@ -11,11 +11,7 @@
     <Window.Resources>
         <System:Double x:Key="margin-y">40</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
-        
         <System:Double x:Key="colWidth">170</System:Double>
-        <System:Double x:Key="colWidth2">360</System:Double>
-        <System:Double x:Key="btn-margin-y">20</System:Double>
-        <System:Double x:Key="btn-height-y">102</System:Double>
 
     </Window.Resources>
 
@@ -32,9 +28,9 @@
         <Grid Name="header" Grid.Row="0" Background="Black">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
-                <ColumnDefinition Width="350"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="560"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -42,9 +38,9 @@
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="1" Grid.Column="1" Foreground="white" HorizontalAlignment="Left">Left</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="2" Foreground="white" HorizontalAlignment="Center">Centre</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="3" Foreground="white" HorizontalAlignment="Right">Right</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Foreground="white">Left</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2" Foreground="white">Centre</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="3" Foreground="white">Right</TextBlock>
         </Grid>
 
         <Grid Name="body" Grid.Row="1">
@@ -54,8 +50,9 @@
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
                 <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
+                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="{Binding Source={StaticResource margin-y}}"></RowDefinition>
@@ -66,19 +63,8 @@
             <TextBlock Grid.Row="0"></TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="1" Background="Aqua"></TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="3" Background="Aqua"></TextBlock>
-            <Grid Grid.Row="1" Grid.Column="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-margin-y}}"></RowDefinition>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-margin-y}}"></RowDefinition>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <TextBlock Grid.Row="0" Grid.Column="0" Background="Aqua"></TextBlock>
-                <TextBlock Grid.Row="2" Grid.Column="0" Background="Aqua"></TextBlock>
-                <TextBlock Grid.Row="4" Grid.Column="0" Background="Aqua"></TextBlock>
-            </Grid>
+            <TextBlock Grid.Row="1" Grid.Column="5" Background="Aqua"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="7" Background="Aqua"></TextBlock>
             <TextBlock Grid.Row="2"></TextBlock>
 
         </Grid>

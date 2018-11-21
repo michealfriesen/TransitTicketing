@@ -11,11 +11,14 @@
     <Window.Resources>
         <System:Double x:Key="margin-y">40</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
-        
+
         <System:Double x:Key="colWidth">170</System:Double>
         <System:Double x:Key="colWidth2">360</System:Double>
         <System:Double x:Key="btn-margin-y">20</System:Double>
         <System:Double x:Key="btn-height-y">102</System:Double>
+
+        <System:Double x:Key="sm-icon-size">90</System:Double>
+
 
     </Window.Resources>
 
@@ -63,9 +66,28 @@
                 <RowDefinition Height="{Binding Source={StaticResource margin-y}}"></RowDefinition>
             </Grid.RowDefinitions>
 
+            <!--Left buttons-->
             <TextBlock Grid.Row="0"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1" Background="Aqua"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="3" Background="Aqua"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Background="Aqua">
+                <StackPanel>
+                    <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>
+                    <TextBlock HorizontalAlignment="Center" FontSize="36">2 Hours</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" Height="150" Width="150" Margin="20" Background="Blue">ICON</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Valid Until</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
+                </StackPanel>
+            </TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="3" Background="Aqua">
+                <StackPanel>
+                    <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>
+                    <TextBlock HorizontalAlignment="Center" FontSize="36">Full Day</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" Height="150" Width="150" Margin="20" Background="Blue">ICON</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Valid Until</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
+                </StackPanel>
+            </TextBlock>
+            
+            <!--Right buttons-->
             <Grid Grid.Row="1" Grid.Column="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
@@ -75,9 +97,51 @@
                     <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Background="Aqua"></TextBlock>
-                <TextBlock Grid.Row="2" Grid.Column="0" Background="Aqua"></TextBlock>
-                <TextBlock Grid.Row="4" Grid.Column="0" Background="Aqua"></TextBlock>
+                <Grid Grid.Row="0" Grid.Column="0" Background="Aqua">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding Source={StaticResource sm-icon-size}}"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Margin="10" Background="Blue"></TextBlock>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Padding="0 10" FontSize="36">3-Day</TextBlock>
+                            <TextBlock>Valid until: Some date</TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="0" Background="Aqua">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding Source={StaticResource sm-icon-size}}"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Margin="10" Background="Blue"></TextBlock>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Padding="0 10" FontSize="36">Week</TextBlock>
+                            <TextBlock>Valid until: Some date</TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="0" Background="Aqua">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding Source={StaticResource sm-icon-size}}"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+                            <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Margin="10" Background="Blue"></TextBlock>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Padding="0 10" FontSize="36">Month</TextBlock>
+                            <TextBlock>Valid until: Some date</TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
             </Grid>
             <TextBlock Grid.Row="2"></TextBlock>
 
