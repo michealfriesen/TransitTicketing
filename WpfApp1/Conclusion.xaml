@@ -11,11 +11,11 @@
     <Window.Resources>
         <System:Double x:Key="margin-y">40</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
-        
-        <System:Double x:Key="colWidth">170</System:Double>
+
+        <System:Double x:Key="colWidth">750</System:Double>
         <System:Double x:Key="colWidth2">360</System:Double>
-        <System:Double x:Key="btn-margin-y">20</System:Double>
-        <System:Double x:Key="btn-height-y">102</System:Double>
+        <System:Double x:Key="top-height">200</System:Double>
+        <System:Double x:Key="bottom-height">175</System:Double>
 
     </Window.Resources>
 
@@ -52,57 +52,34 @@
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
                 <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="{Binding Source={StaticResource margin-y}}"></RowDefinition>
-                <RowDefinition Height="350"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowHeight}}"></RowDefinition>
                 <RowDefinition Height="{Binding Source={StaticResource margin-y}}"></RowDefinition>
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1" Background="Aqua"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="3" Background="Aqua"></TextBlock>
-            <Grid Grid.Row="1" Grid.Column="5">
+            <Grid Grid.Row="1" Grid.Column="1" Background="Aqua">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-margin-y}}"></RowDefinition>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-margin-y}}"></RowDefinition>
-                    <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
+                    <RowDefinition Height="{Binding Source={StaticResource top-height}}"></RowDefinition>
+                    <RowDefinition Height="{Binding Source={StaticResource bottom-height}}"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Background="Aqua"></TextBlock>
-                <TextBlock Grid.Row="2" Grid.Column="0" Background="Aqua"></TextBlock>
-                <TextBlock Grid.Row="4" Grid.Column="0" Background="Aqua"></TextBlock>
+                <Grid Grid.Row="0" Grid.Column="0" Background="Aqua">
+                    <TextBlock FontSize="72" HorizontalAlignment="Center" Padding="0 50">Purchase Complete</TextBlock>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0" Background="Aquamarine">
+                    <TextBlock FontSize="48" TextAlignment="Center" HorizontalAlignment="Center" Padding="100 10" TextWrapping="Wrap">
+                        Please pick up your ticket and receipt below
+                    </TextBlock>
+                </Grid>
             </Grid>
             <TextBlock Grid.Row="2"></TextBlock>
 
         </Grid>
 
-        <Grid Name="footer" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0" Grid.Column="1" 
-                       Background="orange" Padding="50 15">Left</TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="7" 
-                       Background="green" Padding="50 15">Right</TextBlock>
-        </Grid>
 
     </Grid>
 </Window>
