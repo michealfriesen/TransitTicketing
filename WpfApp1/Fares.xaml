@@ -132,6 +132,8 @@
                     <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0 -10">+</TextBlock>
                 </StackPanel>
             </Grid>
+            
+            <!--Minus Buttons-->
             <Grid Grid.Row="3" Grid.Column="1" Background="OrangeRed">
                 <TextBlock FontSize="72" Foreground="White" Margin="95 -33">-</TextBlock>
             </Grid>
