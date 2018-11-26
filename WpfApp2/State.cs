@@ -9,7 +9,19 @@ namespace WpfApp2
 {
     public class State
     {
-        public string StepNumber { get; set; }
+        public int StepNumber { get; set; }
+
+        public Window CurrentWindow { get; set; }
+
+        public void GotoNext()
+        {
+            StepNumber++;
+            Window nextWin = Flow[StepNumber];
+            CurrentWindow.Close();
+
+            nextWin.Close();
+        }
+
 
         public Window[] Flow = { new DurationWindow(), new FaresWindow() };
     }

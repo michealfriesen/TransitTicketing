@@ -23,6 +23,10 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
+
+            State state = new State();
+            state.CurrentWindow = this;
+            state.GotoNext();
         }
     }
 }
