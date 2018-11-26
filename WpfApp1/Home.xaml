@@ -81,7 +81,7 @@
 
             <TextBlock Grid.Row="0"></TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="1" Background="Aqua">
-                <Grid Name="body-ticketsbtn">
+                <Grid Name="ticketsbtn">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource mainbtn-margin-x}}"></ColumnDefinition>
                         <ColumnDefinition Width="{Binding Source={StaticResource mainbtn-icon}}"></ColumnDefinition>
@@ -126,7 +126,7 @@
 
             <TextBlock Grid.Row="1" Grid.Column="1">Left</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="3" Background="green">
-                <Grid Name="expressbtn-1">
+                <Grid Name="expressbtn_1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-text}}"></ColumnDefinition>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-icon}}"></ColumnDefinition>
@@ -143,7 +143,7 @@
                 </Grid>
             </TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="5" Background="green">
-                <Grid Name="expressbtn-2">
+                <Grid Name="expressbtn_2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-text}}"></ColumnDefinition>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-icon}}"></ColumnDefinition>
@@ -160,7 +160,7 @@
                 </Grid>
             </TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="7" Background="green">
-                <Grid Name="expressbtn-3">
+                <Grid Name="expressbtn_3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-text}}"></ColumnDefinition>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-icon}}"></ColumnDefinition>
