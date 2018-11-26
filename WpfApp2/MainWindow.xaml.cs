@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace WpfApp2
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +23,9 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            HomeWindow dur = new HomeWindow();
+            dur.Show();
+            this.Close();
         }
     }
 }
