@@ -68,15 +68,20 @@
 
             <!--Left buttons-->
             <TextBlock Grid.Row="0"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1" Background="Aqua">
-                <StackPanel>
-                    <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>
-                    <TextBlock HorizontalAlignment="Center" FontSize="36">2 Hours</TextBlock>
-                    <TextBlock HorizontalAlignment="Center" Height="150" Width="150" Margin="20" Background="Blue">ICON</TextBlock>
-                    <TextBlock HorizontalAlignment="Center">Valid Until</TextBlock>
-                    <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
-                </StackPanel>
-            </TextBlock>
+            <Border Grid.Row="1" Grid.Column="1" BorderBrush="#FF000000" BorderThickness="1,1,1,1" CornerRadius="28,28,28,28">
+            <Button x:Name="TwoHours">
+            <Button.Background>
+                        <SolidColorBrush Color="#FF2D850C"/>
+                    </Button.Background>
+            <StackPanel>
+                <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>
+                <TextBlock HorizontalAlignment="Center" FontSize="36">2 Hours</TextBlock>
+                <TextBlock HorizontalAlignment="Center" Height="150" Width="150" Margin="20" Background="Blue">ICON</TextBlock>
+                <TextBlock HorizontalAlignment="Center">Valid Until</TextBlock>
+                <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
+            </StackPanel>
+            </Button>
+            </Border>
             <TextBlock Grid.Row="1" Grid.Column="3" Background="Aqua">
                 <StackPanel>
                     <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>

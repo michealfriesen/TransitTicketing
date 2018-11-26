@@ -30,12 +30,12 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-            </Grid.RowDefinitions>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
 
         <!--HEADER-->
 
@@ -57,7 +57,7 @@
             <TextBlock Grid.Row="1" Grid.Column="3" Foreground="white" HorizontalAlignment="Right">Right</TextBlock>
         </Grid>
 
-        <Grid Name="body" Grid.Row="1">
+        <Grid Name="body" Grid.Row="1" Margin="0,3,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
                 <ColumnDefinition Width="{Binding Source={StaticResource main-colWidth}}"></ColumnDefinition>
@@ -76,6 +76,7 @@
 
             <TextBlock Grid.Row="0"></TextBlock>
             <Grid Grid.Row="1" Grid.Column="1" Background="Aqua">
+                <Button x:Name="Adult" Content="" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FF00FFF" HorizontalAlignment="Left" Width="221"></Button>
                 <StackPanel>
                     <TextBlock Width="{Binding Source={StaticResource main-colWidth}}"></TextBlock>
                     <TextBlock FontSize="36" HorizontalAlignment="Center">Adult</TextBlock>
@@ -95,6 +96,7 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1" Grid.Column="3" Background="Aqua">
+                <Button x:Name="Youth" Content="" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FF00F3FF"></Button>
                 <StackPanel>
                     <TextBlock Width="{Binding Source={StaticResource main-colWidth}}"></TextBlock>
                     <TextBlock FontSize="36" HorizontalAlignment="Center">Youth</TextBlock>
@@ -114,6 +116,7 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1" Grid.Column="5" Background="Aqua">
+                <Button x:Name="Senior" Content="" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FF00F3FF"></Button>
                 <StackPanel>
                     <TextBlock Width="{Binding Source={StaticResource main-colWidth}}"></TextBlock>
                     <TextBlock FontSize="36" HorizontalAlignment="Center">Senior</TextBlock>
@@ -132,16 +135,28 @@
                     <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0 -10">+</TextBlock>
                 </StackPanel>
             </Grid>
-            
+
             <!--Minus Buttons-->
             <Grid Grid.Row="3" Grid.Column="1" Background="OrangeRed">
-                <TextBlock FontSize="72" Foreground="White" Margin="95 -33">-</TextBlock>
+                <Button x:Name="Minus1" Content="-"  Margin="65,-33,60,0" FontWeight="Bold" FontSize="72" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="83" Width="96">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FF273A28" Opacity="0"/>
+                    </Button.Background>
+                </Button>
             </Grid>
             <Grid Grid.Row="3" Grid.Column="3" Background="OrangeRed">
-                <TextBlock FontSize="72" Foreground="White" Margin="95 -33">-</TextBlock>
+                <Button x:Name="Minus2" Content="-"  Margin="65,-33,60,0" FontWeight="Bold" FontSize="72" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="83" Width="96">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FF273A28" Opacity="0"/>
+                    </Button.Background>
+                </Button>
             </Grid>
             <Grid Grid.Row="3" Grid.Column="5" Background="OrangeRed">
-                <TextBlock FontSize="72" Foreground="White" Margin="95 -33">-</TextBlock>
+                <Button x:Name="Minus3" Content="-"  Margin="65,-33,60,0" FontWeight="Bold" FontSize="72" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="83" Width="96">
+                    <Button.Background>
+                        <SolidColorBrush Color="#FF273A28" Opacity="0"/>
+                    </Button.Background>
+                </Button>
             </Grid>
             <TextBlock Grid.Row="2"></TextBlock>
 
@@ -161,12 +176,14 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"></RowDefinition>
             </Grid.RowDefinitions>
+            
+            <Button x:Name="Back" Content="Back" Grid.Column="1" 
+                       Background="green" Padding="50 15" FontWeight="Bold" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="51" VerticalAlignment="Bottom"/>
+            <Button x:Name="Next" Content="Next" Grid.Column="7" 
+                       Background="green" Padding="50 15" FontWeight="Bold" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="51" VerticalAlignment="Bottom" Foreground="Black"/>
 
-            <TextBlock Grid.Row="0" Grid.Column="1" 
-                       Background="orange" Padding="50 15">Left</TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="7" 
-                       Background="green" Padding="50 15">Right</TextBlock>
         </Grid>
+
 
     </Grid>
 </Window>
