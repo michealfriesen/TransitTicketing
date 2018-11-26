@@ -23,9 +23,6 @@ namespace WpfApp2
         public MainWindow()
         {
             InitializeComponent();
-            HomeWindow dur = new HomeWindow();
-            dur.Show();
-            this.Close();
         }
     }
 }
