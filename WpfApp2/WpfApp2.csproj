@@ -54,15 +54,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="State.cs" />
-    <Compile Include="SummaryWindow.xaml.cs">
-      <DependentUpon>SummaryWindow.xaml</DependentUpon>
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Page Include="DurationWindow.xaml">
+    <Compile Include="State.cs" />
+    <Compile Include="SummaryPage.xaml.cs">
+      <DependentUpon>SummaryPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DurationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FaresWindow.xaml">
+    <Page Include="FaresPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -74,17 +81,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DurationWindow.xaml.cs">
-      <DependentUpon>DurationWindow.xaml</DependentUpon>
+    <Compile Include="DurationPage.xaml.cs">
+      <DependentUpon>DurationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FaresWindow.xaml.cs">
-      <DependentUpon>FaresWindow.xaml</DependentUpon>
+    <Compile Include="FaresPage.xaml.cs">
+      <DependentUpon>FaresPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SummaryWindow.xaml">
+    <Page Include="SummaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

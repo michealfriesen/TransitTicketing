@@ -4,25 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace WpfApp2
 {
-    public class State
-    {
-        public int StepNumber { get; set; }
+	class State
+	{
+		public static MainWindow PageSwitcher;
+		public static int StepNumber;
+		public static UserControl CurrentPage;
 
-        public Window CurrentWindow { get; set; }
+		public static void Init()
+		{
+			Flow = new UserControl[] { new HomePage(), new DurationPage(), new FaresPage(), new SummaryPage() };
+			StepNumber = 0;
+			CurrentPage = Flow[StepNumber];
+		}
 
-        public void GotoNext()
-        {
-            StepNumber++;
-            Window nextWin = Flow[StepNumber];
-            CurrentWindow.Close();
+		public static void Switch(UserControl newPage)
+		{
+			PageSwitcher.Navigate(newPage);
+		}
 
-            nextWin.Close();
-        }
+		public static void Next()
+		{
+			StepNumber++;
+			CurrentPage = Flow[StepNumber];
+			PageSwitcher.Navigate(CurrentPage);
+		}
 
-
-        public Window[] Flow = { new DurationWindow(), new FaresWindow() };
-    }
+		public static UserControl[] Flow;
+	}
 }

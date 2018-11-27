@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for SummaryWindow.xaml
+    /// Interaction logic for FaresWindow.xaml
     /// </summary>
-    public partial class SummaryWindow : Window
+    public partial class FaresPage : UserControl
     {
-        public SummaryWindow()
+        public FaresPage()
         {
             InitializeComponent();
         }

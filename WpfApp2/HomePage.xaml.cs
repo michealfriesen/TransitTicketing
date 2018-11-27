@@ -10,18 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApp2
 {
-    /// <summary>
-    /// Interaction logic for DurationWindow.xaml
-    /// </summary>
-    public partial class DurationWindow : Window
-    {
-        public DurationWindow()
-        {
-            InitializeComponent();
-        }
-    }
+	/// <summary>
+	/// Interaction logic for HomePage.xaml
+	/// </summary>
+	public partial class HomePage : UserControl
+	{
+		public HomePage()
+		{
+			InitializeComponent();
+		}
+	}
 }

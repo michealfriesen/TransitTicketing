@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DurationWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DurationPage : UserControl
     {
-        public MainWindow()
+        public DurationPage()
         {
             InitializeComponent();
-			State.PageSwitcher = this;
-			State.Switch(new HomePage());
-		}
-
-		public void Navigate(UserControl nextPage)
-		{
-			this.Content = nextPage;
-		}
-	}
+        }
+    }
 }
