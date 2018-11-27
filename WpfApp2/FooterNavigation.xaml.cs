@@ -20,22 +20,9 @@ namespace WpfApp2
     /// </summary>
     public partial class FooterNavigation : UserControl
     {
-		public event EventHandler OnPrevious;
-		public event EventHandler OnNext;
-
 		public FooterNavigation()
         {
             InitializeComponent();
         }
-
-		private void Next_Click(object sender, RoutedEventArgs e)
-		{
-			this.OnNext?.Invoke(this, new EventArgs());
-		}
-
-		private void Back_Click(object sender, RoutedEventArgs e)
-		{
-			this.OnPrevious?.Invoke(this, new EventArgs());
-		}
 	}
 }

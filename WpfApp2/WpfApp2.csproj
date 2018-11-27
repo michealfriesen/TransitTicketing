@@ -54,13 +54,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IViewModel.cs" />
     <Compile Include="FooterNavigation.xaml.cs">
       <DependentUpon>FooterNavigation.xaml</DependentUpon>
     </Compile>
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NavigationViewModel.cs" />
+    <Compile Include="AppViewModel.cs" />
     <Compile Include="SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>

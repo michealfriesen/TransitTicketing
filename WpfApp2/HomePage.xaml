@@ -78,7 +78,7 @@
 			</Grid.RowDefinitions>
 
 			<TextBlock Grid.Row="0"></TextBlock>
-			<TextBlock Grid.Row="1" Grid.Column="1" Background="Aqua">
+			<Button Grid.Row="1" Grid.Column="1" Background="Aqua" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnNext}">
                 <Grid Name="ticketsbtn">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource mainbtn-margin-x}}"></ColumnDefinition>
@@ -94,7 +94,7 @@
                     <TextBlock Grid.Row="1" Grid.Column="1" Background="Black"></TextBlock>
                     <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center">TICKETS</TextBlock>
                 </Grid>
-            </TextBlock>
+            </Button>
 			<TextBlock Grid.Row="2"></TextBlock>
 
 		</Grid>

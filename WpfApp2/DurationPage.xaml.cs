@@ -25,5 +25,5 @@ namespace WpfApp2
         }
     }
 
-	class DurationPageViewModel { }
+	class DurationPageViewModel:IViewModel { }
 }

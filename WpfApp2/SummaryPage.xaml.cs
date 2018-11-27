@@ -24,4 +24,6 @@ namespace WpfApp2
             InitializeComponent();
         }
     }
+
+	class SummaryPageViewModel : IViewModel { }
 }

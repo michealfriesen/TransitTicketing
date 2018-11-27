@@ -7,7 +7,7 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
 		Height="600" Width="800">
-	<UserControl.Resources>
+    <UserControl.Resources>
         <System:Double x:Key="margin-y">40</System:Double>
         <System:Double x:Key="margin-y2">30</System:Double>
 
@@ -75,7 +75,7 @@
 
             <TextBlock Grid.Row="0"></TextBlock>
             <Grid Grid.Row="1" Grid.Column="1" Background="Aqua">
-				<Button x:Name="Adult" Content="" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FF00F3FF" HorizontalAlignment="Left" Width="221"></Button>
+                <Button x:Name="Adult" Content="" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FF00F3FF" HorizontalAlignment="Left" Width="221"></Button>
                 <StackPanel>
                     <TextBlock Width="{Binding Source={StaticResource main-colWidth}}"></TextBlock>
                     <TextBlock FontSize="36" HorizontalAlignment="Center">Adult</TextBlock>
@@ -160,8 +160,6 @@
             <TextBlock Grid.Row="2"></TextBlock>
 
         </Grid>
-
-
-		<local:FooterNavigation Grid.Row="2"></local:FooterNavigation>
-	</Grid>
+        <local:FooterNavigation Grid.Row="2"></local:FooterNavigation>
+    </Grid>
 </UserControl>

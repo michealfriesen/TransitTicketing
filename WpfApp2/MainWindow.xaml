@@ -18,6 +18,9 @@
 		<DataTemplate DataType="{ x:Type local:DurationPageViewModel }">
 			<local:DurationPage/>
 		</DataTemplate>
+		<DataTemplate DataType="{ x:Type local:SummaryPageViewModel }">
+			<local:SummaryPage/>
+		</DataTemplate>
 	</Window.Resources>
 	<UserControl Content="{Binding Path=SelectedViewModel}"/>
 

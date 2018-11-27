@@ -39,11 +39,8 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="50"></RowDefinition>
 		</Grid.RowDefinitions>
-
-		<Button x:Name="Back" Content="Back" Grid.Column="1" 
-                       Background="green" Padding="50 15" FontWeight="Bold" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="51" VerticalAlignment="Bottom" Click="Back_Click"/>
-		<Button x:Name="Next" Content="Next" Grid.Column="7" 
-                       Background="green" Padding="50 15" FontWeight="Bold" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="51" VerticalAlignment="Bottom" Foreground="Black" Click="Next_Click"/>
+		<Button x:Name="Back" Content="Back" Grid.Column="1" Background="green" Padding="50 15" FontWeight="Bold" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="51" VerticalAlignment="Bottom" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnPrevious}"/>
+		<Button x:Name="Next" Content="Next" Grid.Column="7" Background="green" Padding="50 15" FontWeight="Bold" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="51" VerticalAlignment="Bottom" Foreground="Black" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnNext}"/>
 
 	</Grid>
 </UserControl>

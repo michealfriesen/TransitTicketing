@@ -23,8 +23,8 @@ namespace WpfApp2
 		public MainWindow()
         {
             InitializeComponent();
-			this.DataContext = new NavigationViewModel();
-			var viewModel = (NavigationViewModel)DataContext;
+			var viewModel = new AppViewModel();
+			this.DataContext = viewModel;
 			viewModel.Init();
 		}
 	}
