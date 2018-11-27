@@ -152,26 +152,6 @@
 
         </Grid>
 
-        <Grid Name="footer" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0" Grid.Column="1" 
-                       Background="orange" Padding="50 15">Left</TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="7" 
-                       Background="green" Padding="50 15">Right</TextBlock>
-        </Grid>
-
-    </Grid>
+		<local:FooterNavigation Grid.Row="2"></local:FooterNavigation>
+	</Grid>
 </UserControl>

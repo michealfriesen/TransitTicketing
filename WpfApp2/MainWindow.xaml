@@ -8,5 +8,17 @@
         mc:Ignorable="d"
 		Title="MainWindow" Height="600" Width="800"
 		Background="White">
+	<Window.Resources>
+		<DataTemplate DataType="{ x:Type local:HomePageViewModel }">
+			<local:HomePage/>
+		</DataTemplate>
+		<DataTemplate DataType="{ x:Type local:FaresPageViewModel }">
+			<local:FaresPage/>
+		</DataTemplate>
+		<DataTemplate DataType="{ x:Type local:DurationPageViewModel }">
+			<local:DurationPage/>
+		</DataTemplate>
+	</Window.Resources>
+	<UserControl Content="{Binding Path=SelectedViewModel}"/>
 
 </Window>

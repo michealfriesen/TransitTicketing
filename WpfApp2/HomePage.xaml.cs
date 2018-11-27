@@ -25,4 +25,6 @@ namespace WpfApp2
 			InitializeComponent();
 		}
 	}
+
+	class HomePageViewModel { }
 }

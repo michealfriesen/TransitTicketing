@@ -16,16 +16,26 @@ using System.Windows.Shapes;
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FooterNavigation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FooterNavigation : UserControl
     {
-		public MainWindow()
+		public event EventHandler OnPrevious;
+		public event EventHandler OnNext;
+
+		public FooterNavigation()
         {
             InitializeComponent();
-			this.DataContext = new NavigationViewModel();
-			var viewModel = (NavigationViewModel)DataContext;
-			viewModel.Init();
+        }
+
+		private void Next_Click(object sender, RoutedEventArgs e)
+		{
+			this.OnNext?.Invoke(this, new EventArgs());
+		}
+
+		private void Back_Click(object sender, RoutedEventArgs e)
+		{
+			this.OnPrevious?.Invoke(this, new EventArgs());
 		}
 	}
 }
