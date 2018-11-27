@@ -86,7 +86,7 @@ namespace WpfApp2
 			return _canExecute;
 		}
 
-		public event EventHandler CanExecuteChanged
+		public event EventHandler CanExecuteChanged;
 
 		public void Execute(object parameter)
 		{
