@@ -12,6 +12,7 @@ namespace WpfApp2
 {
 	class AppViewModel : INotifyPropertyChanged
 	{
+        
 		#region Navigation 
 		
 		public IViewModel[] flow = new IViewModel[] { new HomePageViewModel(), new DurationPageViewModel(), new FaresPageViewModel(), new SummaryPageViewModel() };
@@ -21,7 +22,7 @@ namespace WpfApp2
 		{
 			get
 			{
-				return new CommandHandler(() => GoToNext(), true);
+				return new CommandHandler(param => GoToNext(), true);
 			}
 		}
 		public void GoToNext()
@@ -37,7 +38,7 @@ namespace WpfApp2
 		{
 			get
 			{
-				return new CommandHandler(() => GoToPrevious(), true);
+				return new CommandHandler(param => GoToPrevious(), true);
 			}
 		}
 		public void GoToPrevious()
@@ -62,21 +63,31 @@ namespace WpfApp2
 			SelectedViewModel = flow[stepNumber];
 		}
 
-		
-		public event PropertyChangedEventHandler PropertyChanged;
+        #region State Handing
+   
+        public ICommand OnSelectDuration { get { return new CommandHandler(param => SelectDuration((TicketDurationType)param)); } }
+        public void SelectDuration(TicketDurationType type)
+        {
+            Console.WriteLine(type);
+        }
+        #endregion
+        public event PropertyChangedEventHandler PropertyChanged;
 		private void OnPropertyChanged(string propName)
 		{
 
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
 		}
 
+
+
+
 	}
 
 	public class CommandHandler : ICommand
 	{
-		private Action _action;
-		private bool _canExecute = true;
-		public CommandHandler(Action action, bool canExec=true)
+        private readonly Action<object> _action;
+        private bool _canExecute = true;
+		public CommandHandler(Action<object> action, bool canExec=true)
 		{
 			_action = action;
 		}
@@ -90,7 +101,10 @@ namespace WpfApp2
 
 		public void Execute(object parameter)
 		{
-			_action();
+			_action(parameter);
 		}
 	}
+
+    enum TicketDurationType { Single, FullDay, ThreeDay, Week, Month };
+
 }
