@@ -26,6 +26,7 @@ namespace WpfApp2
             var adultTicketType = new TicketType {  Name = "Adult" };
             var youthTicketType = new TicketType {  Name = "Youth" };
             var seniorTicketType = new TicketType {  Name = "Senior" };
+            purchaseState = new PurchaseState();
             purchaseState.TicketTypes = new TicketType[] { adultTicketType, youthTicketType, seniorTicketType };
             SelectedViewModel = flow[stepNumber];
         }
