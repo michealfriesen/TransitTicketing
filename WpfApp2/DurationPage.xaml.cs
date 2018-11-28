@@ -17,11 +17,13 @@ namespace WpfApp2
     /// <summary>
     /// Interaction logic for DurationWindow.xaml
     /// </summary>
-    public partial class DurationWindow : Window
+    public partial class DurationPage : UserControl
     {
-        public DurationWindow()
+        public DurationPage()
         {
             InitializeComponent();
         }
     }
+
+	class DurationPageViewModel:IViewModel { }
 }

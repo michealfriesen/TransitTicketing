@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfApp2.DurationWindow"
+﻿<UserControl x:Class="WpfApp2.DurationPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:WpfApp2"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Height="600" Width="800">
 
-    <Window.Resources>
+    <UserControl.Resources>
         <System:Double x:Key="margin-y">40</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
 
@@ -20,7 +20,7 @@
         <System:Double x:Key="sm-icon-size">90</System:Double>
 
 
-    </Window.Resources>
+    </UserControl.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -69,7 +69,9 @@
             <!--Left buttons-->
             <TextBlock Grid.Row="0"></TextBlock>
             <Border Grid.Row="1" Grid.Column="1" BorderBrush="#FF000000" BorderThickness="1,1,1,1" CornerRadius="28,28,28,28">
-                <Button x:Name="TwoHours">
+                <Button x:Name="TwoHours" 
+                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
+                        CommandParameter="{x:Static local:TicketDurationType.Single}" >
                     <Button.Background>
                         <SolidColorBrush Color="#FF2D850C"/>
                     </Button.Background>
@@ -152,26 +154,6 @@
 
         </Grid>
 
-        <Grid Name="footer" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0" Grid.Column="1" 
-                       Background="orange" Padding="50 15">Left</TextBlock>
-            <TextBlock Grid.Row="0" Grid.Column="7" 
-                       Background="green" Padding="50 15">Right</TextBlock>
-        </Grid>
-
-    </Grid>
-</Window>
+		<local:FooterNavigation Grid.Row="2"></local:FooterNavigation>
+	</Grid>
+</UserControl>

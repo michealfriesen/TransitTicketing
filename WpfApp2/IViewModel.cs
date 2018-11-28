@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace WpfApp2
 {
-    public class State
-    {
-        public string StepNumber { get; set; }
-
-        public Window[] Flow = { new DurationWindow(), new FaresWindow() };
-    }
+	public interface IViewModel { }
 }

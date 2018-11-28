@@ -10,22 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FaresWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FaresPage : UserControl
     {
-		public MainWindow()
+        public FaresPage()
         {
             InitializeComponent();
-			var viewModel = new AppViewModel();
-			this.DataContext = viewModel;
-			viewModel.Init();
-		}
-	}
+        }
+    }
+
+	class FaresPageViewModel:IViewModel { }
 }

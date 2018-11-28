@@ -15,17 +15,17 @@ using System.Windows.Shapes;
 
 namespace WpfApp2
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-		public MainWindow()
-        {
-            InitializeComponent();
-			var viewModel = new AppViewModel();
-			this.DataContext = viewModel;
-			viewModel.Init();
+	/// <summary>
+	/// Interaction logic for HomePage.xaml
+	/// </summary>
+	public partial class HomePage : UserControl
+	{
+		public HomePage()
+		{
+			InitializeComponent();
+
 		}
 	}
+
+	class HomePageViewModel : IViewModel { }
 }
