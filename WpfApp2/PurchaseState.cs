@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WpfApp2
 {
     enum TicketDurationType {
-        Single,
+        SingleFare,
         FullDay,
         ThreeDay,
         Week,
@@ -21,5 +21,12 @@ namespace WpfApp2
         {
             return this.TicketTypes.Aggregate(0.0M, (runningTotal, ticket) => runningTotal + ticket.GetPrice(this.Duration));
         }
+
+        public const Dictionary<Tuple<String, TicketDurationType>, Double> price = new Dictionary<Tuple<String, TicketDurationType>, Double>()
+        {
+            {new Tuple<String, TicketDurationType>("Adult", SingleFare), 3.50 }
+        }
+
+
     }
 }
