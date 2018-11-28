@@ -47,7 +47,7 @@
 
             <TextBlock Grid.Row="1" Grid.Column="1" Foreground="white" HorizontalAlignment="Left">Left</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="2" Foreground="white" HorizontalAlignment="Center">Centre</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="3" Foreground="white" HorizontalAlignment="Right" x:Name="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="3" Foreground="white" HorizontalAlignment="Right"></TextBlock>
         </Grid>
 
         <Grid Name="body" Grid.Row="1">

@@ -62,9 +62,11 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppViewModel.cs" />
+    <Compile Include="PurchaseState.cs" />
     <Compile Include="SummaryPage.xaml.cs">
       <DependentUpon>SummaryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TicketType.cs" />
     <Page Include="DurationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
