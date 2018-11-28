@@ -7,40 +7,42 @@
 			 xmlns:System="clr-namespace:System;assembly=mscorlib"
 			 mc:Ignorable="d" 
              d:DesignWidth="800">
-	<UserControl.Resources>
-		<System:Double x:Key="margin-y">40</System:Double>
-		<System:Double x:Key="margin-y2">30</System:Double>
+    <UserControl.Resources>
+        <System:Double x:Key="margin-y">40</System:Double>
+        <System:Double x:Key="margin-y2">30</System:Double>
 
-		<System:Double x:Key="margin-x">20</System:Double>
-		<System:Double x:Key="colWidth">170</System:Double>
+        <System:Double x:Key="margin-x">20</System:Double>
+        <System:Double x:Key="colWidth">170</System:Double>
 
-		<System:Double x:Key="header-height">50</System:Double>
+        <System:Double x:Key="header-height">50</System:Double>
 
-		<System:Double x:Key="main-margin-x">40</System:Double>
-		<System:Double x:Key="main-colWidth">220</System:Double>
-		<System:Double x:Key="main-colHeight">300</System:Double>
+        <System:Double x:Key="main-margin-x">40</System:Double>
+        <System:Double x:Key="main-colWidth">220</System:Double>
+        <System:Double x:Key="main-colHeight">300</System:Double>
 
-		<System:Double x:Key="minus-btn-margin-y">10</System:Double>
-		<System:Double x:Key="minus-btn-height">50</System:Double>
-		<System:Double x:Key="minus-btn-width">50</System:Double>
+        <System:Double x:Key="minus-btn-margin-y">10</System:Double>
+        <System:Double x:Key="minus-btn-height">50</System:Double>
+        <System:Double x:Key="minus-btn-width">50</System:Double>
 
-	</UserControl.Resources>
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-			<ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-			<ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-			<ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-			<ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-			<ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-			<ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-			<ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="50"></RowDefinition>
-		</Grid.RowDefinitions>
-		<Button x:Name="Back" Content="Back" Grid.Column="1" Background="green" Padding="50 15" FontWeight="Bold" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="51" VerticalAlignment="Bottom" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnPrevious}"/>
-		<Button x:Name="Next" Content="Next" Grid.Column="7" Background="green" Padding="50 15" FontWeight="Bold" FontSize="16" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="51" VerticalAlignment="Bottom" Foreground="Black" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnNext}"/>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+            <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
+            <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+            <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
+            <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+            <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
+            <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+            <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
 
-	</Grid>
+        <Button Style="{DynamicResource RoundCorner}" x:Name="Back" Grid.Column="1" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnPrevious}" />
+        <Button Style="{DynamicResource RoundCorner}" x:Name="Next" Grid.Column="7" Content="Next" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnNext}" />
+
+    </Grid>
 </UserControl>

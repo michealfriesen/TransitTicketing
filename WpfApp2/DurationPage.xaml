@@ -68,8 +68,7 @@
 
             <!--Left buttons-->
             <TextBlock Grid.Row="0"></TextBlock>
-            <Border Grid.Row="1" Grid.Column="1" BorderBrush="#FF000000" BorderThickness="1,1,1,1" CornerRadius="28,28,28,28">
-                <Button x:Name="TwoHours" 
+            <Button Style="{DynamicResource RoundCorner}" Grid.Row="1" Grid.Column="1" x:Name="TwoHours" 
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
                         CommandParameter="{x:Static local:TicketDurationType.Single}" >
                     <Button.Background>
@@ -83,8 +82,7 @@
                         <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
                     </StackPanel>
                 </Button>
-            </Border>
-            <TextBlock Grid.Row="1" Grid.Column="3" Background="Aqua">
+            <Button Style="{DynamicResource RoundCorner}" Grid.Row="1" Grid.Column="3" Background="Aqua">
                 <StackPanel>
                     <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>
                     <TextBlock HorizontalAlignment="Center" FontSize="36">Full Day</TextBlock>
@@ -92,7 +90,7 @@
                     <TextBlock HorizontalAlignment="Center">Valid Until</TextBlock>
                     <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
                 </StackPanel>
-            </TextBlock>
+            </Button>
 
             <!--Right buttons-->
             <Grid Grid.Row="1" Grid.Column="5">
@@ -104,7 +102,7 @@
                     <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0" Grid.Column="0" Background="Aqua">
+                <Button Style="{DynamicResource RoundCorner}" Grid.Row="0" Grid.Column="0" Background="Aqua">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{Binding Source={StaticResource sm-icon-size}}"></ColumnDefinition>
@@ -118,8 +116,8 @@
                             <TextBlock>Valid until: Some date</TextBlock>
                         </StackPanel>
                     </Grid>
-                </Grid>
-                <Grid Grid.Row="2" Grid.Column="0" Background="Aqua">
+                </Button>
+                <Button Style="{DynamicResource RoundCorner}" Grid.Row="2" Grid.Column="0" Background="Aqua">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{Binding Source={StaticResource sm-icon-size}}"></ColumnDefinition>
@@ -133,8 +131,8 @@
                             <TextBlock>Valid until: Some date</TextBlock>
                         </StackPanel>
                     </Grid>
-                </Grid>
-                <Grid Grid.Row="4" Grid.Column="0" Background="Aqua">
+                </Button>
+                <Button Style="{DynamicResource BlueButton}" Grid.Row="4" Grid.Column="0" Background="Aqua">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{Binding Source={StaticResource sm-icon-size}}"></ColumnDefinition>
@@ -148,7 +146,7 @@
                             <TextBlock>Valid until: Some date</TextBlock>
                         </StackPanel>
                     </Grid>
-                </Grid>
+                </Button>
             </Grid>
             <TextBlock Grid.Row="2"></TextBlock>
 
