@@ -12,10 +12,36 @@ namespace WpfApp2
 {
 	class AppViewModel : INotifyPropertyChanged
 	{
-        
-		#region Navigation 
-		
-		public IViewModel[] flow = new IViewModel[] { new HomePageViewModel(), new DurationPageViewModel(), new FaresPageViewModel(), new SummaryPageViewModel() };
+        private PurchaseState purchaseState;
+
+        public PurchaseState PurchaseState
+        {
+            get { return purchaseState; }
+            set { purchaseState = value; OnPropertyChanged("PurchaseState"); }
+        }
+
+        #region Initialization
+        public void Init()
+        {
+            var adultTicketType = new TicketType {  Name = "Adult" };
+            var youthTicketType = new TicketType {  Name = "Youth" };
+            var seniorTicketType = new TicketType {  Name = "Senior" };
+            purchaseState.TicketTypes = new TicketType[] { adultTicketType, youthTicketType, seniorTicketType };
+            SelectedViewModel = flow[stepNumber];
+        }
+        #endregion
+
+        #region Property Changed Handling
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string propName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+        }
+        #endregion
+
+        #region Navigation 
+
+        public IViewModel[] flow = new IViewModel[] { new HomePageViewModel(), new DurationPageViewModel(), new FaresPageViewModel(), new SummaryPageViewModel() };
 		private int stepNumber = 0;
 
 		public ICommand OnNext
@@ -56,34 +82,20 @@ namespace WpfApp2
 			get { return selectedViewModel; }
 			set { selectedViewModel = value; OnPropertyChanged("SelectedViewModel"); }
 		}
-		#endregion
-
-		public void Init()
-		{
-			SelectedViewModel = flow[stepNumber];
-		}
+        #endregion
 
         #region State Handing
    
         public ICommand OnSelectDuration { get { return new CommandHandler(param => SelectDuration((TicketDurationType)param)); } }
         public void SelectDuration(TicketDurationType type)
         {
-            Console.WriteLine(type);
+            PurchaseState.Duration = type;
         }
         #endregion
-        public event PropertyChangedEventHandler PropertyChanged;
-		private void OnPropertyChanged(string propName)
-		{
+        
+    }
 
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-		}
-
-
-
-
-	}
-
-	public class CommandHandler : ICommand
+    public class CommandHandler : ICommand
 	{
         private readonly Action<object> _action;
         private bool _canExecute = true;
@@ -104,7 +116,4 @@ namespace WpfApp2
 			_action(parameter);
 		}
 	}
-
-    enum TicketDurationType { Single, FullDay, ThreeDay, Week, Month };
-
 }
