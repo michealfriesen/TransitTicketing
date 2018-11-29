@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Height="300" Width="300">
+        Height="600" Width="800">
     <Grid>
-        
+        <Grid>
+            <ListBox ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.SummaryScreenTicketTypes}" Margin="0,88,282,123">
+                
+            </ListBox>
+        </Grid>
+        <Grid Background="Aqua" Margin="541,87,37,321">
+            <TextBlock HorizontalAlignment="Center" FontSize="30" Foreground="White" VerticalAlignment="Top" Margin="0,40,0,0">Total</TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontSize="60" Foreground="White" VerticalAlignment="Bottom" Margin="0,0,0,50" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.GetTotal}"></TextBlock>
+        </Grid>
+        <local:FooterNavigation VerticalAlignment="Bottom" Margin="0,0,0,30"></local:FooterNavigation>
     </Grid>
 </UserControl>

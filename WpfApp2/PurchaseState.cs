@@ -25,7 +25,18 @@ namespace WpfApp2
     enum TicketAgeType {
         Adult,
         Youth,
-        Senior };
+        Senior
+    };
+
+    class SummaryScreenTicketType
+    {
+        public TicketAgeType Name { get; set; }
+        public decimal BasePrice { get; set; }
+        public decimal TotalPrice { get { return BasePrice * Quantity; } }
+        public TicketDurationType Duration { get; set; }
+        public int Quantity { get; set; }
+        public string IconUrl { get; set; }
+    }
 
     class PurchaseState
     {
@@ -36,7 +47,7 @@ namespace WpfApp2
             var seniorTicketType = new TicketType { Name = TicketAgeType.Senior };
             this.TicketTypes = new TicketType[] { adultTicketType, youthTicketType, seniorTicketType };
         }
-        public TicketDurationType Duration { get ; set; }
+        public TicketDurationType Duration { get; set; }
 
         public string PageSubtitle { get; set; }
 
@@ -50,8 +61,31 @@ namespace WpfApp2
                             ?.Description;
             }
         }
-            
+
         public TicketType[] TicketTypes { get; set; }
+
+        public List<SummaryScreenTicketType> SummaryScreenTicketTypes {
+            get
+            {
+                var selectedTypes = this.TicketTypes.Where(t => t.Quantity > 0);
+                return selectedTypes.Select(st => MapTicketTypeToSummaryTicketType(st)).ToList();
+            }
+        }
+
+        #region Mappers
+        private SummaryScreenTicketType MapTicketTypeToSummaryTicketType(TicketType type)
+        {
+            return new SummaryScreenTicketType()
+            {
+                Name = type.Name,
+                BasePrice = Fare_price(type.Name, this.Duration),
+                Quantity = type.Quantity,
+                IconUrl = type.IconUrl,
+                Duration = this.Duration
+            };
+        }
+        #endregion
+        
 
 
         #region User Actions
