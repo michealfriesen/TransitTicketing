@@ -11,9 +11,5 @@ namespace WpfApp2
         public TicketAgeType Name { get; set; }
         public int Quantity { get; set; } = 0;
         public string IconUrl { get; set; }
-        public decimal GetPrice(TicketDurationType duration)
-        {
-            return 0.0M;
-        }
     }
 }
