@@ -152,6 +152,7 @@
 
         </Grid>
 
+        <local:Header Grid.Row="0"></local:Header>
 		<local:FooterNavigation Grid.Row="2"></local:FooterNavigation>
 	</Grid>
 </UserControl>

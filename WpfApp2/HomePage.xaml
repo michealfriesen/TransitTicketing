@@ -175,5 +175,6 @@
                 </Grid>
             </TextBlock>
 		</Grid>
+    <local:Header Grid.Row="0"></local:Header>
 	</Grid>
 </UserControl>

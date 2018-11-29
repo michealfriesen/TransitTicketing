@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IViewModel.cs" />
     <Compile Include="FooterNavigation.xaml.cs">
       <DependentUpon>FooterNavigation.xaml</DependentUpon>
@@ -74,6 +77,10 @@
     <Page Include="FaresPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Header.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="FooterNavigation.xaml">
       <SubType>Designer</SubType>
