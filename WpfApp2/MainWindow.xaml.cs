@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace WpfApp2
 {
@@ -20,12 +21,15 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-		public MainWindow()
+        public MainWindow()
         {
             InitializeComponent();
-			var viewModel = new AppViewModel();
-			this.DataContext = viewModel;
-			viewModel.Init();
-		}
-	}
+            var viewModel = new AppViewModel();
+            this.DataContext = viewModel;
+            viewModel.Init();
+        }
+
+        
+
+}
 }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace WpfApp2
 {
@@ -23,6 +24,10 @@ namespace WpfApp2
 		public Header()
         {
             InitializeComponent();
+            DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            {
+                this.clock_label.Content = DateTime.Now.ToString("HH:mm");
+            }, this.Dispatcher);
         }
 	}
 }
