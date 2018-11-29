@@ -8,7 +8,7 @@ namespace WpfApp2
 {
     class TicketType
     {
-        public string Name { get; set; }
+        public TicketAgeType Name { get; set; }
         public int Quantity { get; set; } = 0;
         public string IconUrl { get; set; }
         public decimal GetPrice(TicketDurationType duration)

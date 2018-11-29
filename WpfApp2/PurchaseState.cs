@@ -31,6 +31,7 @@ namespace WpfApp2
         {
             return price_list[new Tuple<TicketAgeType, TicketDurationType>(fare_type, duration)];
         }
+
         private readonly Dictionary<Tuple<TicketAgeType, TicketDurationType>, Double> price_list = new Dictionary<Tuple<TicketAgeType, TicketDurationType>, Double>()
         {
             {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Adult, TicketDurationType.SingleFare), 3.50 },
@@ -49,7 +50,5 @@ namespace WpfApp2
             {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Senior, TicketDurationType.Week), 45.00 },
             {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Senior, TicketDurationType.Month), 90.00 }
         };
-
-
     }
 }

@@ -23,9 +23,9 @@ namespace WpfApp2
         #region Initialization
         public void Init()
         {
-            var adultTicketType = new TicketType {  Name = "Adult" };
-            var youthTicketType = new TicketType {  Name = "Youth" };
-            var seniorTicketType = new TicketType {  Name = "Senior" };
+            var adultTicketType = new TicketType {  Name = TicketAgeType.Adult };
+            var youthTicketType = new TicketType {  Name = TicketAgeType.Youth };
+            var seniorTicketType = new TicketType {  Name = TicketAgeType.Senior };
             purchaseState = new PurchaseState();
             purchaseState.TicketTypes = new TicketType[] { adultTicketType, youthTicketType, seniorTicketType };
             SelectedViewModel = flow[stepNumber];
