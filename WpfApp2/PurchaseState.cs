@@ -6,32 +6,15 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Reflection;
 
+
 namespace WpfApp2
 {
-    [Flags]
-    enum TicketDurationType {
-        [Description("Single Fare")]
-        SingleFare,
-        [Description("Full Day")]
-        FullDay,
-        [Description("Three Day")]
-        ThreeDay,
-        [Description("Week")]
-        Week,
-        [Description("Month")]
-        Month
-    };
+    
 
-    enum TicketAgeType {
-        Adult,
-        Youth,
-        Senior
-    };
-
-    class SummaryScreenTicketType
+    class SummaryScreenRow
     {
-        public TicketAgeType Name { get; set; }
-        public decimal BasePrice { get; set; }
+        public TicketAgeType AgeType { get; set; }
+        public decimal BasePrice => Resources.price_list[new Tuple<TicketAgeType, TicketDurationType>(this.AgeType, this.Duration)];
         public decimal TotalPrice { get { return BasePrice * Quantity; } }
         public TicketDurationType Duration { get; set; }
         public int Quantity { get; set; }
@@ -64,7 +47,7 @@ namespace WpfApp2
 
         public TicketType[] TicketTypes { get; set; }
 
-        public List<SummaryScreenTicketType> SummaryScreenTicketTypes {
+        public List<SummaryScreenRow> SummaryScreenTicketTypes {
             get
             {
                 var selectedTypes = this.TicketTypes.Where(t => t.Quantity > 0);
@@ -73,19 +56,18 @@ namespace WpfApp2
         }
 
         #region Mappers
-        private SummaryScreenTicketType MapTicketTypeToSummaryTicketType(TicketType type)
+        private SummaryScreenRow MapTicketTypeToSummaryTicketType(TicketType type)
         {
-            return new SummaryScreenTicketType()
+            return new SummaryScreenRow()
             {
-                Name = type.Name,
-                BasePrice = Fare_price(type.Name, this.Duration),
+                AgeType = type.Name,
                 Quantity = type.Quantity,
                 IconUrl = type.IconUrl,
                 Duration = this.Duration
             };
         }
         #endregion
-        
+
 
 
         #region User Actions
@@ -113,26 +95,7 @@ namespace WpfApp2
 
         public decimal Fare_price(TicketAgeType fare_type, TicketDurationType duration)
         {
-            return price_list[new Tuple<TicketAgeType, TicketDurationType>(fare_type, duration)];
+            return Resources.price_list[new Tuple<TicketAgeType, TicketDurationType>(fare_type, duration)];
         }
-
-        private readonly Dictionary<Tuple<TicketAgeType, TicketDurationType>, Decimal> price_list = new Dictionary<Tuple<TicketAgeType, TicketDurationType>, Decimal>()
-        {
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Adult, TicketDurationType.SingleFare), 3.50M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Adult, TicketDurationType.FullDay), 10.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Adult, TicketDurationType.ThreeDay), 25.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Adult, TicketDurationType.Week), 50.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Adult, TicketDurationType.Month), 100.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Youth, TicketDurationType.SingleFare), 2.50M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Youth, TicketDurationType.FullDay), 8.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Youth, TicketDurationType.ThreeDay), 20.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Youth, TicketDurationType.Week), 40.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Youth, TicketDurationType.Month), 80.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Senior, TicketDurationType.SingleFare), 3.25M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Senior, TicketDurationType.FullDay), 9.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Senior, TicketDurationType.ThreeDay), 22.50M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Senior, TicketDurationType.Week), 45.00M },
-            {new Tuple<TicketAgeType, TicketDurationType>(TicketAgeType.Senior, TicketDurationType.Month), 90.00M }
-        };
     }
 }
