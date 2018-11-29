@@ -25,5 +25,5 @@ namespace WpfApp2
         }
     }
 
-	class FaresPageViewModel:IViewModel { }
+    class FaresPageViewModel:IViewModel { }
 }

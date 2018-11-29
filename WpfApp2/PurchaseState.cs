@@ -72,9 +72,9 @@ namespace WpfApp2
 
         #endregion
 
-        public decimal GetTotal()
+        public decimal GetTotal
         {
-            return this.TicketTypes.Aggregate(0.0M, (runningTotal, ticket) => runningTotal + (Fare_price(ticket.Name, Duration) * ticket.Quantity));
+            get { return this.TicketTypes.Aggregate(0.0M, (runningTotal, ticket) => runningTotal + (Fare_price(ticket.Name, Duration) * ticket.Quantity));  }
         }
 
         public decimal Fare_price(TicketAgeType fare_type, TicketDurationType duration)
