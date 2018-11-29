@@ -70,7 +70,7 @@
             <TextBlock Grid.Row="0"></TextBlock>
             <Button Style="{DynamicResource RoundCorner}" Grid.Row="1" Grid.Column="1" x:Name="TwoHours" 
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
-                        CommandParameter="{x:Static local:TicketDurationType.Single}" >
+                        CommandParameter="{x:Static local:TicketDurationType.SingleFare}" >
                     <Button.Background>
                         <SolidColorBrush Color="#FF2D850C"/>
                     </Button.Background>
@@ -152,6 +152,7 @@
 
         </Grid>
 
+        <local:Header Grid.Row="0"></local:Header>
 		<local:FooterNavigation Grid.Row="2"></local:FooterNavigation>
 	</Grid>
 </UserControl>
