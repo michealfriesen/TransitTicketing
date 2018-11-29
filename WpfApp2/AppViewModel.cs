@@ -23,11 +23,7 @@ namespace WpfApp2
         #region Initialization
         public void Init()
         {
-            var adultTicketType = new TicketType {  Name = TicketAgeType.Adult };
-            var youthTicketType = new TicketType {  Name = TicketAgeType.Youth };
-            var seniorTicketType = new TicketType {  Name = TicketAgeType.Senior };
             purchaseState = new PurchaseState();
-            purchaseState.TicketTypes = new TicketType[] { adultTicketType, youthTicketType, seniorTicketType };
             SelectedViewModel = flow[stepNumber];
         }
         #endregion
@@ -37,6 +33,11 @@ namespace WpfApp2
         private void OnPropertyChanged(string propName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+        }
+
+        private void TriggerPurchaseStateUIUpdate()
+        {
+            OnPropertyChanged("PurchaseState");
         }
         #endregion
 
@@ -91,9 +92,24 @@ namespace WpfApp2
         public void SelectDuration(TicketDurationType type)
         {
             PurchaseState.Duration = type;
+            this.GoToNext();
+        }
+
+        public ICommand OnIncreaseTicketQuantity { get { return new CommandHandler(param => IncreaseTicketQuantity((TicketAgeType)param)); } }
+        public void IncreaseTicketQuantity(TicketAgeType type)
+        {
+            PurchaseState.IncreaseTicketQuantity(type);
+            TriggerPurchaseStateUIUpdate();
+        }
+
+        public ICommand OnDecreaseTicketQuantity { get { return new CommandHandler(param => DecreaseTicketQuantity((TicketAgeType)param)); } }
+        public void DecreaseTicketQuantity(TicketAgeType type)
+        {
+            PurchaseState.DecreaseTicketQuantity(type);
+            TriggerPurchaseStateUIUpdate();
         }
         #endregion
-        
+
     }
 
     public class CommandHandler : ICommand

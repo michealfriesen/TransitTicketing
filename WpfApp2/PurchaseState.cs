@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Reflection;
 
 namespace WpfApp2
 {
+    [Flags]
     enum TicketDurationType {
+        [Description("Single Fare")]
         SingleFare,
+        [Description("Full Day")]
         FullDay,
+        [Description("Three Day")]
         ThreeDay,
+        [Description("Week")]
         Week,
-        Month };
+        [Description("Month")]
+        Month
+    };
 
     enum TicketAgeType {
         Adult,
@@ -20,8 +29,49 @@ namespace WpfApp2
 
     class PurchaseState
     {
+        public PurchaseState()
+        {
+            var adultTicketType = new TicketType { Name = TicketAgeType.Adult };
+            var youthTicketType = new TicketType { Name = TicketAgeType.Youth };
+            var seniorTicketType = new TicketType { Name = TicketAgeType.Senior };
+            this.TicketTypes = new TicketType[] { adultTicketType, youthTicketType, seniorTicketType };
+        }
         public TicketDurationType Duration { get ; set; }
+
+        public string PageSubtitle { get; set; }
+
+        public string GetDurationString {
+            get {
+                return this.Duration
+                           .GetType()
+                           .GetMember(this.Duration.ToString())
+                           .FirstOrDefault()
+                           ?.GetCustomAttribute<DescriptionAttribute>()
+                            ?.Description;
+            }
+        }
+            
         public TicketType[] TicketTypes { get; set; }
+
+
+        #region User Actions
+        public void IncreaseTicketQuantity(TicketAgeType type)
+        {
+            var ticketTypeToChange = this.TicketTypes.FirstOrDefault(tt => tt.Name == type);
+            ticketTypeToChange.Quantity++;
+        }
+
+        public void DecreaseTicketQuantity(TicketAgeType type)
+        {
+            var ticketTypeToChange = this.TicketTypes.FirstOrDefault(tt => tt.Name == type);
+            if (ticketTypeToChange.Quantity > 0)
+            {
+                ticketTypeToChange.Quantity--;
+            }
+        }
+
+        #endregion
+
         public decimal GetTotal()
         {
             return this.TicketTypes.Aggregate(0.0M, (runningTotal, ticket) => runningTotal + (Fare_price(ticket.Name, Duration) * ticket.Quantity));
