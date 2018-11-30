@@ -77,7 +77,7 @@ namespace WpfApp2
 
         public decimal GetTotal
         {
-            get { return this.TicketGroups.Aggregate(0.0M, (runningTotal, ticket) => runningTotal + (Fare_price(ticket.Age, SelectedDuration) * ticket.Quantity));  }
+            get { return this.TicketGroups.Aggregate(0.0M, (runningTotal, ticketGroup) => runningTotal + ticketGroup.TotalGroupPrice);  }
         }
 
         public decimal Fare_price(TicketAge fare_type, TicketDuration duration)

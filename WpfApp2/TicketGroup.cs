@@ -11,7 +11,7 @@ namespace WpfApp2
 		public TicketAge Age { get; set; }
 		public TicketDuration Duration { get; set; }
 		public decimal BasePrice => Resources.price_list[new Tuple<TicketAge, TicketDuration>(this.Age, this.Duration)];
-		public decimal TotalPrice { get { return BasePrice * Quantity; } }
+		public decimal TotalGroupPrice { get { return BasePrice * Quantity; } }
 		public int Quantity { get; set; }
 		public string IconUrl { get; set; }
 	}
