@@ -22,6 +22,6 @@
 			<local:SummaryPage/>
 		</DataTemplate>
 	</Window.Resources>
-	<UserControl Content="{Binding Path=SelectedViewModel}"/>
+	<UserControl Content="{Binding Path=SelectedPage}"/>
 
 </Window>

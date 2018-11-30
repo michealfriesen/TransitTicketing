@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace WpfApp2
 {
-    enum TicketDurationType
+    enum TicketDuration
     {
         [Description("Single Fare")]
         SingleFare,
@@ -22,7 +22,7 @@ namespace WpfApp2
         Month
     };
 
-    enum TicketAgeType
+    enum TicketAge
     {
         Adult,
         Youth,

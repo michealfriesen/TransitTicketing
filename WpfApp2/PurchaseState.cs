@@ -9,93 +9,78 @@ using System.Reflection;
 
 namespace WpfApp2
 {
-    
-
-    class SummaryScreenRow
-    {
-        public TicketAgeType AgeType { get; set; }
-        public decimal BasePrice => Resources.price_list[new Tuple<TicketAgeType, TicketDurationType>(this.AgeType, this.Duration)];
-        public decimal TotalPrice { get { return BasePrice * Quantity; } }
-        public TicketDurationType Duration { get; set; }
-        public int Quantity { get; set; }
-        public string IconUrl { get; set; }
-    }
-
     class PurchaseState
     {
         public PurchaseState()
         {
-            var adultTicketType = new TicketType { Name = TicketAgeType.Adult };
-            var youthTicketType = new TicketType { Name = TicketAgeType.Youth };
-            var seniorTicketType = new TicketType { Name = TicketAgeType.Senior };
-            this.TicketTypes = new TicketType[] { adultTicketType, youthTicketType, seniorTicketType };
+            var adultTicket = new TicketGroup { Age = TicketAge.Adult };
+            var youthTicket = new TicketGroup { Age = TicketAge.Youth };
+            var seniorTicket = new TicketGroup { Age = TicketAge.Senior };
+            this.TicketGroups = new TicketGroup[] { adultTicket, youthTicket, seniorTicket };
         }
-        public TicketDurationType Duration { get; set; }
+
+		public TicketGroup[] TicketGroups { get; set; }
+		private TicketDuration selectedDuration;
+
+        public TicketDuration SelectedDuration {
+			get { return selectedDuration; }
+			set
+			{
+				selectedDuration = value;
+
+				// Because our system only has one duration possible, 
+				// this is so that each ticket group knows the selected duration
+				foreach(var ticketGroup in TicketGroups)
+				{
+					ticketGroup.Duration = value;
+				}
+			}
+		}
 
         public string PageSubtitle { get; set; }
 
         public string GetDurationString {
             get {
-                return this.Duration
+                return this.SelectedDuration
                            .GetType()
-                           .GetMember(this.Duration.ToString())
+                           .GetMember(this.SelectedDuration.ToString())
                            .FirstOrDefault()
                            ?.GetCustomAttribute<DescriptionAttribute>()
-                            ?.Description;
+                           ?.Description;
             }
         }
-
-        public TicketType[] TicketTypes { get; set; }
-
-        public List<SummaryScreenRow> SummaryScreenTicketTypes {
-            get
-            {
-                var selectedTypes = this.TicketTypes.Where(t => t.Quantity > 0);
-                return selectedTypes.Select(st => MapTicketTypeToSummaryTicketType(st)).ToList();
-            }
-        }
-
-        #region Mappers
-        private SummaryScreenRow MapTicketTypeToSummaryTicketType(TicketType type)
-        {
-            return new SummaryScreenRow()
-            {
-                AgeType = type.Name,
-                Quantity = type.Quantity,
-                IconUrl = type.IconUrl,
-                Duration = this.Duration
-            };
-        }
-        #endregion
-
-
 
         #region User Actions
-        public void IncreaseTicketQuantity(TicketAgeType type)
+        public void IncreaseTicketQuantity(TicketAge age)
         {
-            var ticketTypeToChange = this.TicketTypes.FirstOrDefault(tt => tt.Name == type);
+            var ticketTypeToChange = this.TicketGroups.FirstOrDefault(tt => tt.Age == age);
             ticketTypeToChange.Quantity++;
         }
 
-        public void DecreaseTicketQuantity(TicketAgeType type)
+        public void DecreaseTicketQuantity(TicketAge age)
         {
-            var ticketTypeToChange = this.TicketTypes.FirstOrDefault(tt => tt.Name == type);
+            var ticketTypeToChange = this.TicketGroups.FirstOrDefault(tt => tt.Age == age);
             if (ticketTypeToChange.Quantity > 0)
             {
                 ticketTypeToChange.Quantity--;
             }
         }
 
+		public void SelectDuration(TicketDuration duration)
+		{
+			this.SelectedDuration = duration;
+		}
+
         #endregion
 
         public decimal GetTotal
         {
-            get { return this.TicketTypes.Aggregate(0.0M, (runningTotal, ticket) => runningTotal + (Fare_price(ticket.Name, Duration) * ticket.Quantity));  }
+            get { return this.TicketGroups.Aggregate(0.0M, (runningTotal, ticket) => runningTotal + (Fare_price(ticket.Age, SelectedDuration) * ticket.Quantity));  }
         }
 
-        public decimal Fare_price(TicketAgeType fare_type, TicketDurationType duration)
+        public decimal Fare_price(TicketAge fare_type, TicketDuration duration)
         {
-            return Resources.price_list[new Tuple<TicketAgeType, TicketDurationType>(fare_type, duration)];
+            return Resources.price_list[new Tuple<TicketAge, TicketDuration>(fare_type, duration)];
         }
     }
 }

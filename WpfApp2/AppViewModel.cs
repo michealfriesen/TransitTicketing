@@ -13,7 +13,6 @@ namespace WpfApp2
 	class AppViewModel : INotifyPropertyChanged
 	{
         private PurchaseState purchaseState;
-
         public PurchaseState PurchaseState
         {
             get { return purchaseState; }
@@ -24,7 +23,7 @@ namespace WpfApp2
         public void Init()
         {
             purchaseState = new PurchaseState();
-            SelectedViewModel = flow[stepNumber];
+            SelectedPage = flow[stepNumber];
         }
         #endregion
 
@@ -58,7 +57,7 @@ namespace WpfApp2
 			if (stepNumber < flow.Length)
 			{
 				stepNumber++;
-				SelectedViewModel = flow[stepNumber];
+				SelectedPage = flow[stepNumber];
 			}
 		}
 
@@ -81,38 +80,38 @@ namespace WpfApp2
 			if (stepNumber > 0)
 			{
 				stepNumber--;
-				SelectedViewModel = flow[stepNumber];
+				SelectedPage = flow[stepNumber];
 			}
 		}
 
-		private object selectedViewModel;
-		public object SelectedViewModel
+		private object selectedPage;
+		public object SelectedPage
 		{
-			get { return selectedViewModel; }
-			set { selectedViewModel = value; OnPropertyChanged("SelectedViewModel"); }
+			get { return selectedPage; }
+			set { selectedPage = value; OnPropertyChanged("SelectedPage"); }
 		}
         #endregion
 
         #region State Handing
    
-        public ICommand OnSelectDuration { get { return new CommandHandler(param => SelectDuration((TicketDurationType)param)); } }
-        public void SelectDuration(TicketDurationType type)
+        public ICommand OnSelectDuration { get { return new CommandHandler(param => SelectDuration((TicketDuration)param)); } }
+        public void SelectDuration(TicketDuration duration)
         {
-            PurchaseState.Duration = type;
+			PurchaseState.SelectDuration(duration);
             this.GoToNext();
         }
 
-        public ICommand OnIncreaseTicketQuantity { get { return new CommandHandler(param => IncreaseTicketQuantity((TicketAgeType)param)); } }
-        public void IncreaseTicketQuantity(TicketAgeType type)
+        public ICommand OnIncreaseTicketQuantity { get { return new CommandHandler(param => IncreaseTicketQuantity((TicketAge)param)); } }
+        public void IncreaseTicketQuantity(TicketAge age)
         {
-            PurchaseState.IncreaseTicketQuantity(type);
+            PurchaseState.IncreaseTicketQuantity(age);
             TriggerPurchaseStateUIUpdate();
         }
 
-        public ICommand OnDecreaseTicketQuantity { get { return new CommandHandler(param => DecreaseTicketQuantity((TicketAgeType)param)); } }
-        public void DecreaseTicketQuantity(TicketAgeType type)
+        public ICommand OnDecreaseTicketQuantity { get { return new CommandHandler(param => DecreaseTicketQuantity((TicketAge)param)); } }
+        public void DecreaseTicketQuantity(TicketAge age)
         {
-            PurchaseState.DecreaseTicketQuantity(type);
+            PurchaseState.DecreaseTicketQuantity(age);
             TriggerPurchaseStateUIUpdate();
         }
         #endregion
