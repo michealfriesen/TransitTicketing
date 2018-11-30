@@ -30,9 +30,11 @@ namespace WpfApp2
 
 				// Because our system only has one duration possible, 
 				// this is so that each ticket group knows the selected duration
+				// and to reset if any groups have been added already
 				foreach(var ticketGroup in TicketGroups)
 				{
 					ticketGroup.Duration = value;
+					ticketGroup.Quantity = 0;
 				}
 			}
 		}
