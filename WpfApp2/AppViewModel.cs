@@ -61,6 +61,13 @@ namespace WpfApp2
 				SelectedViewModel = flow[stepNumber];
 			}
 		}
+
+        public void GoToPriceChart()
+        {
+            throw new NotImplementedException();
+            stepNumber = 10;
+        }
+
 		
 		public ICommand OnPrevious
 		{
