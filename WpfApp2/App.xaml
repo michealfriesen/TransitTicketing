@@ -17,6 +17,7 @@
                                           VerticalAlignment="Center"
                                           TextElement.FontWeight="Bold">
                                 </ContentPresenter>
+
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -75,10 +76,10 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid x:Name="grid">
                             <Border x:Name="border" CornerRadius="8" Background="#2ED5D5">
-                                <ContentPresenter HorizontalAlignment="Center"
+                                    <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           TextElement.FontWeight="Bold">
-                                </ContentPresenter>
+                                    </ContentPresenter>
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>

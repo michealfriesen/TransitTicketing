@@ -134,11 +134,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="img\movie-tickets.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="img\underground.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\24-hours-delivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\clock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

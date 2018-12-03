@@ -67,30 +67,28 @@
             </Grid.RowDefinitions>
 
             <!--Left buttons-->
-            <TextBlock Grid.Row="0"></TextBlock>
             <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="1" x:Name="TwoHours" 
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
-                        CommandParameter="{x:Static local:TicketDuration.SingleFare}" >
-                <Button.Background>
-                    <SolidColorBrush Color="#FF2D850C"/>
-                </Button.Background>
-                <StackPanel>
-                    <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>
-                    <TextBlock HorizontalAlignment="Center" FontSize="36">2 Hours</TextBlock>
-                    <TextBlock HorizontalAlignment="Center" Height="150" Width="150" Margin="20" Background="Blue">ICON</TextBlock>
-                    <TextBlock HorizontalAlignment="Center">Valid Until</TextBlock>
-                    <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
+                        CommandParameter="{x:Static local:TicketDuration.SingleFare}" Foreground="White" >
+
+                <StackPanel Height="340">
+                    <TextBlock HorizontalAlignment="Center" FontSize="36" Height="48" Foreground="White"><Run Text="2 Hours"/></TextBlock>
+                    <TextBlock Width="{Binding Source={StaticResource colWidth}}"/>
+                    <Image x:Name="clock_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Source="/img/clock.png" Height="140" Margin="0,30,0,40"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Foreground="White" FontSize="20"><Run Text="Valid Until"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Center" Foreground="White" FontSize="20"><Run Text="Expiration Date"/></TextBlock>
                 </StackPanel>
             </Button>
-            <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="3" Background="Aqua" 
-                    Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
-                    CommandParameter="{x:Static local:TicketDuration.FullDay}">
-                <StackPanel>
-                    <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>
-                    <TextBlock HorizontalAlignment="Center" FontSize="36">Full Day</TextBlock>
-                    <TextBlock HorizontalAlignment="Center" Height="150" Width="150" Margin="20" Background="Blue">ICON</TextBlock>
-                    <TextBlock HorizontalAlignment="Center">Valid Until</TextBlock>
-                    <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
+            <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="3" x:Name="FullDay" 
+                        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
+                        CommandParameter="{x:Static local:TicketDuration.SingleFare}" Foreground="White" >
+
+                <StackPanel Height="340">
+                    <TextBlock HorizontalAlignment="Center" FontSize="36" Height="48" Foreground="White"><Run Text="Full Day"/></TextBlock>
+                    <TextBlock Width="{Binding Source={StaticResource colWidth}}"/>
+                    <Image x:Name="full_day_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Source="/img/24-hours-delivery.png" Height="140" Margin="0,30,0,40"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Foreground="White" FontSize="20"><Run Text="Valid Until"/></TextBlock>
+                    <TextBlock HorizontalAlignment="Center" Foreground="White" FontSize="20"><Run Text="Expiration Date"/></TextBlock>
                 </StackPanel>
             </Button>
 
@@ -114,10 +112,10 @@
                             <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="0" Margin="10" Background="Blue"></TextBlock>
+                        <Image x:Name="three_day_icon" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="105" Source="/img/sun.png" Grid.ColumnSpan="2" Height="77" Margin="0,15,5,10"/>
                         <StackPanel Grid.Column="2">
-                            <TextBlock Padding="0 10" FontSize="36">3-Day</TextBlock>
-                            <TextBlock>Valid until: Some date</TextBlock>
+                            <TextBlock Padding="0 10" FontSize="36" Foreground="White">3-Day</TextBlock>
+                            <TextBlock Foreground="White" FontSize="20">Valid until: Some date</TextBlock>
                         </StackPanel>
                     </Grid>
                 </Button>
@@ -131,10 +129,11 @@
                             <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="0" Margin="10" Background="Blue"></TextBlock>
+                        <Image x:Name="week_icon" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="72" Source="/img/sun.png" Height="53" Margin="0,15,18,34"/>
+                        <Image x:Name="week_icon2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="78" Source="/img/sun.png" Height="58" Margin="22,34,10,10" Grid.ColumnSpan="2"/>
                         <StackPanel Grid.Column="2">
-                            <TextBlock Padding="0 10" FontSize="36">Week</TextBlock>
-                            <TextBlock>Valid until: Some date</TextBlock>
+                            <TextBlock Padding="0 10" FontSize="36" Foreground="White">Week</TextBlock>
+                            <TextBlock Foreground="White" FontSize="20">Valid until: Some date</TextBlock>
                         </StackPanel>
                     </Grid>
                 </Button>
@@ -148,10 +147,10 @@
                             <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Grid.Column="0" Margin="10" Background="Blue"></TextBlock>
+                        <Image x:Name="month_icon"  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="95" Source="/img/calendar.png" Grid.ColumnSpan="2" Height="70" Margin="5,14,10,18"/>
                         <StackPanel Grid.Column="2">
-                            <TextBlock Padding="0 10" FontSize="36">Month</TextBlock>
-                            <TextBlock>Valid until: Some date</TextBlock>
+                            <TextBlock Padding="0 10" FontSize="36" Foreground="White">Month</TextBlock>
+                            <TextBlock Foreground="White" FontSize="20"><Run Text="Valid until: Some date"/></TextBlock>
                         </StackPanel>
                     </Grid>
                 </Button>
