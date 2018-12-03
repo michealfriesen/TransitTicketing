@@ -68,7 +68,7 @@
 
             <!--Left buttons-->
             <TextBlock Grid.Row="0"></TextBlock>
-            <Button Style="{DynamicResource RoundCorner}" Grid.Row="1" Grid.Column="1" x:Name="TwoHours" 
+            <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="1" x:Name="TwoHours" 
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
                         CommandParameter="{x:Static local:TicketDuration.SingleFare}" >
                     <Button.Background>
@@ -82,7 +82,7 @@
                         <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
                     </StackPanel>
                 </Button>
-            <Button Style="{DynamicResource RoundCorner}" Grid.Row="1" Grid.Column="3" Background="Aqua" 
+            <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="3" Background="Aqua" 
                     Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
                     CommandParameter="{x:Static local:TicketDuration.FullDay}">
                 <StackPanel>
@@ -104,7 +104,7 @@
                     <RowDefinition Height="{Binding Source={StaticResource btn-height-y}}"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Button Style="{DynamicResource RoundCorner}" Grid.Row="0" Grid.Column="0" Background="Aqua" 
+                <Button Style="{DynamicResource DurationButton}" Grid.Row="0" Grid.Column="0" Background="Aqua" 
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
                         CommandParameter="{x:Static local:TicketDuration.ThreeDay}">
                     <Grid>
@@ -121,7 +121,7 @@
                         </StackPanel>
                     </Grid>
                 </Button>
-                <Button Style="{DynamicResource RoundCorner}" Grid.Row="2" Grid.Column="0" Background="Aqua"
+                <Button Style="{DynamicResource DurationButton}" Grid.Row="2" Grid.Column="0" Background="Aqua"
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
                         CommandParameter="{x:Static local:TicketDuration.Week}">
                     <Grid>
@@ -138,7 +138,7 @@
                         </StackPanel>
                     </Grid>
                 </Button>
-                <Button Style="{DynamicResource BlueButton}" Grid.Row="4" Grid.Column="0" Background="Aqua"
+                <Button Style="{DynamicResource DurationButton}" Grid.Row="4" Grid.Column="0" Background="Aqua"
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
                         CommandParameter="{x:Static local:TicketDuration.Month}">
                     <Grid>
