@@ -78,7 +78,7 @@
 			</Grid.RowDefinitions>
 
 			<TextBlock Grid.Row="0"></TextBlock>
-            <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="1" Background="Aqua" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnNext}">
+            <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="1" Background="Aqua" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}">
                 <Grid Name="ticketsbtn">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource mainbtn-margin-x}}"></ColumnDefinition>

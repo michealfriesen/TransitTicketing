@@ -71,17 +71,17 @@
             <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="1" x:Name="TwoHours" 
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
                         CommandParameter="{x:Static local:TicketDuration.SingleFare}" >
-                    <Button.Background>
-                        <SolidColorBrush Color="#FF2D850C"/>
-                    </Button.Background>
-                    <StackPanel>
-                        <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>
-                        <TextBlock HorizontalAlignment="Center" FontSize="36">2 Hours</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Height="150" Width="150" Margin="20" Background="Blue">ICON</TextBlock>
-                        <TextBlock HorizontalAlignment="Center">Valid Until</TextBlock>
-                        <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
-                    </StackPanel>
-                </Button>
+                <Button.Background>
+                    <SolidColorBrush Color="#FF2D850C"/>
+                </Button.Background>
+                <StackPanel>
+                    <TextBlock Width="{Binding Source={StaticResource colWidth}}"></TextBlock>
+                    <TextBlock HorizontalAlignment="Center" FontSize="36">2 Hours</TextBlock>
+                    <TextBlock HorizontalAlignment="Center" Height="150" Width="150" Margin="20" Background="Blue">ICON</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Valid Until</TextBlock>
+                    <TextBlock HorizontalAlignment="Center">Expiration Date</TextBlock>
+                </StackPanel>
+            </Button>
             <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="3" Background="Aqua" 
                     Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
                     CommandParameter="{x:Static local:TicketDuration.FullDay}">
@@ -161,26 +161,7 @@
         </Grid>
 
         <local:Header Grid.Row="0"></local:Header>
-		<local:FooterNavigation Grid.Row="2">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Button Style="{DynamicResource RoundCorner}" Grid.Column="1" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnPrevious}" />
-                <Button Style="{DynamicResource RoundCorner}" Grid.Column="7" Content="Price Chart" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnNext}" />
-
-            </Grid>
-        </local:FooterNavigation>
-	</Grid>
+        <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToHomePage}" Margin="21,30,620,0" Grid.Row="2" Height="50" />
+        <Button Style="{DynamicResource RoundCorner}" Content="Price Chart" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToPriceChartPage}" Margin="615,30,26,0" Grid.Row="2" Height="50" Width="150" />
+    </Grid>
 </UserControl>
