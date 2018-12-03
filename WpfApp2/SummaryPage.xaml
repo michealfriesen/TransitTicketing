@@ -4,18 +4,51 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
-        mc:Ignorable="d"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d"
         Height="600" Width="800">
+    <UserControl.Resources>
+        <System:Double x:Key="margin-y">40</System:Double>
+        <System:Double x:Key="margin-x">20</System:Double>
+        <System:Double x:Key="colWidth">170</System:Double>
+
+        <System:Double x:Key="header-height">50</System:Double>
+
+        <System:Double x:Key="mainbtn-height">250</System:Double>
+        <System:Double x:Key="mainbtn-icon">150</System:Double>
+        <System:Double x:Key="mainbtn-text">100</System:Double>
+        <System:Double x:Key="mainbtn-margin-y">20</System:Double>
+        <System:Double x:Key="mainbtn-margin-x">150</System:Double>
+
+        <System:Double x:Key="express-margin-y">30</System:Double>
+        <System:Double x:Key="express-margin-x">50</System:Double>
+
+        <System:Double x:Key="expressbtn-height">130</System:Double>
+        <System:Double x:Key="expressbtn-icon">80</System:Double>
+        <System:Double x:Key="expressbtn-text">80</System:Double>
+        <System:Double x:Key="expressbtn-margin-y">20</System:Double>
+        <System:Double x:Key="expressbtn-margin-x">50</System:Double>
+
+        <System:Double x:Key="margin-x-mainbtn">175</System:Double>
+        <System:Double x:Key="colWidth-mainbtn">450</System:Double>
+    </UserControl.Resources>
     <Grid>
-        <Grid>
-            <ListBox ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.SummaryScreenTicketTypes}" Margin="0,88,282,123">
-                
-            </ListBox>
-        </Grid>
-        <Grid Background="Aqua" Margin="541,87,37,321">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Background="Aqua">
             <TextBlock HorizontalAlignment="Center" FontSize="30" Foreground="White" VerticalAlignment="Top" Margin="0,40,0,0">Total</TextBlock>
             <TextBlock HorizontalAlignment="Center" FontSize="60" Foreground="White" VerticalAlignment="Bottom" Margin="0,0,0,50" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.GetTotal}"></TextBlock>
         </Grid>
-        <local:FooterNavigation VerticalAlignment="Bottom" Margin="0,0,0,30"></local:FooterNavigation>
+        <Grid Grid.Row="4" Margin="10,303,113,-303">
+            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToFaresPage}" Margin="21,30,620,0" Grid.Row="2" Height="50" Width="150" />
+        </Grid>
+
     </Grid>
+
 </UserControl>

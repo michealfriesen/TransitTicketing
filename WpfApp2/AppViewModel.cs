@@ -23,7 +23,7 @@ namespace WpfApp2
         public void Init()
         {
             purchaseState = new PurchaseState();
-            SelectedPage = flow[stepNumber];
+            SelectedPage = new HomePage();
         }
         #endregion
 
@@ -40,51 +40,62 @@ namespace WpfApp2
         }
         #endregion
 
-        #region Navigation 
-
-        public IViewModel[] flow = new IViewModel[] { new HomePageViewModel(), new DurationPageViewModel(), new FaresPageViewModel(), new SummaryPageViewModel() };
-		private int stepNumber = 0;
-
-		public ICommand OnNext
-		{
-			get
-			{
-				return new CommandHandler(param => GoToNext(), true);
-			}
-		}
-		public void GoToNext()
-		{
-			if (stepNumber < flow.Length)
-			{
-				stepNumber++;
-				SelectedPage = flow[stepNumber];
-			}
-		}
+        #region Navigation
 
         public void GoToPriceChart()
         {
             throw new NotImplementedException();
-            stepNumber = 10;
         }
 
-		
-		public ICommand OnPrevious
-		{
-			get
-			{
-				return new CommandHandler(param => GoToPrevious(), true);
-			}
-		}
-		public void GoToPrevious()
-		{
-			if (stepNumber > 0)
-			{
-				stepNumber--;
-				SelectedPage = flow[stepNumber];
-			}
-		}
+        public ICommand OnGoToHomePage
+        {
+            get
+            {
+                return new CommandHandler(param => GoToHomePage(), true);
+            }
+        }
+        public void GoToHomePage()
+        {
+            SelectedPage = new HomePage();
+        }
 
-		private object selectedPage;
+        public ICommand OnGoToFaresPage
+        {
+            get
+            {
+                return new CommandHandler(param => GoToFaresPage(), true);
+            }
+        }
+        public void GoToFaresPage()
+        {
+            SelectedPage = new FaresPage();
+        }
+
+        public ICommand OnGoToDurationPage
+        {
+            get
+            {
+                return new CommandHandler(param => GoToDurationPage(), true);
+            }
+        }
+        public void GoToDurationPage()
+        {
+            SelectedPage = new DurationPage();
+        }
+
+        public ICommand OnGoToSummaryPage
+        {
+            get
+            {
+                return new CommandHandler(param => GoToSummaryPage(), true);
+            }
+        }
+        public void GoToSummaryPage()
+        {
+            SelectedPage = new SummaryPage();
+        }
+
+        private object selectedPage;
 		public object SelectedPage
 		{
 			get { return selectedPage; }
@@ -98,7 +109,7 @@ namespace WpfApp2
         public void SelectDuration(TicketDuration duration)
         {
 			PurchaseState.SelectDuration(duration);
-            this.GoToNext();
+            this.GoToFaresPage();
         }
 
         public ICommand OnIncreaseTicketQuantity { get { return new CommandHandler(param => IncreaseTicketQuantity((TicketAge)param)); } }

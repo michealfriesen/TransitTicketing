@@ -26,7 +26,7 @@
 
     </UserControl.Resources>
 
-    <Grid Background="Blue">
+    <Grid Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
             <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>

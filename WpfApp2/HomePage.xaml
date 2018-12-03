@@ -78,7 +78,7 @@
 			</Grid.RowDefinitions>
 
 			<TextBlock Grid.Row="0"></TextBlock>
-			<Button Grid.Row="1" Grid.Column="1" Background="Aqua" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnNext}">
+            <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="1" Background="Aqua" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}">
                 <Grid Name="ticketsbtn">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource mainbtn-margin-x}}"></ColumnDefinition>
@@ -101,7 +101,7 @@
 
 		<!-- EXPRESS FOOTER-->
 
-		<Grid Name="footer" Grid.Row="2" Background="red">
+        <Grid Name="footer" Grid.Row="2" Background="#E57758">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
 				<ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
@@ -118,12 +118,12 @@
 				<RowDefinition Height="{Binding Source={StaticResource express-margin-y}}"></RowDefinition>
 			</Grid.RowDefinitions>
 
-			<TextBlock Grid.Row="0" Grid.Column="0" Background="black"></TextBlock>
-			<TextBlock Grid.Row="1" Grid.Column="0" Background="black"></TextBlock>
-			<TextBlock Grid.Row="2" Grid.Column="0" Background="black"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="0" Background="#AB342B"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Background="#AB342B"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Background="#AB342B"></TextBlock>
 
 			<TextBlock Grid.Row="1" Grid.Column="1">Left</TextBlock>
-			<TextBlock Grid.Row="1" Grid.Column="3" Background="green">
+            <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="3" Background="green">
                 <Grid Name="expressbtn_1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-text}}"></ColumnDefinition>
@@ -139,8 +139,8 @@
                     <TextBlock Grid.Row="1" Grid.Column="0">Adult</TextBlock>
                     <TextBlock Grid.Row="1" Grid.Column="1" Background="Black"></TextBlock>
                 </Grid>
-            </TextBlock>
-			<TextBlock Grid.Row="1" Grid.Column="5" Background="green">
+            </Button>
+            <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="5" Background="green">
                 <Grid Name="expressbtn_2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-text}}"></ColumnDefinition>
@@ -156,8 +156,8 @@
                     <TextBlock Grid.Row="1" Grid.Column="0">Youth</TextBlock>
                     <TextBlock Grid.Row="1" Grid.Column="1" Background="Black"></TextBlock>
                 </Grid>
-            </TextBlock>
-			<TextBlock Grid.Row="1" Grid.Column="7" Background="green">
+            </Button>
+            <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="7" Background="green">
                 <Grid Name="expressbtn_3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-text}}"></ColumnDefinition>
@@ -173,7 +173,7 @@
                     <TextBlock Grid.Row="1" Grid.Column="0">Senior</TextBlock>
                     <TextBlock Grid.Row="1" Grid.Column="1" Background="Black"></TextBlock>
                 </Grid>
-            </TextBlock>
+            </Button>
 		</Grid>
     <local:Header Grid.Row="0"></local:Header>
 	</Grid>
