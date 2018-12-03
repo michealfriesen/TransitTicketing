@@ -41,10 +41,16 @@ namespace WpfApp2
         #endregion
 
         #region Navigation
-
-        public void GoToPriceChart()
+        public ICommand OnGoToPriceChartPage
         {
-            throw new NotImplementedException();
+            get
+            {
+                return new CommandHandler(param => GoToPriceChartPage(), true);
+            }
+        }
+        public void GoToPriceChartPage()
+        {
+            SelectedPage = new PriceChart();
         }
 
         public ICommand OnGoToHomePage
