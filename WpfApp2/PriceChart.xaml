@@ -20,6 +20,7 @@
         <System:Double x:Key="chartMargin-x">40</System:Double>
         <System:Double x:Key="rowMargin">15</System:Double>
         <System:Double x:Key="rowHeight">45</System:Double>
+        <System:String x:Key="TextColor">Black</System:String>
 
 
 
@@ -88,58 +89,66 @@
 
                 <RowDefinition Height="{Binding Source={StaticResource margin-y}}"></RowDefinition>
             </Grid.RowDefinitions>
-            <Rectangle Grid.Column="2" Grid.RowSpan="5" >
+            <Rectangle Grid.Column="2" Grid.RowSpan="11" Grid.Row="1" RadiusX="8" RadiusY="8">
                 <Rectangle.Fill>
-                    <SolidColorBrush Color="Green">
+                    <SolidColorBrush Color="LightGreen">
                         
                     </SolidColorBrush>
 
                 </Rectangle.Fill>
             </Rectangle>
-            
+            <Rectangle Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="1" RadiusX="8" RadiusY="8">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Green">
+
+                    </SolidColorBrush>
+
+                </Rectangle.Fill>
+            </Rectangle>
+
             <!--Row 1-->
-            <TextBlock Grid.Row="1" Grid.Column="2" Foreground="white" FontSize="25" HorizontalAlignment="Center">Type</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="4" Foreground="white" FontSize="25" HorizontalAlignment="Center">Adult</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="6" Foreground="white" FontSize="25" HorizontalAlignment="Center">Youth</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="8" Foreground="white" FontSize="25" HorizontalAlignment="Center">Senior</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Type</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Adult</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Youth</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Senior</TextBlock>
             
             <!--Row 2-->
-            <TextBlock Grid.Row="3" Grid.Column="2" Foreground="white" FontSize="25" HorizontalAlignment="Center">2-Hour</TextBlock>
-            <TextBlock Grid.Row="3" Grid.Column="4" Foreground="white" FontSize="20" HorizontalAlignment="Center">$3.50</TextBlock>
-            <TextBlock Grid.Row="3" Grid.Column="6" Foreground="white" FontSize="20" HorizontalAlignment="Center">$2.50</TextBlock>
-            <TextBlock Grid.Row="3" Grid.Column="8" Foreground="white" FontSize="20" HorizontalAlignment="Center">$3.25</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">2-Hour</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$3.50</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$2.50</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$3.25</TextBlock>
 
 
 
             <!--Row 3-->
-            <TextBlock Grid.Row="5" Grid.Column="2" Foreground="white" FontSize="25" HorizontalAlignment="Center">Day</TextBlock>
-            <TextBlock Grid.Row="5" Grid.Column="4" Foreground="white" FontSize="20" HorizontalAlignment="Center">$10.00</TextBlock>
-            <TextBlock Grid.Row="5" Grid.Column="6" Foreground="white" FontSize="20" HorizontalAlignment="Center">$8.00</TextBlock>
-            <TextBlock Grid.Row="5" Grid.Column="8" Foreground="white" FontSize="20" HorizontalAlignment="Center">$9.00</TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Day</TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$10.00</TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$8.00</TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$9.00</TextBlock>
 
 
 
             <!--Row 4-->
-            <TextBlock Grid.Row="7" Grid.Column="2" Foreground="white" FontSize="25" HorizontalAlignment="Center">3-Day</TextBlock>
-            <TextBlock Grid.Row="7" Grid.Column="4" Foreground="white" FontSize="20" HorizontalAlignment="Center">$25.00</TextBlock>
-            <TextBlock Grid.Row="7" Grid.Column="6" Foreground="white" FontSize="20" HorizontalAlignment="Center">$20.00</TextBlock>
-            <TextBlock Grid.Row="7" Grid.Column="8" Foreground="white" FontSize="20" HorizontalAlignment="Center">$22.50</TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">3-Day</TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$25.00</TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$20.00</TextBlock>
+            <TextBlock Grid.Row="7" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$22.50</TextBlock>
 
 
 
             <!--Row 5-->
-            <TextBlock Grid.Row="9" Grid.Column="2" Foreground="white" FontSize="25" HorizontalAlignment="Center">Week</TextBlock>
-            <TextBlock Grid.Row="9" Grid.Column="4" Foreground="white" FontSize="20" HorizontalAlignment="Center">$50.00</TextBlock>
-            <TextBlock Grid.Row="9" Grid.Column="6" Foreground="white" FontSize="20" HorizontalAlignment="Center">$40.00</TextBlock>
-            <TextBlock Grid.Row="9" Grid.Column="8" Foreground="white" FontSize="20" HorizontalAlignment="Center">$45.00</TextBlock>
+            <TextBlock Grid.Row="9" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Week</TextBlock>
+            <TextBlock Grid.Row="9" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$50.00</TextBlock>
+            <TextBlock Grid.Row="9" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$40.00</TextBlock>
+            <TextBlock Grid.Row="9" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$45.00</TextBlock>
 
 
 
             <!--Row 6-->
-            <TextBlock Grid.Row="11" Grid.Column="2" Foreground="white" FontSize="25" HorizontalAlignment="Center">Month</TextBlock>
-            <TextBlock Grid.Row="11" Grid.Column="4" Foreground="white" FontSize="20" HorizontalAlignment="Center">$100.00</TextBlock>
-            <TextBlock Grid.Row="11" Grid.Column="6" Foreground="white" FontSize="20" HorizontalAlignment="Center">$80.00</TextBlock>
-            <TextBlock Grid.Row="11" Grid.Column="8" Foreground="white" FontSize="20" HorizontalAlignment="Center">$90.00</TextBlock>
+            <TextBlock Grid.Row="11" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Month</TextBlock>
+            <TextBlock Grid.Row="11" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$100.00</TextBlock>
+            <TextBlock Grid.Row="11" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$80.00</TextBlock>
+            <TextBlock Grid.Row="11" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$90.00</TextBlock>
 
 
 
@@ -147,28 +156,10 @@
 
 
         </Grid>
+        <Button Style="{DynamicResource RoundCorner}" Content="Price Chart" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" Margin="615,30,26,0" Grid.Row="2" Height="50" Width="150" />
+
 
         <local:Header Grid.Row="0"></local:Header>
-        <local:FooterNavigation Grid.Row="2">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                    <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <Button Style="{DynamicResource RoundCorner}" Grid.Column="1" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnPrevious}" />
-                <Button Style="{DynamicResource RoundCorner}" Grid.Column="7" Content="Price Chart" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" />
-
-            </Grid>
-        </local:FooterNavigation>
+        
     </Grid>
 </UserControl>
