@@ -9,7 +9,7 @@
         Height="600" Width="800">
 
     <UserControl.Resources>
-        <System:Double x:Key="margin-y">58</System:Double>
+        <System:Double x:Key="margin-y">42</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
 
         <System:Double x:Key="colWidth">170</System:Double>
@@ -18,8 +18,8 @@
         <System:Double x:Key="btn-height-y">102</System:Double>
         <System:Double x:Key="chartColWidth">150</System:Double>
         <System:Double x:Key="chartMargin-x">40</System:Double>
-        <System:Double x:Key="chartMargin-y">15</System:Double>
-        <System:Double x:Key="chartColHeight">40</System:Double>
+        <System:Double x:Key="rowMargin">15</System:Double>
+        <System:Double x:Key="rowHeight">45</System:Double>
 
 
 
@@ -55,6 +55,7 @@
             <TextBlock Grid.Row="1" Grid.Column="2" Foreground="white" HorizontalAlignment="Center">Centre</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="3" Foreground="white" HorizontalAlignment="Right"></TextBlock>
         </Grid>
+        
 
         <Grid Name="body" Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -73,20 +74,28 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="{Binding Source={StaticResource margin-y}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartColHeight}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartMargin-y}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartColHeight}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartMargin-y}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartColHeight}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartMargin-y}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartColHeight}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartMargin-y}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartColHeight}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartMargin-y}}"></RowDefinition>
-                <RowDefinition Height="{Binding Source={StaticResource chartColHeight}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowHeight}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowMargin}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowHeight}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowMargin}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowHeight}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowMargin}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowHeight}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowMargin}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowHeight}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowMargin}}"></RowDefinition>
+                <RowDefinition Height="{Binding Source={StaticResource rowHeight}}"></RowDefinition>
 
                 <RowDefinition Height="{Binding Source={StaticResource margin-y}}"></RowDefinition>
             </Grid.RowDefinitions>
+            <Rectangle Grid.Column="2" Grid.RowSpan="5" >
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Green">
+                        
+                    </SolidColorBrush>
+
+                </Rectangle.Fill>
+            </Rectangle>
             
             <!--Row 1-->
             <TextBlock Grid.Row="1" Grid.Column="2" Foreground="white" FontSize="25" HorizontalAlignment="Center">Type</TextBlock>
