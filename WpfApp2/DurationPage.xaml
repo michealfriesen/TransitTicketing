@@ -178,7 +178,7 @@
                 </Grid.RowDefinitions>
 
                 <Button Style="{DynamicResource RoundCorner}" Grid.Column="1" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnPrevious}" />
-                <Button Style="{DynamicResource RoundCorner}" Grid.Column="7" Content="Price Chart" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnNext}" />
+                <Button Style="{DynamicResource RoundCorner}" Grid.Column="7" Content="Price Chart" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToPriceChart}" />
 
             </Grid>
         </local:FooterNavigation>
