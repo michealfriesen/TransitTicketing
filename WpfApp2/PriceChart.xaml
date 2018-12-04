@@ -76,7 +76,7 @@
             </Grid.RowDefinitions>
             <Rectangle Grid.Column="2" Grid.RowSpan="11" Grid.Row="1" RadiusX="8" RadiusY="8">
                 <Rectangle.Fill>
-                    <SolidColorBrush Color="LightGreen">
+                    <SolidColorBrush Color="#B1FFFF">
                         
                     </SolidColorBrush>
 
@@ -84,7 +84,7 @@
             </Rectangle>
             <Rectangle Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="1" RadiusX="8" RadiusY="8">
                 <Rectangle.Fill>
-                    <SolidColorBrush Color="Green">
+                    <SolidColorBrush Color="#00ADAD">
 
                     </SolidColorBrush>
 
@@ -142,7 +142,7 @@
 
         </Grid>
         <Grid Grid.Row="2" Margin="20, 0, 40,0">
-            <Button Style="{DynamicResource RoundCorner}" Content="Go Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" Height="50" Width="150" HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="Top" />
+            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" Height="50" Width="150" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Top" />
         </Grid>
     </Grid>
 </UserControl>

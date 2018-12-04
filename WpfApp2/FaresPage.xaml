@@ -67,8 +67,9 @@
 						Padding="5" 
 						Margin="0,0,1,0"
 						Width="220"><InlineUIContainer>
-                            <TextBlock FontSize="36" HorizontalAlignment="Center" Foreground="White"><Run Text="Adult"/></TextBlock>
+                            <TextBlock FontSize="36" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold"><Run Text="Adult"/></TextBlock>
                         </InlineUIContainer></TextBlock>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Foreground="White" Margin="0,-10,0,0"><Run Text="Ages 18 - 64"/></TextBlock>
                     <Grid Margin="0 20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="100"></RowDefinition>
@@ -77,10 +78,11 @@
                             <ColumnDefinition Width="120"></ColumnDefinition>
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image x:Name="adult_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" Source="/img/boy.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="0,10,68,-19" Height="109" />
+                        <Image x:Name="adult_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" Source="/img/boy.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="0,-20,68,-19" Height="109" />
                         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[0].Quantity}" FontSize="72" Foreground="White"></TextBlock>
                     </Grid>
-                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,30,0,0" Foreground="White">+</TextBlock>
+                    <TextBlock FontSize="30" HorizontalAlignment="Center" Foreground="White" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[0].BasePrice, StringFormat=${0} each}" Margin="0,-10,0,0"></TextBlock>
+                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,-20,0,0" Foreground="White">+</TextBlock>
                 </StackPanel>
             </Button>
             <Button  x:Name="Youth"  Style="{DynamicResource FaresButton}" Grid.Row="1" Grid.Column="3"
@@ -95,8 +97,9 @@
 						Padding="5" 
 						Margin="0,0,1,0"
 						Width="220"><InlineUIContainer>
-                            <TextBlock FontSize="36" HorizontalAlignment="Center" Foreground="White"><Run Text="Youth"/></TextBlock>
+                            <TextBlock FontSize="36" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold"><Run Text="Youth"/></TextBlock>
                         </InlineUIContainer></TextBlock>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Foreground="White" Margin="0,-10,0,0"><Run Text="Ages 5 - 17"/></TextBlock>
                     <Grid Margin="0 20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="100"></RowDefinition>
@@ -105,10 +108,11 @@
                             <ColumnDefinition Width="120"></ColumnDefinition>
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image x:Name="child_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" Source="/img/baby.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="0,10,68,-19" Height="109" />
+                        <Image x:Name="child_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" Source="/img/baby.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="0,-20,68,-19" Height="109" />
                         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[1].Quantity}" Foreground="White" FontSize="72"></TextBlock>
                     </Grid>
-                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,30,0,0" Foreground="White">+</TextBlock>
+                    <TextBlock FontSize="30" HorizontalAlignment="Center" Foreground="White" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[1].BasePrice, StringFormat=${0} each}" Margin="0,-10,0,0"></TextBlock>
+                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,-20,0,0" Foreground="White">+</TextBlock>
                 </StackPanel>
             </Button>
             <Button  x:Name="Senior"  Style="{DynamicResource FaresButton}" Grid.Row="1" Grid.Column="5"
@@ -123,8 +127,9 @@
 						Padding="5" 
 						Margin="0,0,1,0"
 						Width="220"><InlineUIContainer>
-                            <TextBlock FontSize="36" HorizontalAlignment="Center" Foreground="White"><Run Text="Senior"/></TextBlock>
+                            <TextBlock FontSize="36" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold"><Run Text="Senior"/></TextBlock>
                         </InlineUIContainer></TextBlock>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Foreground="White" Margin="0,-10,0,0"><Run Text="Ages 65 +"/></TextBlock>
                     <Grid Margin="0 20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="100"></RowDefinition>
@@ -133,10 +138,11 @@
                             <ColumnDefinition Width="120"></ColumnDefinition>
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image x:Name="senior_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" Source="/img/grandmother.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="0,10,68,-19" Height="109" />
+                        <Image x:Name="senior_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="153" Source="/img/grandmother.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="0,-19,68,-19" Height="109" />
                         <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[2].Quantity}" FontSize="72" Foreground="White"></TextBlock>
                     </Grid>
-                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,30,0,0" Foreground="White">+</TextBlock>
+                    <TextBlock FontSize="30" HorizontalAlignment="Center" Foreground="White" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[2].BasePrice, StringFormat=${0} each}" Margin="0,-10,0,0"></TextBlock>
+                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,-20,0,0" Foreground="White">+</TextBlock>
                 </StackPanel>
             </Button>
 
