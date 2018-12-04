@@ -67,7 +67,7 @@
 						Padding="5" 
 						Margin="0,0,1,0"
 						Width="220"><InlineUIContainer>
-                            <TextBlock FontSize="36" HorizontalAlignment="Center"><Run Text="Adult"/></TextBlock>
+                            <TextBlock FontSize="36" HorizontalAlignment="Center" Foreground="White"><Run Text="Adult"/></TextBlock>
                         </InlineUIContainer></TextBlock>
                     <Grid Margin="0 20">
                         <Grid.RowDefinitions>
@@ -78,9 +78,9 @@
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">ICON</TextBlock>
-                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[0].Quantity}"></TextBlock>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[0].Quantity}" FontSize="72" Foreground="White"></TextBlock>
                     </Grid>
-                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,30,0,0">+</TextBlock>
+                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,30,0,0" Foreground="White">+</TextBlock>
                 </StackPanel>
             </Button>
             <Button  x:Name="Youth"  Style="{DynamicResource FaresButton}" Grid.Row="1" Grid.Column="3"
@@ -95,7 +95,7 @@
 						Padding="5" 
 						Margin="0,0,1,0"
 						Width="220"><InlineUIContainer>
-                            <TextBlock FontSize="36" HorizontalAlignment="Center"><Run Text="Youth"/></TextBlock>
+                            <TextBlock FontSize="36" HorizontalAlignment="Center" Foreground="White"><Run Text="Youth"/></TextBlock>
                         </InlineUIContainer></TextBlock>
                     <Grid Margin="0 20">
                         <Grid.RowDefinitions>
@@ -106,9 +106,9 @@
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">ICON</TextBlock>
-                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[1].Quantity}"></TextBlock>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[1].Quantity}" Foreground="White" FontSize="72"></TextBlock>
                     </Grid>
-                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,30,0,0">+</TextBlock>
+                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,30,0,0" Foreground="White">+</TextBlock>
                 </StackPanel>
             </Button>
             <Button  x:Name="Senior"  Style="{DynamicResource FaresButton}" Grid.Row="1" Grid.Column="5"
@@ -123,7 +123,7 @@
 						Padding="5" 
 						Margin="0,0,1,0"
 						Width="220"><InlineUIContainer>
-                            <TextBlock FontSize="36" HorizontalAlignment="Center"><Run Text="Senior"/></TextBlock>
+                            <TextBlock FontSize="36" HorizontalAlignment="Center" Foreground="White"><Run Text="Senior"/></TextBlock>
                         </InlineUIContainer></TextBlock>
                     <Grid Margin="0 20">
                         <Grid.RowDefinitions>
@@ -134,16 +134,16 @@
                             <ColumnDefinition Width="100"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0">ICON</TextBlock>
-                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[2].Quantity}"></TextBlock>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups[2].Quantity}" FontSize="72" Foreground="White"></TextBlock>
                     </Grid>
-                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,30,0,0">+</TextBlock>
+                    <TextBlock FontSize="48" HorizontalAlignment="Center" Margin="0,30,0,0" Foreground="White">+</TextBlock>
                 </StackPanel>
             </Button>
 
             <!--Minus Buttons-->
-            <Button Style="{DynamicResource MinusButton}" x:Name="Minus1"  Grid.Row="3" Grid.Column="1" Content="-" FontWeight="Bold" FontSize="72" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnDecreaseTicketQuantity}" CommandParameter="{x:Static local:TicketAge.Adult}" ClipToBounds="False" SnapsToDevicePixels="False" Padding="1" UseLayoutRounding="False" />
-            <Button Style="{DynamicResource MinusButton}" x:Name="Minus2"  Grid.Row="3" Grid.Column="3" Content="-" FontWeight="Bold" FontSize="72" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnDecreaseTicketQuantity}" CommandParameter="{x:Static local:TicketAge.Youth}" ClipToBounds="False" SnapsToDevicePixels="False" Padding="1" UseLayoutRounding="False" />
-            <Button Style="{DynamicResource MinusButton}" x:Name="Minus3"  Grid.Row="3" Grid.Column="5" Content="-" FontWeight="Bold" FontSize="72" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnDecreaseTicketQuantity}" CommandParameter="{x:Static local:TicketAge.Senior}" ClipToBounds="False" SnapsToDevicePixels="False" Padding="1" UseLayoutRounding="False" />
+            <Button Style="{DynamicResource MinusButton}" x:Name="Minus1"  Grid.Row="3" Grid.Column="1" Content="-" FontWeight="Bold" FontSize="72" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnDecreaseTicketQuantity}" CommandParameter="{x:Static local:TicketAge.Adult}" ClipToBounds="False" SnapsToDevicePixels="False" Padding="1" UseLayoutRounding="False" Foreground="White" />
+            <Button Style="{DynamicResource MinusButton}" x:Name="Minus2"  Grid.Row="3" Grid.Column="3" Content="-" FontWeight="Bold" FontSize="72" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnDecreaseTicketQuantity}" CommandParameter="{x:Static local:TicketAge.Youth}" ClipToBounds="False" SnapsToDevicePixels="False" Padding="1" UseLayoutRounding="False" Foreground="White" />
+            <Button Style="{DynamicResource MinusButton}" x:Name="Minus3"  Grid.Row="3" Grid.Column="5" Content="-" FontWeight="Bold" FontSize="72" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnDecreaseTicketQuantity}" CommandParameter="{x:Static local:TicketAge.Senior}" ClipToBounds="False" SnapsToDevicePixels="False" Padding="1" UseLayoutRounding="False" Foreground="White" />
         </Grid>
 
         <Grid Grid.Row="2" Margin="20, 0 ,40,0">
