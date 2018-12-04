@@ -12,6 +12,8 @@
         <System:Double x:Key="margin-y">40</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
 
+        <System:Double x:Key="header-height">50</System:Double>
+        
         <System:Double x:Key="colWidth">170</System:Double>
         <System:Double x:Key="colWidth2">360</System:Double>
         <System:Double x:Key="btn-margin-y">20</System:Double>
@@ -27,30 +29,14 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Grid Name="header" Grid.Row="0" Background="Black">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
-                <ColumnDefinition Width="350"></ColumnDefinition>
-                <ColumnDefinition Width="200"></ColumnDefinition>
-                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="{Binding Source={StaticResource margin-x}}"></RowDefinition>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
+        <local:Header Grid.Row="0"></local:Header>
 
-            <TextBlock Grid.Row="1" Grid.Column="1" Foreground="white" HorizontalAlignment="Left">Left</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="2" Foreground="white" HorizontalAlignment="Center">Centre</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="3" Foreground="white" HorizontalAlignment="Right"></TextBlock>
-        </Grid>
-
-        <Grid Name="body" Grid.Row="1">
+        <Grid Name="body" Grid.Row="1" Width="800">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
                 <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
@@ -159,8 +145,9 @@
 
         </Grid>
 
-        <local:Header Grid.Row="0"></local:Header>
-        <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToHomePage}" Margin="21,30,620,0" Grid.Row="2" Height="50" />
-        <Button Style="{DynamicResource RoundCorner}" Content="Price Chart" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToPriceChartPage}" Margin="615,30,26,0" Grid.Row="2" Height="50" Width="150" />
+        <Grid Grid.Row="2" Margin="20, 0, 40,0">
+            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToHomePage}" Height="50" HorizontalAlignment="Left" Width="150" />
+            <Button Style="{DynamicResource RoundCorner}" Content="Price Chart" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToPriceChartPage}" Height="50" Width="150" HorizontalAlignment="Right" Grid.Column="1" />
+        </Grid>
     </Grid>
 </UserControl>
