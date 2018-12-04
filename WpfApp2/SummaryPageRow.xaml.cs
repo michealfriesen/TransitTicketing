@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Diagnostics;
 
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for Page2.xaml
+    /// Interaction logic for SummaryPageRow.xaml
     /// </summary>
-    public partial class PrintingPage : UserControl
+    public partial class SummaryPageRow : UserControl
     {
-        public PrintingPage()
+        public SummaryPageRow()
         {
             InitializeComponent();
-            
         }
     }
 }
