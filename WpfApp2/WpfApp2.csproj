@@ -184,5 +184,11 @@
   <ItemGroup>
     <Resource Include="img\grandmother.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\information-button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

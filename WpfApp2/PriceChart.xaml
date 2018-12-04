@@ -56,7 +56,7 @@
             <TextBlock Grid.Row="1" Grid.Column="2" Foreground="white" HorizontalAlignment="Center">Centre</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="3" Foreground="white" HorizontalAlignment="Right"></TextBlock>
         </Grid>
-        
+
 
         <Grid Name="body" Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -92,7 +92,7 @@
             <Rectangle Grid.Column="2" Grid.RowSpan="11" Grid.Row="1" RadiusX="8" RadiusY="8">
                 <Rectangle.Fill>
                     <SolidColorBrush Color="LightGreen">
-                        
+
                     </SolidColorBrush>
 
                 </Rectangle.Fill>
@@ -111,7 +111,7 @@
             <TextBlock Grid.Row="1" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Adult</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Youth</TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Senior</TextBlock>
-            
+
             <!--Row 2-->
             <TextBlock Grid.Row="3" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">2-Hour</TextBlock>
             <TextBlock Grid.Row="3" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$3.50</TextBlock>
@@ -156,10 +156,17 @@
 
 
         </Grid>
-        <Button Style="{DynamicResource RoundCorner}" Content="Price Chart" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" Margin="615,30,26,0" Grid.Row="2" Height="50" Width="150" />
 
+        <Grid Grid.Row="2" Margin="20, 0, 40,0">
+            <Button Style="{DynamicResource PriceChart}" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}"  Height="50" Width="150" HorizontalAlignment="Right" Grid.Column="1">
+                <Grid>
+                    <TextBlock Margin="20,10,-21,10" Foreground="White" FontSize="16" Text="Price Chart" HorizontalAlignment="Center"/>
+                    <Image x:Name="i_icon" HorizontalAlignment="Left" Height="31" VerticalAlignment="Center" Width="33" Source="/img/information.png" Margin="-20,7,0,6"/>
+                </Grid>
+            </Button>
+        </Grid>
 
         <local:Header Grid.Row="0"></local:Header>
-        
+
     </Grid>
 </UserControl>
