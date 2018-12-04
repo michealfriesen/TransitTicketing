@@ -43,7 +43,7 @@
 
         <Image x:Name="logo_header" Grid.Column="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center" Width="43" Source="/img/underground.png"/>
         <Label x:Name="clock_label" Content="XX:XX" Grid.Column="7" HorizontalAlignment="Center" Margin="71,5,-22,0" VerticalAlignment="Top" Width="122" Height="45" FontSize="24" HorizontalContentAlignment="Center" Foreground="White" FontFamily="HP Simplified"/>
-        <Label x:Name="title_text" Content="Transit Ticketing" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="363" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" FontSize="24" Foreground="White" FontFamily="HP Simplified" Margin="0,5,0,0"/>
+        <Label x:Name="title_text" Content="TITLE" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="363" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" FontSize="24" Foreground="White" FontFamily="HP Simplified" Margin="0,5,0,0"/>
 
     </Grid>
 </UserControl>
