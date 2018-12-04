@@ -123,7 +123,7 @@
             <TextBlock Grid.Row="1" Grid.Column="0" Background="#AB342B"></TextBlock>
             <TextBlock Grid.Row="2" Grid.Column="0" Background="#AB342B"></TextBlock>
 
-            <TextBlock Grid.Row="1" Grid.Column="1">Left</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" FontWeight="Bold" FontSize="24" Foreground="White" Grid.ColumnSpan="2" Margin="10,0,11,0"><Run Text="Express"/><LineBreak/><Run Text="One-Touch"/></TextBlock>
             <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="3" Background="green">
                 <Grid Name="expressbtn_1">
                     <Grid.ColumnDefinitions>
@@ -137,8 +137,9 @@
                         <RowDefinition Height="{Binding Source={StaticResource expressbtn-text}}"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0">Adult</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Background="Black"></TextBlock>
+                    <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,0,15" Foreground="White" FontSize="18" Grid.RowSpan="2" Text="Adult Single Fare" HorizontalAlignment="Center"/>
+                    <Image x:Name="adult_icon" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108" Source="/img/boy.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="23,10,29,0" Height="71" Grid.Row="1" Grid.RowSpan="2" />
+                    <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,77" Foreground="White" FontSize="18" Grid.Row="2" Grid.RowSpan="2" Text="$3.50" HorizontalAlignment="Center"/>
                 </Grid>
             </Button>
             <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="5" Background="green">
@@ -154,8 +155,10 @@
                         <RowDefinition Height="{Binding Source={StaticResource expressbtn-text}}"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0">Youth</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Background="Black"></TextBlock>
+                    <TextBlock Grid.Column="0" Foreground="White" FontSize="18" Margin="0,6,-3,70" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">Youth Single Fare</TextBlock>
+                    <Image x:Name="youth_icon" HorizontalAlignment="Center" VerticalAlignment="Top" Width="66" Source="/img/baby.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="49,15,45,0" Height="71" Grid.Row="1" Grid.RowSpan="2" />
+                    <TextBlock Grid.Column="0" Foreground="White" FontSize="18" Margin="13,1,10,75" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="2" Text="$2.50"/>
+                    <TextBlock Grid.Column="0" Foreground="White" FontSize="18" Margin="60.141,1,56.858,75" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="2" Text="$2.50"/>
                 </Grid>
             </Button>
             <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="7" Background="green">
@@ -171,10 +174,12 @@
                         <RowDefinition Height="{Binding Source={StaticResource expressbtn-text}}"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0">Senior</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Background="Black"></TextBlock>
+                    <TextBlock Grid.Column="0" FontSize="18" Foreground="White" Margin="7,6,-7,70" Grid.RowSpan="2" HorizontalAlignment="Left" Width="160" Grid.ColumnSpan="2">Senior Single Fare</TextBlock>
+                    <Image x:Name="senior_icon" HorizontalAlignment="Center" VerticalAlignment="Top" Width="66" Source="/img/grandmother.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="49,15,45,0" Height="71" Grid.Row="1" Grid.RowSpan="2" />
+                    <TextBlock Grid.Column="0" FontSize="18" Foreground="White" Margin="60,1,53,75" Grid.RowSpan="2" HorizontalAlignment="Center" Width="47" Grid.Row="2" Text="$2.75" Grid.ColumnSpan="2"/>
                 </Grid>
             </Button>
+            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20" Foreground="White" Margin="11,74,10,0" Grid.ColumnSpan="2"><Run Text="Valid Until"/><LineBreak/><Run Text="DATE"/></TextBlock>
         </Grid>
         <local:Header Grid.Row="0"></local:Header>
     </Grid>
