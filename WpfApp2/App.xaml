@@ -17,6 +17,9 @@
                                           VerticalAlignment="Center"
                                           TextElement.FontWeight="Bold">
                                 </ContentPresenter>
+                                <Border.Effect>
+                                    <DropShadowEffect  BlurRadius="5" Opacity="0.4" />
+                                </Border.Effect>
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -48,6 +51,9 @@
                                           VerticalAlignment="Center"
                                           TextElement.FontWeight="Bold">
                                 </ContentPresenter>
+                                <Border.Effect>
+                                    <DropShadowEffect  BlurRadius="5" Opacity="0.4" />
+                                </Border.Effect>
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -75,10 +81,13 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid x:Name="grid">
                             <Border x:Name="border" CornerRadius="8" Background="#2ED5D5">
-                                <ContentPresenter HorizontalAlignment="Center"
+                                    <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           TextElement.FontWeight="Bold">
-                                </ContentPresenter>
+                                    </ContentPresenter>
+                                <Border.Effect>
+                                    <DropShadowEffect  BlurRadius="5" Opacity="0.4" />
+                                </Border.Effect>
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -106,6 +115,9 @@
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-32"
                                           TextElement.FontWeight="Bold">
                                 </ContentPresenter>
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.4" />
+                                </Border.Effect>
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -134,6 +146,9 @@
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-32"
                                           TextElement.FontWeight="Bold">
                                 </ContentPresenter>
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.4" />
+                                </Border.Effect>
                             </Border>
                         </Grid>
                         <ControlTemplate.Triggers>
