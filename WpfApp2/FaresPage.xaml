@@ -153,10 +153,10 @@
         </Grid>
 
         <Grid Grid.Row="2" Margin="20, 0 ,40,0">
-            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" Grid.Row="2" Width="150" Height="50" HorizontalAlignment="Left" />
+            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" Grid.Row="2" Width="150" Height="50" HorizontalAlignment="Left" Foreground="White" />
             <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontSize="20">Total:</TextBlock>
             <TextBlock HorizontalAlignment="Right" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.GetTotal}" Width="77" VerticalAlignment="Bottom" FontSize="20" Margin="0,0,317,0"/>
-            <Button Style="{DynamicResource RoundCorner}" Content="Next" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToSummaryPage}" Width="150" Height="50" HorizontalAlignment="Right"/>
+            <Button Style="{DynamicResource RoundCorner}" Content="Next" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToSummaryPage}" Width="150" Height="50" HorizontalAlignment="Right" Foreground="White"/>
             <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="331,25,398,0" Text="$"/>
         </Grid>
     </Grid>

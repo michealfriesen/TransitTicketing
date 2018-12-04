@@ -59,7 +59,7 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="2" VerticalAlignment="Bottom">
-            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToFaresPage}" Margin="21,30,620,0" Grid.Row="2" Height="50" Width="150" />
+            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="24" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToFaresPage}" Margin="21,30,620,0" Grid.Row="2" Height="50" Width="150" Background="White" Foreground="White" />
         </Grid>
 
     </Grid>
