@@ -21,7 +21,10 @@ namespace WpfApp2
     /// </summary>
     public partial class PrintingPage : UserControl
     {
-        
+        public String title
+        {
+            get { return "Thank You"; }
+        }
         public PrintingPage()
         {
             InitializeComponent();

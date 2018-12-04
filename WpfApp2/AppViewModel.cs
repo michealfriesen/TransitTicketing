@@ -19,6 +19,8 @@ namespace WpfApp2
             get { return purchaseState; }
             set { purchaseState = value; OnPropertyChanged("PurchaseState"); }
         }
+        
+        //public object SelectedPage_actual { get { return SelectedPage; } set { SelectedPage = value; } }
 
         #region Initialization
         public void Init()

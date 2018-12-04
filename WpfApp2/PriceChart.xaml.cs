@@ -20,6 +20,10 @@ namespace WpfApp2
     /// </summary>
     public partial class PriceChart : UserControl 
     {
+        public String title
+        {
+            get { return "Price Chart"; }
+        }
         public PriceChart()
         {
             InitializeComponent();
