@@ -63,6 +63,9 @@
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppViewModel.cs" />
+    <Compile Include="PriceChart.xaml.cs">
+      <DependentUpon>PriceChart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PurchaseState.cs" />
     <Compile Include="Resources.cs" />
     <Compile Include="SummaryPage.xaml.cs">
@@ -103,6 +106,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PriceChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SummaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,11 +141,25 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="img\movie-tickets.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="img\underground.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\24-hours-delivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\clock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
