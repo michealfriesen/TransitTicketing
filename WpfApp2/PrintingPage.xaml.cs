@@ -24,12 +24,7 @@ namespace WpfApp2
         public PrintingPage()
         {
             InitializeComponent();
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            if(sw.ElapsedMilliseconds>= 5000)
-            {
-                new CommandHandler(param => new HomePage());
-            }
+            
         }
     }
 }

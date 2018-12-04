@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Diagnostics;
 
 namespace WpfApp2
 {
@@ -111,6 +112,12 @@ namespace WpfApp2
         public void GoToPrintingPage()
         {
             SelectedPage = new PrintingPage();
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            if (sw.ElapsedMilliseconds >= 5000)
+            {
+                SelectedPage = new HomePage();
+            }
         }
 
 
