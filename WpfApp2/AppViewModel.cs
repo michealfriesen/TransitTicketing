@@ -101,6 +101,19 @@ namespace WpfApp2
             SelectedPage = new SummaryPage();
         }
 
+        public ICommand OnGoToPrintingPage
+        {
+            get
+            {
+                return new CommandHandler(param => GoToPrintingPage(), true);
+            }
+        }
+        public void GoToPrintingPage()
+        {
+            SelectedPage = new PrintingPage();
+        }
+
+
         private object selectedPage;
 		public object SelectedPage
 		{
