@@ -13,24 +13,6 @@
         <System:Double x:Key="colWidth">170</System:Double>
 
         <System:Double x:Key="header-height">50</System:Double>
-
-        <System:Double x:Key="mainbtn-height">250</System:Double>
-        <System:Double x:Key="mainbtn-icon">150</System:Double>
-        <System:Double x:Key="mainbtn-text">100</System:Double>
-        <System:Double x:Key="mainbtn-margin-y">20</System:Double>
-        <System:Double x:Key="mainbtn-margin-x">150</System:Double>
-
-        <System:Double x:Key="express-margin-y">30</System:Double>
-        <System:Double x:Key="express-margin-x">50</System:Double>
-
-        <System:Double x:Key="expressbtn-height">130</System:Double>
-        <System:Double x:Key="expressbtn-icon">80</System:Double>
-        <System:Double x:Key="expressbtn-text">80</System:Double>
-        <System:Double x:Key="expressbtn-margin-y">20</System:Double>
-        <System:Double x:Key="expressbtn-margin-x">50</System:Double>
-
-        <System:Double x:Key="margin-x-mainbtn">175</System:Double>
-        <System:Double x:Key="colWidth-mainbtn">450</System:Double>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -42,8 +24,34 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         
-        <Grid Grid.Row="1" Background="Aqua">
-            <TextBlock HorizontalAlignment="Center" FontSize="30" Foreground="White" VerticalAlignment="Top" Margin="0,40,0,0">Total</TextBlock>
+        <local:Header Grid.Row="0"></local:Header>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <ItemsControl ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding BasePrice}"></TextBlock>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+            <Grid Grid.Column="3" Width="220">
+                <TextBlock Background="Aqua" FontSize="30" Foreground="White" VerticalAlignment="Top">Total</TextBlock>
+            </Grid>
         </Grid>
         <Grid Grid.Row="2" VerticalAlignment="Bottom">
             <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToFaresPage}" Margin="21,30,620,0" Grid.Row="2" Height="50" Width="150" />

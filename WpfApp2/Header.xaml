@@ -38,7 +38,7 @@
             <ColumnDefinition Width="{Binding Source={StaticResource colWidth}}"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Image x:Name="logo_header" Grid.Column="1" HorizontalAlignment="Left" Height="40" VerticalAlignment="Center" Width="43" Source="/img/underground.png"/>
