@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace WpfApp2
 {
@@ -23,6 +24,12 @@ namespace WpfApp2
         public PrintingPage()
         {
             InitializeComponent();
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            if(sw.ElapsedMilliseconds>= 5000)
+            {
+                new CommandHandler(param => new HomePage());
+            }
         }
     }
 }
