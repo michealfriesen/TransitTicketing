@@ -70,6 +70,7 @@
                 <TextBlock FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center">Printing Yo Ticket</TextBlock>
             </Grid>
             <TextBlock FontSize="40" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">You be gettin it below</TextBlock>
+            <Path HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" Fill="LightGreen" Data="M 0 0 L 75 50 L 150 0 Z"/>
         </Grid>
     </Grid>
 </UserControl>
