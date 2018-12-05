@@ -24,6 +24,14 @@ namespace WpfApp2
         {
             get { return "Price Chart"; }
         }
+        public String time
+        {
+            get { return DateTime.Now.ToString("HH:mm"); }
+        }
+        public String date
+        {
+            get { return DateTime.Now.ToString("MM/dd/yyy"); }
+        }
         public PriceChart()
         {
             InitializeComponent();

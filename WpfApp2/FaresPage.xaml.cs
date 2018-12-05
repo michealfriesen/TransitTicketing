@@ -23,6 +23,14 @@ namespace WpfApp2
         {
             get { return "Fare Type"; }
         }
+        public String time
+        {
+            get { return DateTime.Now.ToString("HH:mm"); }
+        }
+        public String date
+        {
+            get { return DateTime.Now.ToString("MM/dd/yyy"); }
+        }
         public FaresPage()
         {
             InitializeComponent();

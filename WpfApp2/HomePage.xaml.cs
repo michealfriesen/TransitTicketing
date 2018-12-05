@@ -24,7 +24,15 @@ namespace WpfApp2
         {
             get { return "Qualgary Transit"; }
         }
-		public HomePage()
+        public String time
+        {
+            get { return DateTime.Now.ToString("HH:mm"); }
+        }
+        public String date
+        {
+            get { return DateTime.Now.ToString("MM/dd/yyy"); }
+        }
+        public HomePage()
 		{
 			InitializeComponent();
 

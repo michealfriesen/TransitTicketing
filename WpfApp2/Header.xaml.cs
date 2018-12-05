@@ -27,6 +27,7 @@ namespace WpfApp2
             DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
             {
                 this.clock_label.Content = DateTime.Now.ToString("HH:mm");
+                this.date_label.Content = DateTime.Now.ToString("MM/dd/yyyy");
             }, this.Dispatcher);
         }
 
