@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Diagnostics;
+using System.Windows.Threading;
 
 namespace WpfApp2
 {
@@ -102,6 +103,7 @@ namespace WpfApp2
         public void GoToSummaryPage()
         {
             SelectedPage = new SummaryPage();
+            AcceptPayment();
         }
 
         public ICommand OnGoToPrintingPage
@@ -114,12 +116,14 @@ namespace WpfApp2
         public void GoToPrintingPage()
         {
             SelectedPage = new PrintingPage();
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            if (sw.ElapsedMilliseconds >= 5000)
+            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(5) };
+            timer.Start();
+            timer.Tick += (sender, args) =>
             {
-                SelectedPage = new HomePage();
-            }
+                timer.Stop();
+                this.Init();
+                //TODO: reset all state
+            };
         }
 
 
@@ -129,10 +133,28 @@ namespace WpfApp2
 			get { return selectedPage; }
 			set { selectedPage = value; OnPropertyChanged("SelectedPage"); }
 		}
+
+        public ICommand OnAcceptPayment
+        {
+            get
+            {
+                return new CommandHandler(param => AcceptPayment(), true);
+            }
+        }
+        public void AcceptPayment()
+        {
+            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(5) };
+            timer.Start();
+            timer.Tick += (sender, args) =>
+            {
+                timer.Stop();
+                GoToPrintingPage();
+            };
+        }
         #endregion
 
         #region State Handing
-   
+
         public ICommand OnSelectDuration { get { return new CommandHandler(param => SelectDuration((TicketDuration)param)); } }
         public void SelectDuration(TicketDuration duration)
         {
