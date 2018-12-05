@@ -13,13 +13,19 @@ namespace WpfApp2
     {
         public PurchaseState()
         {
-            var adultTicket = new TicketGroup { Age = TicketAge.Adult };
-            var youthTicket = new TicketGroup { Age = TicketAge.Youth };
-            var seniorTicket = new TicketGroup { Age = TicketAge.Senior };
+            var adultTicket = new TicketGroup { Age = TicketAge.Adult, IconUrl = "/img/movie-tickets.png" };
+            var youthTicket = new TicketGroup { Age = TicketAge.Youth, IconUrl = "/img/movie-tickets.png" };
+            var seniorTicket = new TicketGroup { Age = TicketAge.Senior, IconUrl = "/img/movie-tickets.png"};
             this.TicketGroups = new TicketGroup[] { adultTicket, youthTicket, seniorTicket };
         }
 
 		public TicketGroup[] TicketGroups { get; set; }
+        public TicketGroup[] ActiveTicketGroups {
+            get
+            {
+                return this.TicketGroups.Where(tg => tg.Quantity > 0).ToArray();
+            }
+        }
 		private TicketDuration selectedDuration;
 
         public TicketDuration SelectedDuration {
@@ -77,7 +83,7 @@ namespace WpfApp2
 
         public decimal GetTotal
         {
-            get { return this.TicketGroups.Aggregate(0.0M, (runningTotal, ticketGroup) => runningTotal + ticketGroup.TotalGroupPrice);  }
+            get { return this.TicketGroups.Aggregate(0.0M, (runningTotal, ticketGroup) => runningTotal + ticketGroup.TotalPrice);  }
         }
 
         public decimal Fare_price(TicketAge fare_type, TicketDuration duration)
