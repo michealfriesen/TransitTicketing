@@ -124,7 +124,7 @@
             <TextBlock Grid.Row="2" Grid.Column="0" Background="#AB342B"></TextBlock>
 
             <TextBlock Grid.Row="1" Grid.Column="1" FontWeight="Bold" FontSize="24" Foreground="White" Grid.ColumnSpan="2" Margin="10,0,11,0"><Run Text="Express"/><LineBreak/><Run Text="One-Touch"/></TextBlock>
-            <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="3" Background="green">
+            <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="3" Background="green" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnExpressAdult}">
                 <Grid Name="expressbtn_1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-text}}"></ColumnDefinition>
@@ -142,7 +142,7 @@
                     <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,77" Foreground="White" FontSize="18" Grid.Row="2" Grid.RowSpan="2" Text="$3.50" HorizontalAlignment="Center"/>
                 </Grid>
             </Button>
-            <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="5" Background="green">
+            <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="5" Background="green" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnExpressYouth}">
                 <Grid Name="expressbtn_2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-text}}"></ColumnDefinition>
@@ -161,7 +161,7 @@
                     <TextBlock Grid.Column="0" Foreground="White" FontSize="18" Margin="60.141,1,56.858,75" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="2" Text="$2.50"/>
                 </Grid>
             </Button>
-            <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="7" Background="green">
+            <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="7" Background="green" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnExpressSenior}">
                 <Grid Name="expressbtn_3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="{Binding Source={StaticResource expressbtn-text}}"></ColumnDefinition>

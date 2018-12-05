@@ -106,6 +106,51 @@ namespace WpfApp2
             AcceptPayment();
         }
 
+        public ICommand OnExpressAdult
+        {
+            get
+            {
+                return new CommandHandler(param => ExpressAdult(), true);
+            }
+        }
+        public void ExpressAdult()
+        {
+            //set the state for one adult regular ticket.
+            PurchaseState.SelectDuration(TicketDuration.SingleFare);
+            PurchaseState.IncreaseTicketQuantity(TicketAge.Adult);
+            GoToSummaryPage();
+        }
+
+        public ICommand OnExpressYouth
+        {
+            get
+            {
+                return new CommandHandler(param => ExpressYouth(), true);
+            }
+        }
+        public void ExpressYouth()
+        {
+            //set the state for one adult regular ticket.
+            PurchaseState.SelectDuration(TicketDuration.SingleFare);
+            PurchaseState.IncreaseTicketQuantity(TicketAge.Youth);
+            GoToSummaryPage();
+        }
+
+        public ICommand OnExpressSenior
+        {
+            get
+            {
+                return new CommandHandler(param => ExpressSenior(), true);
+            }
+        }
+        public void ExpressSenior()
+        {
+            //set the state for one adult regular ticket.
+            PurchaseState.SelectDuration(TicketDuration.SingleFare);
+            PurchaseState.IncreaseTicketQuantity(TicketAge.Senior);
+            GoToSummaryPage();
+        }
+
         public ICommand OnGoToPrintingPage
         {
             get
@@ -122,7 +167,6 @@ namespace WpfApp2
             {
                 timer.Stop();
                 this.Init();
-                //TODO: reset all state
             };
         }
 
