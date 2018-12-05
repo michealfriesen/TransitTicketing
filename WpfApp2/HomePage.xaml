@@ -8,11 +8,11 @@
 			 mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
     <UserControl.Resources>
-        <System:Double x:Key="margin-y">40</System:Double>
+        <System:Double x:Key="margin-y">30</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
         <System:Double x:Key="colWidth">170</System:Double>
 
-        <System:Double x:Key="header-height">50</System:Double>
+        <System:Double x:Key="header-height">70</System:Double>
 
         <System:Double x:Key="mainbtn-height">250</System:Double>
         <System:Double x:Key="mainbtn-icon">150</System:Double>

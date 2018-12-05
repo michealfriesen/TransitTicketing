@@ -174,6 +174,17 @@ namespace WpfApp2
             };
         }
 
+        public ICommand OnExitSession
+        {
+            get
+            {
+                return new CommandHandler(param => ExitSession(), true);
+            }
+        }
+        public void ExitSession()
+        {
+             this.Init();
+        }
 
         private object selectedPage;
 		public object SelectedPage

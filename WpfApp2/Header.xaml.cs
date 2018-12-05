@@ -29,5 +29,10 @@ namespace WpfApp2
                 this.clock_label.Content = DateTime.Now.ToString("HH:mm");
             }, this.Dispatcher);
         }
-	}
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }

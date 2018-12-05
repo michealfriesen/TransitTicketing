@@ -8,13 +8,13 @@
         mc:Ignorable="d"
 		Height="600" Width="800">
     <UserControl.Resources>
-        <System:Double x:Key="margin-y">40</System:Double>
+        <System:Double x:Key="margin-y">30</System:Double>
         <System:Double x:Key="margin-y2">30</System:Double>
 
         <System:Double x:Key="margin-x">20</System:Double>
         <System:Double x:Key="colWidth">170</System:Double>
 
-        <System:Double x:Key="header-height">50</System:Double>
+        <System:Double x:Key="header-height">70</System:Double>
 
         <System:Double x:Key="main-margin-x">40</System:Double>
         <System:Double x:Key="main-colWidth">220</System:Double>

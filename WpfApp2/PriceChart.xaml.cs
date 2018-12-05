@@ -28,5 +28,10 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
+
+        private void Header_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
