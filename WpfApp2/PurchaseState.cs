@@ -40,7 +40,6 @@ namespace WpfApp2
 				foreach(var ticketGroup in TicketGroups)
 				{
 					ticketGroup.Duration = value;
-					ticketGroup.Quantity = 0;
 				}
 			}
 		}
