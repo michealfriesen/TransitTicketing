@@ -9,10 +9,10 @@
         Height="600" Width="800">
 
     <UserControl.Resources>
-        <System:Double x:Key="margin-y">40</System:Double>
+        <System:Double x:Key="margin-y">30</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
 
-        <System:Double x:Key="header-height">50</System:Double>
+        <System:Double x:Key="header-height">70</System:Double>
         
         <System:Double x:Key="colWidth">170</System:Double>
         <System:Double x:Key="colWidth2">360</System:Double>
@@ -67,7 +67,7 @@
             </Button>
             <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="3" x:Name="FullDay" 
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
-                        CommandParameter="{x:Static local:TicketDuration.SingleFare}" Foreground="White" >
+                        CommandParameter="{x:Static local:TicketDuration.FullDay}" Foreground="White" >
 
                 <StackPanel Height="340">
                     <TextBlock HorizontalAlignment="Center" FontSize="36" Height="48" Foreground="White"><Run Text="Full Day"/></TextBlock>
@@ -146,7 +146,7 @@
         </Grid>
 
         <Grid Grid.Row="2" Margin="20, 0, 40,0">
-            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToHomePage}" Height="50" HorizontalAlignment="Left" Width="150" />
+            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToHomePage}" Height="50" HorizontalAlignment="Left" Width="150" Foreground="White" />
             <Button Style="{DynamicResource PriceChart}" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToPriceChartPage}" Height="50" Width="150" HorizontalAlignment="Right">
             <Grid>
                 <TextBlock Margin="20,10,-21,10" Foreground="White" FontWeight="Bold" FontSize="16" Text="Price Chart" HorizontalAlignment="Center"/>

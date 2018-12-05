@@ -19,6 +19,10 @@ namespace WpfApp2
     /// </summary>
     public partial class DurationPage : UserControl
     {
+        public String title
+        {
+            get { return "Duration"; }
+        }
         public DurationPage()
         {
             InitializeComponent();

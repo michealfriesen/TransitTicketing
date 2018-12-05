@@ -8,13 +8,11 @@
              mc:Ignorable="d"
         Height="600" Width="800">
     <UserControl.Resources>
-        <System:Double x:Key="margin-y">40</System:Double>
+        <System:Double x:Key="margin-y">30</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
         <System:Double x:Key="colWidth">170</System:Double>
         <System:Double x:Key="margin-x-chart">10</System:Double>
-
-        <System:Double x:Key="header-height">50</System:Double>
-        <System:Double x:Key="table-text-font-size">50</System:Double>
+        <System:Double x:Key="header-height">70</System:Double>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -85,12 +83,12 @@
                     <TextBlock  FontSize="30" Foreground="White" VerticalAlignment="Top">Total</TextBlock>
                 </Grid>
                 <Grid Background="Aqua" VerticalAlignment="Bottom">
-                    <TextBlock Background="Aqua" FontSize="30" Foreground="White" VerticalAlignment="Bottom">Insert Payment</TextBlock>
+                    <Button Background="Aqua" FontSize="30" Foreground="White" VerticalAlignment="Bottom" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnAcceptPayment}" >Insert Payment</Button>
                 </Grid>
             </Grid>
         </Grid>
         <Grid Grid.Row="2" VerticalAlignment="Bottom">
-            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToFaresPage}" Margin="21,30,620,0" Grid.Row="2" Height="50" Width="150" />
+            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="24" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToFaresPage}" Margin="21,30,620,0" Grid.Row="2" Height="50" Width="150" Background="White" Foreground="White" />
         </Grid>
 
     </Grid>

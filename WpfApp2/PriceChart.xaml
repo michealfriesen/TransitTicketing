@@ -9,9 +9,9 @@
         Height="600" Width="800">
 
     <UserControl.Resources>
-        <System:Double x:Key="margin-y">42</System:Double>
+        <System:Double x:Key="margin-y">32</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
-        <System:Double x:Key="header-height">50</System:Double>
+        <System:Double x:Key="header-height">70</System:Double>
 
 
         <System:Double x:Key="colWidth">170</System:Double>
@@ -41,7 +41,7 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <local:Header Grid.Row="0"></local:Header>
+        <local:Header Grid.Row="0" Loaded="Header_Loaded"></local:Header>
 
         <Grid Name="body" Grid.Row="1" Width="800">
             <Grid.ColumnDefinitions>
@@ -142,7 +142,7 @@
 
         </Grid>
         <Grid Grid.Row="2" Margin="20, 0, 40,0">
-            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" Height="50" Width="150" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Top" />
+            <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" Height="50" Width="150" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Top" Foreground="White" />
         </Grid>
     </Grid>
 </UserControl>

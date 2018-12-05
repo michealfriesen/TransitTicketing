@@ -8,6 +8,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Diagnostics;
+using System.Windows.Threading;
+using System.Threading;
 
 namespace WpfApp2
 {
@@ -19,6 +21,8 @@ namespace WpfApp2
             get { return purchaseState; }
             set { purchaseState = value; OnPropertyChanged("PurchaseState"); }
         }
+
+        //public object SelectedPage_actual { get { return SelectedPage; } set { SelectedPage = value; } }
 
         #region Initialization
         public void Init()
@@ -34,7 +38,7 @@ namespace WpfApp2
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
-
+        
         private void TriggerPurchaseStateUIUpdate()
         {
             OnPropertyChanged("PurchaseState");
@@ -99,7 +103,56 @@ namespace WpfApp2
         }
         public void GoToSummaryPage()
         {
-            SelectedPage = new SummaryPage();
+            if(PurchaseState.GetTotal > 0.0M)
+            {
+                SelectedPage = new SummaryPage();
+            }
+            
+        }
+
+        public ICommand OnExpressAdult
+        {
+            get
+            {
+                return new CommandHandler(param => ExpressAdult(), true);
+            }
+        }
+        public void ExpressAdult()
+        {
+            //set the state for one adult regular ticket.
+            PurchaseState.SelectDuration(TicketDuration.SingleFare);
+            PurchaseState.IncreaseTicketQuantity(TicketAge.Adult);
+            GoToSummaryPage();
+        }
+
+        public ICommand OnExpressYouth
+        {
+            get
+            {
+                return new CommandHandler(param => ExpressYouth(), true);
+            }
+        }
+        public void ExpressYouth()
+        {
+            //set the state for one youth regular ticket.
+            PurchaseState.SelectDuration(TicketDuration.SingleFare);
+            PurchaseState.IncreaseTicketQuantity(TicketAge.Youth);
+            GoToSummaryPage();
+        }
+
+        public ICommand OnExpressSenior
+        {
+            get
+            {
+                return new CommandHandler(param => ExpressSenior(), true);
+            }
+        }
+        public void ExpressSenior()
+        {
+            //set the state for one senior regular ticket.
+            PurchaseState.SelectDuration(TicketDuration.SingleFare);
+            PurchaseState.IncreaseTicketQuantity(TicketAge.Senior);
+            GoToSummaryPage();
         }
 
         public ICommand OnGoToPrintingPage
@@ -112,14 +165,26 @@ namespace WpfApp2
         public void GoToPrintingPage()
         {
             SelectedPage = new PrintingPage();
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            if (sw.ElapsedMilliseconds >= 5000)
+            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(5) };
+            timer.Start();
+            timer.Tick += (sender, args) =>
             {
-                SelectedPage = new HomePage();
-            }
+                timer.Stop();
+                this.Init();
+            };
         }
 
+        public ICommand OnExitSession
+        {
+            get
+            {
+                return new CommandHandler(param => ExitSession(), true);
+            }
+        }
+        public void ExitSession()
+        {
+             this.Init();
+        }
 
         private object selectedPage;
 		public object SelectedPage
@@ -127,10 +192,22 @@ namespace WpfApp2
 			get { return selectedPage; }
 			set { selectedPage = value; OnPropertyChanged("SelectedPage"); }
 		}
+
+        public ICommand OnAcceptPayment
+        {
+            get
+            {
+                return new CommandHandler(param => AcceptPayment(), true);
+            }
+        }
+        public void AcceptPayment()
+        { 
+                GoToPrintingPage();
+        }
         #endregion
 
         #region State Handing
-   
+
         public ICommand OnSelectDuration { get { return new CommandHandler(param => SelectDuration((TicketDuration)param)); } }
         public void SelectDuration(TicketDuration duration)
         {

@@ -20,9 +20,18 @@ namespace WpfApp2
     /// </summary>
     public partial class PriceChart : UserControl 
     {
+        public String title
+        {
+            get { return "Price Chart"; }
+        }
         public PriceChart()
         {
             InitializeComponent();
+        }
+
+        private void Header_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
