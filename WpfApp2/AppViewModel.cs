@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Diagnostics;
 using System.Windows.Threading;
+using System.Threading;
 
 namespace WpfApp2
 {
@@ -20,7 +21,7 @@ namespace WpfApp2
             get { return purchaseState; }
             set { purchaseState = value; OnPropertyChanged("PurchaseState"); }
         }
-        
+
         //public object SelectedPage_actual { get { return SelectedPage; } set { SelectedPage = value; } }
 
         #region Initialization
@@ -37,7 +38,7 @@ namespace WpfApp2
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
-
+        
         private void TriggerPurchaseStateUIUpdate()
         {
             OnPropertyChanged("PurchaseState");
@@ -102,8 +103,11 @@ namespace WpfApp2
         }
         public void GoToSummaryPage()
         {
-            SelectedPage = new SummaryPage();
-            AcceptPayment();
+            if(PurchaseState.GetTotal > 0.0M)
+            {
+                SelectedPage = new SummaryPage();
+            }
+            
         }
 
         public ICommand OnExpressAdult
@@ -130,7 +134,7 @@ namespace WpfApp2
         }
         public void ExpressYouth()
         {
-            //set the state for one adult regular ticket.
+            //set the state for one youth regular ticket.
             PurchaseState.SelectDuration(TicketDuration.SingleFare);
             PurchaseState.IncreaseTicketQuantity(TicketAge.Youth);
             GoToSummaryPage();
@@ -145,7 +149,7 @@ namespace WpfApp2
         }
         public void ExpressSenior()
         {
-            //set the state for one adult regular ticket.
+            //set the state for one senior regular ticket.
             PurchaseState.SelectDuration(TicketDuration.SingleFare);
             PurchaseState.IncreaseTicketQuantity(TicketAge.Senior);
             GoToSummaryPage();
@@ -186,14 +190,8 @@ namespace WpfApp2
             }
         }
         public void AcceptPayment()
-        {
-            var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(5) };
-            timer.Start();
-            timer.Tick += (sender, args) =>
-            {
-                timer.Stop();
+        { 
                 GoToPrintingPage();
-            };
         }
         #endregion
 

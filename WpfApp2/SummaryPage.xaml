@@ -54,7 +54,7 @@
                     <TextBlock  FontSize="30" Foreground="White" VerticalAlignment="Top">Total</TextBlock>
                 </Grid>
                 <Grid Background="Aqua" VerticalAlignment="Bottom">
-                    <TextBlock Background="Aqua" FontSize="30" Foreground="White" VerticalAlignment="Bottom">Insert Payment</TextBlock>
+                    <Button Background="Aqua" FontSize="30" Foreground="White" VerticalAlignment="Bottom" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnAcceptPayment}" >Insert Payment</Button>
                 </Grid>
             </Grid>
         </Grid>
