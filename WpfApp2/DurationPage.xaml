@@ -67,7 +67,7 @@
             </Button>
             <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="3" x:Name="FullDay" 
                         Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnSelectDuration}"
-                        CommandParameter="{x:Static local:TicketDuration.SingleFare}" Foreground="White" >
+                        CommandParameter="{x:Static local:TicketDuration.FullDay}" Foreground="White" >
 
                 <StackPanel Height="340">
                     <TextBlock HorizontalAlignment="Center" FontSize="36" Height="48" Foreground="White"><Run Text="Full Day"/></TextBlock>
