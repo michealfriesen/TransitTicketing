@@ -182,5 +182,6 @@
             <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20" Foreground="White" Margin="11,74,10,0" Grid.ColumnSpan="2"><Run Text="Valid Until"/><LineBreak/><Run Text="DATE"/></TextBlock>
         </Grid>
         <local:Header Grid.Row="0"></local:Header>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="66" Margin="10,5,0,0" Stroke="Black" VerticalAlignment="Top" Width="77"/>
     </Grid>
 </UserControl>

@@ -68,6 +68,7 @@ namespace WpfApp2
         public void GoToHomePage()
         {
             SelectedPage = new HomePage();
+            this.Init();
         }
 
         public ICommand OnGoToFaresPage

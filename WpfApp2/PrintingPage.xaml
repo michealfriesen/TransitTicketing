@@ -49,9 +49,9 @@
             </Grid.RowDefinitions>
 
             <Grid Name="TopTextScreen" Grid.Row="2" Grid.Column="1"  Grid.RowSpan="2">
-                <Rectangle Height="auto" Width="auto" RadiusX="8" RadiusY="8" >
+                <Rectangle Height="auto" Width="auto" RadiusX="8" RadiusY="8" Margin="0,-63,0,0" >
                     <Rectangle.Fill>
-                        <SolidColorBrush Color="LightBlue">
+                        <SolidColorBrush Color="#FF00ADAD">
 
                         </SolidColorBrush>
 
@@ -60,18 +60,19 @@
             </Grid>
             <Grid Name="BottomTextScreen" Grid.Row="1" Grid.Column="1"  Grid.RowSpan="2">
 
-                <Rectangle Height="auto" Width="auto" RadiusX="8" RadiusY="8" >
+                <Rectangle Height="auto" Width="auto" RadiusX="8" RadiusY="8" Margin="0,0,0,66" >
                     <Rectangle.Fill>
-                        <SolidColorBrush Color="Aqua">
+                        <SolidColorBrush Color="#FF2ED5D5">
 
                         </SolidColorBrush>
 
                     </Rectangle.Fill>
                 </Rectangle>
-                <TextBlock FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center">Printing Yo Ticket</TextBlock>
+                <TextBlock FontSize="50" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Center" Foreground="White" Text="Purchase Complete" Margin="0,34,0,99" Width="500" TextAlignment="Center"/>
             </Grid>
-            <TextBlock FontSize="40" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">You be gettin it below</TextBlock>
-            <Path HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" Fill="LightBlue" Data="M 0 0 L 75 50 L 150 0 Z"/>
+            <TextBlock FontSize="40" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="76,10,82,33" Grid.RowSpan="2"><Run Text="Please pick up your"/><LineBreak/><Run Text="tickets and receipt"/></TextBlock>
+            <Path HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" Fill="#FF00ADAD" Data="M 0 0 L 75 50 L 150 0 Z"/>
         </Grid>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="57" Margin="17,3,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
     </Grid>
 </UserControl>
