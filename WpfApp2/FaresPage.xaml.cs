@@ -34,6 +34,8 @@ namespace WpfApp2
         public FaresPage()
         {
             InitializeComponent();
+            this.expiry_time.Text = DateTime.Now.AddHours(2.0).ToString("MM/dd/yyy HH:mm");
+
         }
     }
 
