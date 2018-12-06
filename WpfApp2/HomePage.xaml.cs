@@ -22,7 +22,7 @@ namespace WpfApp2
 	{
         public String title
         {
-            get { return "Qualgary Transit"; }
+            get { return "Home Page"; }
         }
 		public HomePage()
 		{
