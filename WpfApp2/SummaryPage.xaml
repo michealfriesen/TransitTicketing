@@ -11,7 +11,7 @@
         <System:Double x:Key="margin-y">30</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
         <System:Double x:Key="colWidth">170</System:Double>
-
+        <System:Double x:Key="margin-x-chart">10</System:Double>
         <System:Double x:Key="header-height">70</System:Double>
     </UserControl.Resources>
     <Grid>
@@ -26,7 +26,7 @@
         
         <local:Header Grid.Row="0"></local:Header>
         
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0,40,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -35,19 +35,48 @@
                 <ColumnDefinition Width="{Binding Source={StaticResource margin-x}}"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="1" Height="340">
-                <ItemsControl ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.TicketGroups}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding BasePrice}"></TextBlock>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+            <Grid Grid.Column="1" Background="Green" Height="340">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="{Binding Source={StaticResource margin-x-chart}}"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="{Binding Source={StaticResource margin-x-chart}}"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="{Binding Source={StaticResource margin-x-chart}}"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="{Binding Source={StaticResource margin-x-chart}}"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Padding="20,0" Foreground="Aqua" FontWeight="Bold" Text="Qty" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="2" Padding="20,0" Foreground="Aqua" FontWeight="Bold" Text="Ticket" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="4" Padding="20,0" Foreground="Aqua" FontWeight="Bold" Text="Type" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="6" Padding="20,0" Foreground="Aqua" FontWeight="Bold" Text="Price" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="8" Padding="20,0" Foreground="Black" Background="Aqua" FontWeight="Bold" Text="Total" HorizontalAlignment="Center"></TextBlock>
+                </Grid>
+                <StackPanel Orientation="Vertical" Margin="0,30,0,0">
+                    <ItemsControl ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.ActiveTicketGroups}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,0,0,5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" FontSize="20" Text="{Binding Quantity, StringFormat={}{0} x}"></TextBlock>
+                                    <Grid Grid.Column="1">
+                                        <Image x:Name="_row_image" Height="20" Width="20" HorizontalAlignment="Left" Source="{Binding IconUrl}"/>
+                                        <TextBlock FontSize="20" Text="{Binding Age}" Margin="30,0,0,0" ></TextBlock>
+                                    </Grid>
+                                    <TextBlock Grid.Column="2"  FontSize="20" Text="{Binding BasePrice, StringFormat=${0}}"></TextBlock>
+                                    <TextBlock Grid.Column="3"  FontSize="20" Text="{Binding TotalPrice, StringFormat=${0}}"></TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
             </Grid>
             <Grid Grid.Column="3" Width="220">
                 <Grid Background="Aqua" Height="250" VerticalAlignment="Top">
