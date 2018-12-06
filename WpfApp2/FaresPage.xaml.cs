@@ -35,6 +35,11 @@ namespace WpfApp2
         {
             InitializeComponent();
         }
+
+        private void Minus1_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     class FaresPageViewModel:IViewModel { }

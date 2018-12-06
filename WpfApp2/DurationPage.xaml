@@ -13,7 +13,8 @@
         <System:Double x:Key="margin-x">20</System:Double>
 
         <System:Double x:Key="header-height">70</System:Double>
-        
+        <System:Double x:Key="footer-height">50</System:Double>
+
         <System:Double x:Key="colWidth">170</System:Double>
         <System:Double x:Key="colWidth2">360</System:Double>
         <System:Double x:Key="btn-margin-y">20</System:Double>
@@ -31,7 +32,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="{Binding Source={StaticResource footer-height}}"></RowDefinition>
         </Grid.RowDefinitions>
 
         <local:Header Grid.Row="0"></local:Header>

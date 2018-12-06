@@ -12,7 +12,7 @@
         <System:Double x:Key="margin-y">32</System:Double>
         <System:Double x:Key="margin-x">20</System:Double>
         <System:Double x:Key="header-height">70</System:Double>
-
+        <System:Double x:Key="footer-height">50</System:Double>
 
         <System:Double x:Key="colWidth">170</System:Double>
         <System:Double x:Key="colWidth2">360</System:Double>
@@ -23,6 +23,7 @@
         <System:Double x:Key="rowMargin">15</System:Double>
         <System:Double x:Key="rowHeight">45</System:Double>
         <System:String x:Key="TextColor">Black</System:String>
+        <System:String x:Key="TextColor2">White</System:String>
 
 
 
@@ -38,7 +39,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="{Binding Source={StaticResource footer-height}}"></RowDefinition>
         </Grid.RowDefinitions>
 
         <local:Header Grid.Row="0" Loaded="Header_Loaded"></local:Header>
@@ -77,12 +78,12 @@
             <Rectangle Grid.Column="2" Grid.RowSpan="11" Grid.Row="1" RadiusX="8" RadiusY="8">
                 <Rectangle.Fill>
                     <SolidColorBrush Color="#B1FFFF">
-                        
+
                     </SolidColorBrush>
 
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="1" RadiusX="8" RadiusY="8">
+            <Rectangle Grid.Column="2" Grid.ColumnSpan="7" RadiusX="8" RadiusY="8" Margin="0,23,0,0" Grid.RowSpan="2">
                 <Rectangle.Fill>
                     <SolidColorBrush Color="#00ADAD">
 
@@ -92,11 +93,14 @@
             </Rectangle>
 
             <!--Row 1-->
-            <TextBlock Grid.Row="1" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Type</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Adult</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Youth</TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">Senior</TextBlock>
-            
+            <TextBlock Grid.Row="1" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" HorizontalAlignment="Center">Type</TextBlock>
+            <Image x:Name="adult_icon" Grid.Column="4" Source="/img/boy.png" OpacityMask="White" RenderTransformOrigin="0.819,0.556" Margin="10,29,105,4" Grid.RowSpan="2" />
+            <TextBlock Grid.Row="1" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" HorizontalAlignment="Center">Adult</TextBlock>
+            <Image x:Name="baby_icon" Grid.Column="6" Source="/img/baby.png" OpacityMask="White" RenderTransformOrigin="0.819,0.556" Margin="10,29,105,4" Grid.RowSpan="2" />
+            <TextBlock Grid.Row="1" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" HorizontalAlignment="Center">Youth</TextBlock>
+            <Image x:Name="grandma_icon" Grid.Column="8" Source="/img/grandmother.png" OpacityMask="White" RenderTransformOrigin="0.819,0.556" Margin="7,29,108,4" Grid.RowSpan="2" />
+            <TextBlock Grid.Row="1" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" HorizontalAlignment="Center">Senior</TextBlock>
+
             <!--Row 2-->
             <TextBlock Grid.Row="3" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center">2-Hour</TextBlock>
             <TextBlock Grid.Row="3" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="20" HorizontalAlignment="Center">$3.50</TextBlock>
