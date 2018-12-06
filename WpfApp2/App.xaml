@@ -171,36 +171,6 @@
             </Setter>
         </Style>
 
-        <Style x:Key="AccentColor" TargetType="{x:Type Button}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid x:Name="grid">
-                            <Border x:Name="border" CornerRadius="8" Background="#00ADAD">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-32"
-                                          TextElement.FontWeight="Bold">
-                                </ContentPresenter>
-                                <Border.Effect>
-                                    <DropShadowEffect  BlurRadius="10" Opacity="0.2" />
-                                </Border.Effect>
-                            </Border>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsPressed" Value="True">
-
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#FE977A"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
         <Style x:Key="FaresButton" TargetType="{x:Type Button}">
 
             <Setter Property="Template">
