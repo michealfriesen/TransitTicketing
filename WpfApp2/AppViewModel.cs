@@ -63,17 +63,17 @@ namespace WpfApp2
                 var type = PurchaseState.SelectedDuration;
                 switch (type){
                     case TicketDuration.SingleFare:
-                        return DateTime.Now.AddHours(2.0).ToString("MM/dd/yyyy HH:mm");
+                        return "Valid Until: " + DateTime.Now.AddHours(2.0).ToString("MM/dd/yyyy HH:mm");
                     case TicketDuration.FullDay:
-                        return DateTime.Now.AddDays(1.0).ToString("MM/dd/yyyy HH:mm");
+                        return "Valid Until: " + DateTime.Now.AddDays(1.0).ToString("MM/dd/yyyy HH:mm");
                     case TicketDuration.ThreeDay:
-                        return DateTime.Now.AddDays(3.0).ToString("MM/dd/yyyy HH:mm");
+                        return "Valid Until:" + DateTime.Now.AddDays(3.0).ToString("MM/dd/yyyy HH:mm");
                     case TicketDuration.Week:
-                        return DateTime.Now.AddDays(7.0).ToString("MM/dd/yyyy HH:mm");
+                        return "Valid Until: " + DateTime.Now.AddDays(7.0).ToString("MM/dd/yyyy HH:mm");
                     case TicketDuration.Month:
-                        return DateTime.Now.AddMonths(1).ToString("MM/dd/yyyy HH:mm");
+                        return "Valid Until:" + DateTime.Now.AddMonths(1).ToString("MM/dd/yyyy HH:mm");
                     default:
-                        return DateTime.Now.AddHours(2.0).ToString("MM/dd/yyyy HH:mm");
+                        return "Valid Until: " + DateTime.Now.AddHours(2.0).ToString("MM/dd/yyyy HH:mm");
 
                 }
 
