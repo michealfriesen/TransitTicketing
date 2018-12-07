@@ -26,6 +26,15 @@ namespace WpfApp2
                 return this.TicketGroups.Where(tg => tg.Quantity > 0).ToArray();
             }
         }
+
+        public bool HasActiveTicketGroups
+        {
+            get
+            {
+                return this.ActiveTicketGroups.Length > 0;
+            }
+        }
+
 		private TicketDuration selectedDuration;
 
         public TicketDuration SelectedDuration {

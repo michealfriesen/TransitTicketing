@@ -31,6 +31,7 @@ namespace WpfApp2
         {
             get { return DateTime.Now.ToString("MM/dd/yyy"); }
         }
+
         public FaresPage()
         {
             InitializeComponent();
