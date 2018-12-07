@@ -55,6 +55,31 @@ namespace WpfApp2
             }
             
         }
+        
+        public string GetExpiry
+        {
+            get
+            {
+                var type = PurchaseState.SelectedDuration;
+                switch (type){
+                    case TicketDuration.SingleFare:
+                        return "Valid Until: " + DateTime.Now.AddHours(2.0).ToString("MM/dd/yyyy HH:mm");
+                    case TicketDuration.FullDay:
+                        return "Valid Until: " + DateTime.Now.AddDays(1.0).ToString("MM/dd/yyyy HH:mm");
+                    case TicketDuration.ThreeDay:
+                        return "Valid Until:" + DateTime.Now.AddDays(3.0).ToString("MM/dd/yyyy HH:mm");
+                    case TicketDuration.Week:
+                        return "Valid Until: " + DateTime.Now.AddDays(7.0).ToString("MM/dd/yyyy HH:mm");
+                    case TicketDuration.Month:
+                        return "Valid Until:" + DateTime.Now.AddMonths(1).ToString("MM/dd/yyyy HH:mm");
+                    default:
+                        return "Valid Until: " + DateTime.Now.AddHours(2.0).ToString("MM/dd/yyyy HH:mm");
+
+                }
+
+                
+            }
+        }
 
         #endregion
 
