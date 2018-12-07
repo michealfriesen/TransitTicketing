@@ -37,5 +37,5 @@ namespace WpfApp2
         }
     }
 
-	class SummaryPageViewModel : IViewModel { }
+    class SummaryPageViewModel : IViewModel { }
 }

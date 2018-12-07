@@ -193,5 +193,17 @@
   <ItemGroup>
     <Resource Include="img\underground2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\insert-payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\baby-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\boy-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\grandmother-black.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,7 +24,7 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="{Binding Source={StaticResource footer-height}}"></RowDefinition>
         </Grid.RowDefinitions>
-        
+
         <local:Header Grid.Row="0" Margin="0,0,0,0"></local:Header>
 
         <Grid Grid.Row="1" Width="740" Margin="20,30,40,20">
@@ -88,7 +88,7 @@
                 </StackPanel>
             </Grid>
             <StackPanel Grid.Column="1">
-                <Grid>
+                <Grid  Margin="0,0,0,20">
                     <Rectangle RadiusX="8" RadiusY="8">
                         <Rectangle.Fill>
                             <SolidColorBrush Color="#00ADAD"/>
@@ -100,13 +100,16 @@
                         <TextBlock FontSize="50" Foreground="White" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.GetTotal, StringFormat=${0}}"></TextBlock>
                     </TextBlock>
                 </Grid>
-                <Grid Margin="0,20,0,0">
-                    <Button Style="{DynamicResource InsertPaymentButton}" Height="120"  BorderThickness="0">
-                        <TextBlock FontSize="30" Foreground="White"  TextAlignment="Center">
-                        Insert
-                        <LineBreak></LineBreak>
-                        Payment
-                        </TextBlock>
+                <Grid>
+                    <Button Style="{DynamicResource InsertPaymentButton}" Height="194">
+                        <StackPanel Margin="0,50,0,0">
+                            <TextBlock FontSize="30" Foreground="White" Margin="0,0,0,30" TextAlignment="Center">
+                                Insert
+                                <LineBreak></LineBreak>
+                                Payment
+                            </TextBlock>
+                            <Image Width="130"  Source="/img/insert-payment.png"/>
+                        </StackPanel>
                     </Button>
                 </Grid>
             </StackPanel>
@@ -114,8 +117,7 @@
         <Grid Grid.Row="2" Margin="20,0,0,0">
             <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToFaresPage}" Height="50" Width="150"  Foreground="White" HorizontalAlignment="Left" />
         </Grid>
-        
-
+        <Polygon Points="0,0 25,25 0,50" Fill="#00ADAD" Margin="750,216,24,147" Grid.Row="1" />
     </Grid>
 
 </UserControl>

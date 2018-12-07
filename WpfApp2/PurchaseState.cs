@@ -13,9 +13,9 @@ namespace WpfApp2
     {
         public PurchaseState()
         {
-            var adultTicket = new TicketGroup { Age = TicketAge.Adult, IconUrl = "/img/movie-tickets.png" };
-            var youthTicket = new TicketGroup { Age = TicketAge.Youth, IconUrl = "/img/movie-tickets.png" };
-            var seniorTicket = new TicketGroup { Age = TicketAge.Senior, IconUrl = "/img/movie-tickets.png"};
+            var adultTicket = new TicketGroup { Age = TicketAge.Adult, IconUrl = "/img/boy-black.png" };
+            var youthTicket = new TicketGroup { Age = TicketAge.Youth, IconUrl = "/img/baby-black.png" };
+            var seniorTicket = new TicketGroup { Age = TicketAge.Senior, IconUrl = "/img/grandmother-black.png" };
             this.TicketGroups = new TicketGroup[] { adultTicket, youthTicket, seniorTicket };
         }
 
