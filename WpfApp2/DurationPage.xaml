@@ -13,7 +13,7 @@
         <System:Double x:Key="margin-x">20</System:Double>
 
         <System:Double x:Key="header-height">70</System:Double>
-        
+
         <System:Double x:Key="colWidth">170</System:Double>
         <System:Double x:Key="colWidth2">360</System:Double>
         <System:Double x:Key="btn-margin-y">20</System:Double>
@@ -98,7 +98,7 @@
                             <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Image x:Name="three_day_icon" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="105" Source="/img/sun.png" Grid.ColumnSpan="2" Height="77" Margin="0,15,5,10"/>
+                        <Image x:Name="three_day_icon" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="105" Source="/img/3day.png" Grid.ColumnSpan="2" Height="77" Margin="0,15,5,10"/>
                         <StackPanel Grid.Column="2">
                             <TextBlock Padding="0 10" FontSize="36" Foreground="White">3-Day</TextBlock>
                             <TextBlock  x:Name="ThreeDays_expiry" Foreground="White" FontSize="20"></TextBlock>
@@ -115,8 +115,7 @@
                             <ColumnDefinition Width="{Binding Source={StaticResource colWidth2}}"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Image x:Name="week_icon" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="72" Source="/img/sun.png" Height="53" Margin="0,15,18,34"/>
-                        <Image x:Name="week_icon2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="78" Source="/img/sun.png" Height="58" Margin="22,34,10,10" Grid.ColumnSpan="2"/>
+                        <Image x:Name="week_icon" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="105" Source="/img/week.png" Height="77" Margin="0,15,5,10" Grid.ColumnSpan="2"/>
                         <StackPanel Grid.Column="2">
                             <TextBlock Padding="0 10" FontSize="36" Foreground="White">Week</TextBlock>
                             <TextBlock  x:Name="Week_expiry" Foreground="White" FontSize="20"></TextBlock>
@@ -148,15 +147,15 @@
         <Grid Grid.Row="2" Margin="20, 0, 40,0">
             <Button Style="{DynamicResource RoundCorner}" Content="Back" FontWeight="Bold" FontSize="16" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToHomePage}" Height="50" HorizontalAlignment="Left" Width="150" Foreground="White" />
             <Button Style="{DynamicResource PriceChart}" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToPriceChartPage}" Height="50" Width="150" HorizontalAlignment="Right">
-            <Grid>
-                <TextBlock Margin="20,10,-21,10" Foreground="White" FontWeight="Bold" FontSize="16" Text="Price Chart" HorizontalAlignment="Center"/>
-                <Image x:Name="i_icon" HorizontalAlignment="Left" Height="31" VerticalAlignment="Center" Width="33" Source="/img/information.png" Margin="-20,7,0,6"/>
-            </Grid>
-             </Button>
-            
-            
+                <Grid>
+                    <TextBlock Margin="20,10,-21,10" Foreground="White" FontWeight="Bold" FontSize="16" Text="Price Chart" HorizontalAlignment="Center"/>
+                    <Image x:Name="i_icon" HorizontalAlignment="Left" Height="31" VerticalAlignment="Center" Width="33" Source="/img/information.png" Margin="-20,7,0,6"/>
+                </Grid>
+            </Button>
+
+
         </Grid>
 
-        
+
     </Grid>
 </UserControl>
