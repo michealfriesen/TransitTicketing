@@ -40,5 +40,5 @@ namespace WpfApp2
         }
     }
 
-	class HomePageViewModel : IViewModel { }
+    class HomePageViewModel : IViewModel { }
 }

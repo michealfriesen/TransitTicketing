@@ -16,7 +16,7 @@
 
         <System:Double x:Key="mainbtn-height">250</System:Double>
         <System:Double x:Key="mainbtn-icon">150</System:Double>
-        <System:Double x:Key="mainbtn-text">100</System:Double>
+        <System:Double x:Key="mainbtn-text">200</System:Double>
         <System:Double x:Key="mainbtn-margin-y">20</System:Double>
         <System:Double x:Key="mainbtn-margin-x">150</System:Double>
 
@@ -78,22 +78,23 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0"></TextBlock>
-            <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="1" Background="Aqua" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}">
+            <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="1" Background="Aqua" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToDurationPage}" >
                 <Grid Name="ticketsbtn">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="{Binding Source={StaticResource mainbtn-margin-x}}"></ColumnDefinition>
+                        <ColumnDefinition Width="300"></ColumnDefinition>
                         <ColumnDefinition Width="{Binding Source={StaticResource mainbtn-icon}}"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="{Binding Source={StaticResource mainbtn-margin-y}}"></RowDefinition>
                         <RowDefinition Height="{Binding Source={StaticResource mainbtn-icon}}"></RowDefinition>
                         <RowDefinition Height="{Binding Source={StaticResource mainbtn-margin-y}}"></RowDefinition>
-                        <RowDefinition Height="{Binding Source={StaticResource mainbtn-text}}"></RowDefinition>
+                        <RowDefinition Height="44"></RowDefinition>
+                        <RowDefinition Height="56"/>
                     </Grid.RowDefinitions>
 
 
-                    <Image x:Name="logo_header" HorizontalAlignment="Left" Height="165" VerticalAlignment="Center" Width="203" Source="/img/movie-tickets.png" Margin="56,15,0,10" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
-                    <TextBlock Grid.Row="3" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="10,0,-9,0" Width="299" FontSize="36" FontWeight="Bold" Foreground="White"><Run Text="Purchase Tickets"/><LineBreak/><Run/></TextBlock>
+                    <Image x:Name="logo_header" HorizontalAlignment="Left" Height="165" VerticalAlignment="Center" Width="204" Source="/img/movie-tickets.png" Margin="137,14,0,11" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="65,18,69,2" FontSize="36" TextAlignment="Center" FontWeight="Bold" Foreground="White" Grid.RowSpan="3" ><Run Text="Press Here to Start"/><LineBreak/><Run/></TextBlock>
                 </Grid>
             </Button>
             <TextBlock Grid.Row="2"></TextBlock>
@@ -121,9 +122,9 @@
 
             <TextBlock Grid.Row="0" Grid.Column="0" Background="#E57758"></TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="0" Background="#E57758"></TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="0" Background="#E57758"></TextBlock> 
+            <TextBlock Grid.Row="2" Grid.Column="0" Background="#E57758"></TextBlock>
 
-            <TextBlock Grid.Row="1" Grid.Column="1" FontWeight="Bold" FontSize="24" Foreground="White" Grid.ColumnSpan="2" Margin="10,0,11,0"><Run Text="Express"/><LineBreak/><Run Text="One-Touch"/></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" FontWeight="Bold" FontSize="24" Foreground="White" Grid.ColumnSpan="2" Margin="10,0,11,0"><Run Text="Express"/><LineBreak/><Run Text="Single Ticket"/></TextBlock>
             <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="3" Background="green" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnExpressAdult}">
                 <Grid Name="expressbtn_1">
                     <Grid.ColumnDefinitions>
@@ -137,8 +138,8 @@
                         <RowDefinition Height="{Binding Source={StaticResource expressbtn-text}}"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,0,15" Foreground="White" FontSize="18" Grid.RowSpan="2" Text="Adult Single Fare" HorizontalAlignment="Center"/>
-                    <Image x:Name="adult_icon" HorizontalAlignment="Center" VerticalAlignment="Top" Width="108" Source="/img/boy.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="23,10,29,0" Height="71" Grid.Row="1" Grid.RowSpan="2" />
+                    <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Margin="0,5,0,15" Foreground="White" FontSize="18" Grid.RowSpan="2" Text="Adult" HorizontalAlignment="Center"/>
+                    <Image x:Name="adult_icon" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/img/boy.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="49,16,51,0" Height="60" Grid.Row="1" />
                     <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,77" Foreground="White" FontSize="18" Grid.Row="2" Grid.RowSpan="2" Text="$3.50" HorizontalAlignment="Center"/>
                 </Grid>
             </Button>
@@ -155,8 +156,8 @@
                         <RowDefinition Height="{Binding Source={StaticResource expressbtn-text}}"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Column="0" Foreground="White" FontSize="18" Margin="0,6,-3,70" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">Youth Single Fare</TextBlock>
-                    <Image x:Name="youth_icon" HorizontalAlignment="Center" VerticalAlignment="Top" Width="66" Source="/img/baby.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="49,15,45,0" Height="71" Grid.Row="1" Grid.RowSpan="2" />
+                    <TextBlock Grid.Column="0" Foreground="White" FontSize="18" Margin="0,6,-3,70" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center">Youth</TextBlock>
+                    <Image x:Name="youth_icon" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/img/baby.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="49,15,45,0" Height="60" Grid.Row="1" Grid.RowSpan="2" />
                     <TextBlock Grid.Column="0" Foreground="White" FontSize="18" Margin="13,1,10,75" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="2" Text="$2.50"/>
                     <TextBlock Grid.Column="0" Foreground="White" FontSize="18" Margin="60.141,1,56.858,75" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="2" Text="$2.50"/>
                 </Grid>
@@ -174,8 +175,8 @@
                         <RowDefinition Height="{Binding Source={StaticResource expressbtn-text}}"></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Column="0" FontSize="18" Foreground="White" Margin="7,6,-7,70" Grid.RowSpan="2" HorizontalAlignment="Left" Width="160" Grid.ColumnSpan="2">Senior Single Fare</TextBlock>
-                    <Image x:Name="senior_icon" HorizontalAlignment="Center" VerticalAlignment="Top" Width="66" Source="/img/grandmother.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="49,15,45,0" Height="71" Grid.Row="1" Grid.RowSpan="2" />
+                    <TextBlock Grid.Column="0" FontSize="18" TextAlignment="Center" Foreground="White" Margin="1,6,-1,70" Grid.RowSpan="2" HorizontalAlignment="Left" Width="160" Grid.ColumnSpan="2">Senior</TextBlock>
+                    <Image x:Name="senior_icon" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="60" Source="/img/grandmother.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="49,15,45,0" Grid.Row="1" Grid.RowSpan="2" />
                     <TextBlock Grid.Column="0" FontSize="18" Foreground="White" Margin="60,1,53,75" Grid.RowSpan="2" HorizontalAlignment="Center" Width="47" Grid.Row="2" Text="$2.75" Grid.ColumnSpan="2"/>
                 </Grid>
             </Button>
