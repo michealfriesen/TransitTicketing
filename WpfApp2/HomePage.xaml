@@ -119,9 +119,9 @@
                 <RowDefinition Height="{Binding Source={StaticResource express-margin-y}}"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Background="#AB342B"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="0" Background="#AB342B"></TextBlock>
-            <TextBlock Grid.Row="2" Grid.Column="0" Background="#AB342B"></TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="0" Background="#E57758"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" Background="#E57758"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Background="#E57758"></TextBlock> 
 
             <TextBlock Grid.Row="1" Grid.Column="1" FontWeight="Bold" FontSize="24" Foreground="White" Grid.ColumnSpan="2" Margin="10,0,11,0"><Run Text="Express"/><LineBreak/><Run Text="One-Touch"/></TextBlock>
             <Button Style="{DynamicResource Express}" Grid.Row="1" Grid.Column="3" Background="green" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnExpressAdult}">
