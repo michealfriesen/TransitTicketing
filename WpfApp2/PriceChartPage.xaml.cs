@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for DurationWindow.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class DurationWindow : Window
+    public partial class PriceChartPage : Page
     {
-        public DurationWindow()
+        public PriceChartPage()
         {
             InitializeComponent();
         }

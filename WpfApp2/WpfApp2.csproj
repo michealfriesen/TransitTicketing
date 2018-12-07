@@ -54,15 +54,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="State.cs" />
-    <Compile Include="SummaryWindow.xaml.cs">
-      <DependentUpon>SummaryWindow.xaml</DependentUpon>
+    <Compile Include="Enums.cs" />
+    <Compile Include="Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
     </Compile>
-    <Page Include="DurationWindow.xaml">
+    <Compile Include="IViewModel.cs" />
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppViewModel.cs" />
+    <Compile Include="PrintingPage.xaml.cs">
+      <DependentUpon>PrintingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PriceChart.xaml.cs">
+      <DependentUpon>PriceChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseState.cs" />
+    <Compile Include="Resources.cs" />
+    <Compile Include="SummaryPage.xaml.cs">
+      <DependentUpon>SummaryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SummaryPageRow.xaml.cs">
+      <DependentUpon>SummaryPageRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TicketGroup.cs" />
+    <Page Include="DurationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FaresWindow.xaml">
+    <Page Include="FaresPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Header.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -74,17 +102,29 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DurationWindow.xaml.cs">
-      <DependentUpon>DurationWindow.xaml</DependentUpon>
+    <Compile Include="DurationPage.xaml.cs">
+      <DependentUpon>DurationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FaresWindow.xaml.cs">
-      <DependentUpon>FaresWindow.xaml</DependentUpon>
+    <Compile Include="FaresPage.xaml.cs">
+      <DependentUpon>FaresPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SummaryWindow.xaml">
+    <Page Include="PrintingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PriceChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SummaryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SummaryPageRow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,6 +154,62 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\movie-tickets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\underground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\24-hours-delivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\baby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\boy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\grandmother.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\information-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\underground2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\insert-payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\baby-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\boy-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\grandmother-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\week.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\3day.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

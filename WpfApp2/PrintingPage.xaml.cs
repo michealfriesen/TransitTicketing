@@ -12,24 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page2.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PrintingPage : UserControl
     {
-        public MainWindow()
+        public String title
+        {
+            get { return "Thank You"; }
+        }
+        public String time
+        {
+            get { return DateTime.Now.ToString("HH:mm"); }
+        }
+        public String date
+        {
+            get { return DateTime.Now.ToString("MM/dd/yyy"); }
+        }
+        public PrintingPage()
         {
             InitializeComponent();
-            var viewModel = new AppViewModel();
-            this.DataContext = viewModel;
-            viewModel.Init();
+            
         }
-
-        
-
-}
+    }
 }

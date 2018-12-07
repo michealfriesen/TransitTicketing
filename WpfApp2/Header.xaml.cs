@@ -17,19 +17,23 @@ using System.Windows.Threading;
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FooterNavigation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Header : UserControl
     {
-        public MainWindow()
+		public Header()
         {
             InitializeComponent();
-            var viewModel = new AppViewModel();
-            this.DataContext = viewModel;
-            viewModel.Init();
+            DispatcherTimer timer = new DispatcherTimer(new TimeSpan(0, 0, 1), DispatcherPriority.Normal, delegate
+            {
+                this.clock_label.Content = DateTime.Now.ToString("HH:mm");
+                this.date_label.Content = DateTime.Now.ToString("MM/dd/yyyy");
+            }, this.Dispatcher);
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
-}
+        }
+    }
 }

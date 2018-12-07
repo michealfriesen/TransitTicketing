@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="WpfApp2.PrintingPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Height="600" Width="800">
+
+    <UserControl.Resources>
+        <System:Double x:Key="margin-y">40</System:Double>
+        <System:Double x:Key="margin-x">20</System:Double>
+        <System:Double x:Key="header-height">70</System:Double>
+        <System:Double x:Key="colWidth">170</System:Double>
+        <System:Double x:Key="colWidth2">360</System:Double>
+        <System:Double x:Key="btn-margin-y">20</System:Double>
+        <System:Double x:Key="btn-height-y">102</System:Double>
+
+        <System:Double x:Key="sm-icon-size">90</System:Double>
+
+
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <local:Header Grid.Row="0"></local:Header>
+
+        <Grid Name="body" Grid.Row="1" Height="550">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="500"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition ></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Name="TopTextScreen" Grid.Row="2" Grid.Column="1"  Grid.RowSpan="2">
+                <Rectangle Height="auto" Width="auto" RadiusX="8" RadiusY="8" Margin="0,-63,0,0" >
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#FF00ADAD">
+
+                        </SolidColorBrush>
+
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+            <Grid Name="BottomTextScreen" Grid.Row="1" Grid.Column="1"  Grid.RowSpan="2">
+
+                <Rectangle Height="auto" Width="auto" RadiusX="8" RadiusY="8" Margin="0,0,0,66" >
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#FF2ED5D5">
+
+                        </SolidColorBrush>
+
+                    </Rectangle.Fill>
+                </Rectangle>
+                <TextBlock FontSize="50" HorizontalAlignment="Center" FontWeight="Bold" VerticalAlignment="Center" Foreground="White" Text="Purchase Complete" Margin="0,34,0,99" Width="500" TextAlignment="Center"/>
+            </Grid>
+            <TextBlock FontSize="40" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="76,10,82,33" Grid.RowSpan="2"><Run Text="Please pick up your"/><LineBreak/><Run Text="tickets and receipt"/></TextBlock>
+            <Path HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="4" Fill="#FF00ADAD" Data="M 0 0 L 75 50 L 150 0 Z"/>
+        </Grid>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="57" Margin="17,3,0,0" Stroke="Black" VerticalAlignment="Top" Width="62"/>
+    </Grid>
+</UserControl>
