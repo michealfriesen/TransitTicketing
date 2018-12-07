@@ -34,6 +34,12 @@ namespace WpfApp2
         public DurationPage()
         {
             InitializeComponent();
+
+            this.TwoHours_expiry.Text = DateTime.Now.AddHours(2.0).ToString("MM/dd/yyy HH:mm");
+            this.FullDay_expiry.Text = DateTime.Now.AddDays(1.0).ToString("MM/dd/yyy HH:mm");
+            this.ThreeDays_expiry.Text = DateTime.Now.AddDays(3.0).ToString("MM/dd/yyy HH:mm");
+            this.Week_expiry.Text = DateTime.Now.AddDays(7.0).ToString("MM/dd/yyy HH:mm");
+            this.Month_expiry.Text = DateTime.Now.AddMonths(1).ToString("MM/dd/yyy HH:mm");
         }
     }
 

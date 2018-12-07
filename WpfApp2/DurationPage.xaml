@@ -13,8 +13,7 @@
         <System:Double x:Key="margin-x">20</System:Double>
 
         <System:Double x:Key="header-height">70</System:Double>
-        <System:Double x:Key="footer-height">50</System:Double>
-
+        
         <System:Double x:Key="colWidth">170</System:Double>
         <System:Double x:Key="colWidth2">360</System:Double>
         <System:Double x:Key="btn-margin-y">20</System:Double>
@@ -32,7 +31,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="{Binding Source={StaticResource footer-height}}"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
         <local:Header Grid.Row="0"></local:Header>
@@ -63,7 +62,7 @@
                     <TextBlock Width="{Binding Source={StaticResource colWidth}}"/>
                     <Image x:Name="clock_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Source="/img/clock.png" Height="140" Margin="0,30,0,40"/>
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Foreground="White" FontSize="20"><Run Text="Valid Until"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Center" Foreground="White" FontSize="20"><Run Text="Expiration Date"/></TextBlock>
+                    <TextBlock x:Name="TwoHours_expiry" HorizontalAlignment="Center" Foreground="White" FontSize="20"></TextBlock>
                 </StackPanel>
             </Button>
             <Button Style="{DynamicResource DurationButton}" Grid.Row="1" Grid.Column="3" x:Name="FullDay" 
@@ -75,7 +74,7 @@
                     <TextBlock Width="{Binding Source={StaticResource colWidth}}"/>
                     <Image x:Name="full_day_icon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Source="/img/24-hours-delivery.png" Height="140" Margin="0,30,0,40"/>
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Foreground="White" FontSize="20"><Run Text="Valid Until"/></TextBlock>
-                    <TextBlock HorizontalAlignment="Center" Foreground="White" FontSize="20"><Run Text="Expiration Date"/></TextBlock>
+                    <TextBlock x:Name="FullDay_expiry" HorizontalAlignment="Center" Foreground="White" FontSize="20"></TextBlock>
                 </StackPanel>
             </Button>
 
@@ -102,7 +101,7 @@
                         <Image x:Name="three_day_icon" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="105" Source="/img/sun.png" Grid.ColumnSpan="2" Height="77" Margin="0,15,5,10"/>
                         <StackPanel Grid.Column="2">
                             <TextBlock Padding="0 10" FontSize="36" Foreground="White">3-Day</TextBlock>
-                            <TextBlock Foreground="White" FontSize="20">Valid until: Some date</TextBlock>
+                            <TextBlock  x:Name="ThreeDays_expiry" Foreground="White" FontSize="20"></TextBlock>
                         </StackPanel>
                     </Grid>
                 </Button>
@@ -120,7 +119,7 @@
                         <Image x:Name="week_icon2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="78" Source="/img/sun.png" Height="58" Margin="22,34,10,10" Grid.ColumnSpan="2"/>
                         <StackPanel Grid.Column="2">
                             <TextBlock Padding="0 10" FontSize="36" Foreground="White">Week</TextBlock>
-                            <TextBlock Foreground="White" FontSize="20">Valid until: Some date</TextBlock>
+                            <TextBlock  x:Name="Week_expiry" Foreground="White" FontSize="20"></TextBlock>
                         </StackPanel>
                     </Grid>
                 </Button>
@@ -137,7 +136,7 @@
                         <Image x:Name="month_icon"  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="95" Source="/img/calendar.png" Grid.ColumnSpan="2" Height="70" Margin="5,14,10,18"/>
                         <StackPanel Grid.Column="2">
                             <TextBlock Padding="0 10" FontSize="36" Foreground="White">Month</TextBlock>
-                            <TextBlock Foreground="White" FontSize="20"><Run Text="Valid until: Some date"/></TextBlock>
+                            <TextBlock  x:Name="Month_expiry" Foreground="White" FontSize="20"></TextBlock>
                         </StackPanel>
                     </Grid>
                 </Button>
