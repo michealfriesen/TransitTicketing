@@ -34,6 +34,12 @@ namespace WpfApp2
         public FaresPage()
         {
             InitializeComponent();
+            this.validUntil.Text = DateTime.Now.AddHours(2.0).ToString("MM/dd/yyy HH: mm");
+        }
+
+        private void Minus1_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 
