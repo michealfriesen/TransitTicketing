@@ -33,7 +33,7 @@
                 <ColumnDefinition Width="220"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0" Height="360" Margin="0,0,20,0">
+            <Grid Grid.Column="0" Height="auto" Margin="0,0,20,0">
                 <Rectangle RadiusX="8" RadiusY="8" Width="100" HorizontalAlignment="Right">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="#B1FFFF"/>
@@ -101,14 +101,14 @@
                     </TextBlock>
                 </Grid>
                 <Grid>
-                    <Button Style="{DynamicResource InsertPaymentButton}" Height="194">
-                        <StackPanel Margin="0,50,0,0">
-                            <TextBlock FontSize="30" Foreground="White" Margin="0,0,0,30" TextAlignment="Center">
+                    <Button Style="{DynamicResource InsertPaymentButton}">
+                        <StackPanel Margin="0,50,0,60">
+                            <TextBlock FontSize="30" Margin="0,0,0,30" Foreground="White" VerticalAlignment="Top" TextAlignment="Center">
                                 Insert
                                 <LineBreak></LineBreak>
                                 Payment
                             </TextBlock>
-                            <Image Width="130"  Source="/img/insert-payment.png"/>
+                            <Image Width="130" VerticalAlignment="Bottom"  Source="/img/insert-payment.png"/>
                         </StackPanel>
                     </Button>
                 </Grid>
