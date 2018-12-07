@@ -43,9 +43,22 @@ namespace WpfApp2
         {
             OnPropertyChanged("PurchaseState");
         }
+
+        public string GetEnumType
+        {
+            get{
+                Type type = PurchaseState.SelectedDuration.GetType();
+                var next = type.GetMember(PurchaseState.SelectedDuration.ToString());
+                var after = next[0].GetCustomAttributes(typeof(DescriptionAttribute), false);
+                var tmpstring = (DescriptionAttribute)after[0];
+                return tmpstring.Description.ToString();
+            }
+            
+        }
+
         #endregion
 
-        #region Navigation
+            #region Navigation
         public ICommand OnGoToPriceChartPage
         {
             get
