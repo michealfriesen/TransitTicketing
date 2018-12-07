@@ -36,8 +36,9 @@ namespace WpfApp2
 		{
 			InitializeComponent();
 
-		}
-	}
+            this.Express_expiry.Text = DateTime.Now.AddHours(2.0).ToString("MM/dd/yyy HH:mm");
+        }
+    }
 
 	class HomePageViewModel : IViewModel { }
 }

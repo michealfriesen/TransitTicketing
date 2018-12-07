@@ -179,7 +179,7 @@
                     <TextBlock Grid.Column="0" FontSize="18" Foreground="White" Margin="60,1,53,75" Grid.RowSpan="2" HorizontalAlignment="Center" Width="47" Grid.Row="2" Text="$2.75" Grid.ColumnSpan="2"/>
                 </Grid>
             </Button>
-            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20" Foreground="White" Margin="11,74,10,0" Grid.ColumnSpan="2"><Run Text="Valid Until"/><LineBreak/><Run Text="DATE"/></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20" Foreground="White" Margin="11,74,10,0" Grid.ColumnSpan="2"><Run Text="Valid Until"/><LineBreak/><Run x:Name="Express_expiry" Text="DATE"/></TextBlock>
         </Grid>
         <local:Header Grid.Row="0"></local:Header>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="66" Margin="10,5,0,0" Stroke="Black" VerticalAlignment="Top" Width="77"/>
