@@ -10,11 +10,11 @@ namespace WpfApp2
 {
     enum TicketDuration
     {
-        [Description("Single Fare")]
+        [Description("2 Hours")]
         SingleFare,
         [Description("Full Day")]
         FullDay,
-        [Description("Three Day")]
+        [Description("3-Day")]
         ThreeDay,
         [Description("Week")]
         Week,

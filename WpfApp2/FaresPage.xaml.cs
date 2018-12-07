@@ -21,7 +21,7 @@ namespace WpfApp2
     {
         public String title
         {
-            get { return "Fare Type"; }
+            get { return ""; }
         }
         public String time
         {
