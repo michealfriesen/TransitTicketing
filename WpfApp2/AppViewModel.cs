@@ -121,7 +121,6 @@ namespace WpfApp2
             {
                 SelectedPage = new SummaryPage();
             }
-            
         }
 
         public ICommand OnExpressAdult
@@ -234,6 +233,10 @@ namespace WpfApp2
         {
             PurchaseState.IncreaseTicketQuantity(age);
             TriggerPurchaseStateUIUpdate();
+            if(PurchaseState.TicketGroups[0].Quantity > 0 || PurchaseState.TicketGroups[0].Quantity > 0 || PurchaseState.TicketGroups[0].Quantity > 0)
+            {
+
+            }
         }
 
         public ICommand OnDecreaseTicketQuantity { get { return new CommandHandler(param => DecreaseTicketQuantity((TicketAge)param)); } }
@@ -241,6 +244,10 @@ namespace WpfApp2
         {
             PurchaseState.DecreaseTicketQuantity(age);
             TriggerPurchaseStateUIUpdate();
+            if (PurchaseState.TicketGroups[0].Quantity == 0)
+            {
+
+            }
         }
         #endregion
 
