@@ -99,6 +99,7 @@
             </Button>
             <TextBlock Grid.Row="2"></TextBlock>
 
+
         </Grid>
 
         <!-- EXPRESS FOOTER-->
@@ -184,5 +185,8 @@
         </Grid>
         <local:Header Grid.Row="0"></local:Header>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="66" Margin="10,5,0,0" Stroke="Black" VerticalAlignment="Top" Width="77"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="45" Margin="270,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="233"/>
+        <Label Content="City Transit" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="293,3,0,0" Width="233" Height="61" Foreground="White" HorizontalContentAlignment="Center" FontSize="36" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="39" Margin="270,15,0,0" VerticalAlignment="Top" Width="39" Source="/img/underground.png"/>
     </Grid>
 </UserControl>
