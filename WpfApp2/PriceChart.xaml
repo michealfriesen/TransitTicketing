@@ -38,7 +38,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="411"></RowDefinition>
             <RowDefinition Height="{Binding Source={StaticResource footer-height}}"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -93,13 +93,13 @@
             </Rectangle>
 
             <!--Row 1-->
-            <TextBlock Grid.Row="1" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" HorizontalAlignment="Center" Margin="50,0,48,0" Width="52">Type</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" FontWeight="Bold" HorizontalAlignment="Center" Margin="50,0,48,0">Type</TextBlock>
             <Image x:Name="adult_icon" Grid.Column="4" Source="/img/boy.png" OpacityMask="White" RenderTransformOrigin="0.819,0.556" Margin="10,29,105,4" Grid.RowSpan="2" />
-            <TextBlock Grid.Row="1" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" HorizontalAlignment="Center" Margin="60,0,50,0" Width="60">Adult</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="4" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" FontWeight="Bold" Margin="20,0,0,0" HorizontalAlignment="Center" >Adult</TextBlock>
             <Image x:Name="baby_icon" Grid.Column="6" Source="/img/baby.png" OpacityMask="White" RenderTransformOrigin="0.819,0.556" Margin="10,29,105,4" Grid.RowSpan="2" />
-            <TextBlock Grid.Row="1" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" HorizontalAlignment="Center" Margin="56,0,52,0" Width="62">Youth</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="6" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" FontWeight="Bold" Margin="20,0,0,0" HorizontalAlignment="Center">Youth</TextBlock>
             <Image x:Name="grandma_icon" Grid.Column="8" Source="/img/grandmother.png" OpacityMask="White" RenderTransformOrigin="0.819,0.556" Margin="7,29,108,4" Grid.RowSpan="2" />
-            <TextBlock Grid.Row="1" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" HorizontalAlignment="Center" Margin="56,0,44,0" Width="70">Senior</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="8" Foreground="{Binding Source={StaticResource TextColor2}}" FontSize="25" FontWeight="Bold" Margin="20,0,0,0" HorizontalAlignment="Center">Senior</TextBlock>
 
             <!--Row 2-->
             <TextBlock Grid.Row="3" Grid.Column="2" Foreground="{Binding Source={StaticResource TextColor}}" FontSize="25" HorizontalAlignment="Center" Margin="36,0" Width="78">2-Hour</TextBlock>

@@ -83,7 +83,7 @@ namespace WpfApp2
 
         #endregion
 
-            #region Navigation
+        #region Navigation
         public ICommand OnGoToPriceChartPage
         {
             get

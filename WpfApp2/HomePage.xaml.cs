@@ -22,7 +22,7 @@ namespace WpfApp2
 	{
         public String title
         {
-            get { return "Home Page"; }
+            get { return ""; }
         }
         public String time
         {

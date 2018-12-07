@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="{Binding Source={StaticResource header-height}}"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="411"></RowDefinition>
             <RowDefinition Height="{Binding Source={StaticResource footer-height}}"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -39,7 +39,12 @@
                         <SolidColorBrush Color="#B1FFFF"/>
                     </Rectangle.Fill>
                 </Rectangle>
-                <Grid>
+                <Rectangle RadiusX="8" VerticalAlignment="Top" Height="35" RadiusY="8" Grid.RowSpan="2">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#00ADAD"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Grid Margin="0,2,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50"></ColumnDefinition>
                         <ColumnDefinition Width="{Binding Source={StaticResource margin-x-chart}}"></ColumnDefinition>
@@ -51,13 +56,13 @@
                         <ColumnDefinition Width="{Binding Source={StaticResource margin-x-chart}}"></ColumnDefinition>
                         <ColumnDefinition Width="100"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" FontSize="20" FontWeight="Bold" Text="Qty" HorizontalAlignment="Center"></TextBlock>
-                    <TextBlock Grid.Column="2" FontSize="20" FontWeight="Bold" Text="Ticket" HorizontalAlignment="Center"></TextBlock>
-                    <TextBlock Grid.Column="4" FontSize="20" FontWeight="Bold" Text="Type" HorizontalAlignment="Center"></TextBlock>
-                    <TextBlock Grid.Column="6" FontSize="20" FontWeight="Bold" Text="Price" HorizontalAlignment="Center"></TextBlock>
-                    <TextBlock Grid.Column="8" FontSize="20" FontWeight="Bold" Text="Total" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="0" FontSize="20" Foreground="White" FontWeight="Bold" Text="Qty" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="2" FontSize="20" Foreground="White" FontWeight="Bold" Text="Ticket" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="4" FontSize="20" Foreground="White" FontWeight="Bold" Text="Type" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="6" FontSize="20" Foreground="White" FontWeight="Bold" Text="Price" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Grid.Column="8" FontSize="20" Foreground="White" FontWeight="Bold" Text="Total" HorizontalAlignment="Center"></TextBlock>
                 </Grid>
-                <StackPanel Orientation="Vertical" Margin="0,30,0,0">
+                <StackPanel Orientation="Vertical" Margin="0,40,0,0">
                     <ItemsControl ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.ActiveTicketGroups}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
@@ -78,7 +83,7 @@
                                         <Image x:Name="_row_image" Width="20" HorizontalAlignment="Left" Source="{Binding IconUrl}"/>
                                         <TextBlock FontSize="20" Text="{Binding Age}" Margin="30,0,0,0" ></TextBlock>
                                     </Grid>
-                                    <TextBlock Grid.Column="4"  TextAlignment="Center"  FontSize="20" Text="{Binding Duration}"></TextBlock>
+                                    <TextBlock Grid.Column="4"  TextAlignment="Center"  FontSize="20" Text="{Binding DataContext.GetEnumType, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"></TextBlock>
                                     <TextBlock Grid.Column="6" TextAlignment="Center"   FontSize="20" Text="{Binding BasePrice, StringFormat=${0}}"></TextBlock>
                                     <TextBlock Grid.Column="8"  TextAlignment="Center"  FontSize="20" Text="{Binding TotalPrice, StringFormat=${0}}"></TextBlock>
                                 </Grid>
@@ -88,21 +93,21 @@
                 </StackPanel>
             </Grid>
             <StackPanel Grid.Column="1">
-                <Grid  Margin="0,0,0,20">
+                <Grid Margin="0,0,0,20">
                     <Rectangle RadiusX="8" RadiusY="8">
                         <Rectangle.Fill>
                             <SolidColorBrush Color="#00ADAD"/>
                         </Rectangle.Fill>
                     </Rectangle>
-                    <TextBlock  FontSize="30" Foreground="White"  Margin="0,20" TextAlignment="Center">
+                    <TextBlock FontSize="30" Foreground="White"  Margin="0,20" TextAlignment="Center">
                         Total
                         <LineBreak></LineBreak>
                         <TextBlock FontSize="50" Foreground="White" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.PurchaseState.GetTotal, StringFormat=${0}}"></TextBlock>
                     </TextBlock>
                 </Grid>
                 <Grid>
-                    <Button Style="{DynamicResource InsertPaymentButton}">
-                        <StackPanel Margin="0,50,0,60">
+                    <Button Style="{DynamicResource InsertPaymentButton}" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.OnGoToPrintingPage}">
+                        <StackPanel Margin="0,50,0,57">
                             <TextBlock FontSize="30" Margin="0,0,0,30" Foreground="White" VerticalAlignment="Top" TextAlignment="Center">
                                 Insert
                                 <LineBreak></LineBreak>

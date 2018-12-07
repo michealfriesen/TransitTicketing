@@ -115,7 +115,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid x:Name="grid">
-                            <Border x:Name="border" CornerRadius="8" Background="#2ED5D5">
+                            <Border x:Name="border" CornerRadius="8" Background="#00ADAD">
                                     <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           TextElement.FontWeight="Bold">
@@ -130,7 +130,7 @@
 
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#48E9E9"/>
+                                <Setter Property="Background" TargetName="border" Value="#2ED5D5"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
@@ -207,7 +207,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid x:Name="grid">
-                            <Border x:Name="border" CornerRadius="8" Background="#2ED5D5">
+                            <Border x:Name="border" CornerRadius="8" Background="#00ADAD">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-32"
                                           TextElement.FontWeight="Bold">
                                 </ContentPresenter>
@@ -221,7 +221,7 @@
 
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" TargetName="border" Value="#48E9E9"/>
+                                <Setter Property="Background" TargetName="border" Value="#2ED5D5"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
