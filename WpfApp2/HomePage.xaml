@@ -178,7 +178,7 @@
 
                     <TextBlock Grid.Column="0" FontSize="18" TextAlignment="Center" Foreground="White" Margin="1,6,-1,70" Grid.RowSpan="2" HorizontalAlignment="Left" Width="160" Grid.ColumnSpan="2">Senior</TextBlock>
                     <Image x:Name="senior_icon" HorizontalAlignment="Center" VerticalAlignment="Top"  Height="60" Source="/img/grandmother.png" OpacityMask="White" Grid.ColumnSpan="2" Margin="49,15,45,0" Grid.Row="1" Grid.RowSpan="2" />
-                    <TextBlock Grid.Column="0" FontSize="18" Foreground="White" Margin="60,1,53,75" Grid.RowSpan="2" HorizontalAlignment="Center" Width="47" Grid.Row="2" Text="$2.75" Grid.ColumnSpan="2"/>
+                    <TextBlock Grid.Column="0" FontSize="18" Foreground="White" Margin="60,1,53,75" Grid.RowSpan="2" HorizontalAlignment="Center" Width="47" Grid.Row="2" Text="$3.25" Grid.ColumnSpan="2"/>
                 </Grid>
             </Button>
             <TextBlock Grid.Row="1" Grid.Column="1" FontSize="20" Foreground="White" Margin="11,74,10,0" Grid.ColumnSpan="2"><Run Text="Valid Until"/><LineBreak/><Run x:Name="Express_expiry" Text="DATE"/></TextBlock>
